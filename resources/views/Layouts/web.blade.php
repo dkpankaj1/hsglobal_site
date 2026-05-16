@@ -41,6 +41,9 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('assets/web/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/web/css/fixes.css') }}" rel="stylesheet">
+
+    @stack('pageStyles')
 
 </head>
 
@@ -84,6 +87,8 @@
 
     <!-- Custom script for this template -->
     <script src="{{ asset('assets/web/js/script.js') }}"></script>
+
+    @stack('pageScripts')
 </body>
 
 </html>

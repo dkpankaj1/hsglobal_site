@@ -1,5 +1,15 @@
 <x-web-layout>
 
+    @push('pageStyles')
+        <link href="{{ asset('assets/web/css/home-hero-slider.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/web/css/home-facilities.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/web/css/home-authorities.css') }}" rel="stylesheet">
+    @endpush
+
+    @push('pageScripts')
+        <script src="{{ asset('assets/web/js/home-hero-slider.js') }}"></script>
+    @endpush
+
     <!-- start of notices marquee -->
     <section class="home-notice-bar" aria-label="Latest notifications">
         <div class="container">
@@ -24,90 +34,59 @@
     </section>
     <!-- end of notices marquee -->
 
-    <!-- start of hero -->
-    <section class="hero hero-slider-wrapper hero-slider-s1">
-        <div class="hero-slider">
-            <div class="slide">
-                <img src="images/slider/slide-1.jpg" alt class="slider-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col col-md-10 col-md-offset-1 slide-caption">
-                            <span class="trending"><i class="fa fa-bolt" aria-hidden="true"></i> Trending</span>
-                            <h1 class="slide-title">Construction Begins on New Huntington Beach Power Station</h1>
-                            <h5 class="slide-subtitle">Industry Segment: Power | 2 min read</h5>
-                            <a href="#" class="theme-btn-s1">Read Article</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="slide">
-                <img src="images/slider/slide-2.jpg" alt class="slider-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col col-md-10 col-md-offset-1 slide-caption">
-                            <span class="trending"><i class="fa fa-bolt" aria-hidden="true"></i> Trending</span>
-                            <h1 class="slide-title">Construction Begins on New Huntington Beach Power Station</h1>
-                            <h5 class="slide-subtitle">Industry Segment: Power | 2 min read</h5>
-                            <a href="#" class="theme-btn-s1">Read Article</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    @php
+        $heroSlides = [
+            [
+                'src' => 'https://bharatonline.co/uploads/sliders/slider1.jpg',
+                'title' => 'Learning For Life',
+            ],
+            [
+                'src' => 'https://bharatonline.co/uploads/sliders/slider2.jpg',
+                'title' => 'Modern Campus Experience',
+            ],
+            [
+                'src' => 'https://bharatonline.co/uploads/sliders/slider3.png',
+                'title' => 'Future-Ready Students',
+            ],
+        ];
+    @endphp
+    <x-web.hero-slider :slides="$heroSlides" :autoplay-ms="5000" />
 
-            <div class="slide">
-                <img src="images/slider/slide-3.jpg" alt class="slider-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col col-md-10 col-md-offset-1 slide-caption">
-                            <span class="trending"><i class="fa fa-bolt" aria-hidden="true"></i> Trending</span>
-                            <h1 class="slide-title">Construction Begins on New Huntington Beach Power Station</h1>
-                            <h5 class="slide-subtitle">Industry Segment: Power | 2 min read</h5>
-                            <a href="#" class="theme-btn-s1">Read Article</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- end of hero slider -->
 
-    <!-- start of about school -->
-    <section class="section-padding home-about-school">
+
+    <section class="about-us " style="padding: 3rem;">
         <div class="container">
             <div class="row">
-                <div class="col col-md-7">
+                <div class="col col-md-6">
                     <div class="section-title-s1">
                         <span>Welcome To {{ $school['name'] }}</span>
                         <h2>A Future-Ready <span>CBSE School</span> For Holistic Growth</h2>
                     </div>
-                    <p>{{ $school['description'] }}</p>
-                    <ul class="home-check-list">
-                        @foreach($school['highlights'] as $item)
-                            <li><i class="fa fa-check-circle" aria-hidden="true"></i> {{ $item }}</li>
-                        @endforeach
-                    </ul>
-                    <a href="{{ route('about.school') }}" class="theme-btn-s1">Know More</a>
-                </div>
-                <div class="col col-md-5">
-                    <div class="home-info-card">
-                        <h3>School Info</h3>
-                        <ul>
-                            <li><strong>Established:</strong> {{ $school['established'] }}</li>
-                            <li><strong>Affiliation:</strong> {{ $school['affiliation'] }}</li>
-                            <li><strong>Affiliation No:</strong> {{ $school['aff_no'] }}</li>
-                            <li><strong>School No:</strong> {{ $school['school_no'] }}</li>
-                            <li><strong>Contact:</strong> {{ $school['phone'] }}</li>
+                    <div class="about-details">
+                        <p>{{ $school['description'] }}</p>
+                        <ul class="home-check-list">
+                            @foreach($school['highlights'] as $item)
+                                <li><i class="fa fa-check-circle" aria-hidden="true"></i> {{ $item }}</li>
+                            @endforeach
                         </ul>
+                        <a href="{{ route('about.school') }}" class="btn theme-btn-s2">Know More</a>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="col col-md-6 about-image-col">
+                    <div class="img-holder">
+                        <img src="{{asset('assets/web/images/about-us/img-1.jpg')}}" alt="" class="img img-responsive">
+                        <img src="{{asset('assets/web/images/about-us/img-2.jpg')}}" alt="" class="img img-responsive">
+                        <img src="{{asset('assets/web/images/about-us/img-3.jpg')}}" alt="" class="img img-responsive">
+                    </div>
+                </div>
+            </div> <!-- end row -->
+        </div> <!-- end container -->
     </section>
     <!-- end of about school -->
 
     <!-- start of key stats -->
-    <section class="home-stats section-padding">
+    <section class="home-stats" style="padding:3rem;">
         <div class="container">
             <div class="row section-title-s3">
                 <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -141,31 +120,38 @@
     </section>
     <!-- end of key stats -->
 
-    <!-- start of academic programs -->
-    <section class="section-padding">
+    <section class="home-authorities section-padding">
         <div class="container">
-            <div class="row section-title-s2">
-                <div class="col col-lg-3">
-                    <h2><span>Academic</span> Programs</h2>
-                </div>
-                <div class="col col-lg-7">
-                    <p>Age-appropriate and outcome-focused learning paths designed as per CBSE framework.</p>
+            <div class="row section-title-s3">
+                <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2>School <span>Authorities</span></h2>
+                    <p>Meet the leadership team guiding academic excellence, discipline, and the long-term vision of the school.</p>
                 </div>
             </div>
-            <div class="row">
-                @foreach($home['programs'] as $program)
-                    <div class="col col-sm-6">
-                        <div class="home-program-card">
-                            <h3>{{ $program['title'] }}</h3>
-                            <p>{{ $program['description'] }}</p>
-                            <a href="{{ route($program['route']) }}" class="read-more">Explore Program</a>
-                        </div>
+
+            <div class="row home-authority-grid">
+                @foreach($authorities as $authority)
+                    <div class="col col-sm-6 col-md-4">
+                        <article class="home-authority-card">
+                            <div class="home-authority-photo">
+                                <img src="{{ $authority['photo'] }}" alt="{{ $authority['name'] }}" class="img-responsive">
+                            </div>
+
+                            <div class="home-authority-content">
+                                <h3>{{ $authority['name'] }}</h3>
+                                <span class="home-authority-divider"></span>
+                                <h4>{{ $authority['role'] }}</h4>
+                                <p>{{ $authority['summary'] }}</p>
+                                <a href="{{ route($authority['route']) }}" class="home-authority-link">
+                                    Read More! <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
                     </div>
                 @endforeach
             </div>
         </div>
     </section>
-    <!-- end of academic programs -->
 
     <!-- start of facilities -->
     <section class="section-padding home-facilities">
@@ -178,10 +164,15 @@
             </div>
             <div class="row home-facility-grid">
                 @foreach($home['facilities'] as $facility)
-                    <div class="col col-xs-6 col-md-4">
+                    <div class="col col-sm-6 col-md-4">
                         <a href="{{ route($facility['route']) }}" class="home-facility-card">
-                            <i class="fa {{ $facility['icon'] }}" aria-hidden="true"></i>
-                            <span>{{ $facility['title'] }}</span>
+                            <div class="home-facility-media">
+                                <img src="{{ $facility['image'] }}" alt="{{ $facility['title'] }}">
+                            </div>
+                            <div class="home-facility-body">
+                                <h3>{{ $facility['title'] }}</h3>
+                                <p>{{ $facility['description'] }}</p>
+                            </div>
                         </a>
                     </div>
                 @endforeach

@@ -1,0 +1,122 @@
+.home-authority-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.home-authority-grid .col {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.home-authority-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ebedf0;
+    padding: 0;
+}
+
+.home-authority-photo {
+    overflow: hidden;
+    background: #f3f4f6;
+}
+
+.home-authority-photo img {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    display: block;
+}
+
+.home-authority-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 14px 0;
+}
+
+.home-authority-content h3 {
+    margin: 0;
+    color: #1f2f6a;
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.home-authority-divider {
+    width: 100%;
+    max-width: 120px;
+    height: 2px;
+    margin: 18px auto 14px;
+    background: #b5351f;
+}
+
+.home-authority-content h4 {
+    margin: 0 0 12px;
+    color: #1f2f6a;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.home-authority-content p {
+    margin: 0;
+    flex: 1;
+    color: #2f3c4d;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.home-authority-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 22px;
+    padding: 10px 22px;
+    background: #b5351f;
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.home-authority-link:hover,
+.home-authority-link:focus {
+    background: #8f2615;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 991px) {
+    .home-authority-content {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .home-authority-content h3 {
+        font-size: 20px;
+    }
+
+    .home-authority-content h4 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-authority-grid .col {
+        width: 100%;
+        margin-bottom: 28px;
+    }
+
+    .home-authority-card {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .home-authority-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

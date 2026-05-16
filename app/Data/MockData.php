@@ -139,12 +139,48 @@ class MockData
             ],
             // TODO: Replace with Facility::featured()->get();
             'facilities' => [
-                ['icon' => 'fa-desktop',       'title' => 'Smart Classrooms', 'route' => 'facilities.smart-classrooms'],
-                ['icon' => 'fa-flask',         'title' => 'Science Labs',     'route' => 'facilities.science-lab'],
-                ['icon' => 'fa-book',          'title' => 'Library',          'route' => 'facilities.library'],
-                ['icon' => 'fa-futbol-o',      'title' => 'Sports Arena',     'route' => 'facilities.sports'],
-                ['icon' => 'fa-laptop',        'title' => 'Computer Labs',    'route' => 'facilities.computer-lab'],
-                ['icon' => 'fa-shield',        'title' => 'Safe Campus',      'route' => 'disclosure.safety'],
+                [
+                    'icon' => 'fa-desktop',
+                    'title' => 'Smart Classrooms',
+                    'route' => 'facilities.smart-classrooms',
+                    'image' => 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',
+                    'description' => 'Spacious, well-organised classrooms with digital teaching tools, proper ventilation, and a focused academic environment.',
+                ],
+                [
+                    'icon' => 'fa-flask',
+                    'title' => 'Science Labs',
+                    'route' => 'facilities.science-lab',
+                    'image' => 'https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=1200&q=80',
+                    'description' => 'Hands-on Physics, Chemistry, and Biology labs designed for practical exploration, safety, and concept clarity.',
+                ],
+                [
+                    'icon' => 'fa-book',
+                    'title' => 'Library',
+                    'route' => 'facilities.library',
+                    'image' => 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80',
+                    'description' => 'A quiet and resource-rich reading space with books, references, and digital learning support for all grades.',
+                ],
+                [
+                    'icon' => 'fa-futbol-o',
+                    'title' => 'Sports Arena',
+                    'route' => 'facilities.sports',
+                    'image' => 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80',
+                    'description' => 'Outdoor and indoor sports infrastructure that encourages fitness, teamwork, discipline, and competitive spirit.',
+                ],
+                [
+                    'icon' => 'fa-laptop',
+                    'title' => 'Computer Labs',
+                    'route' => 'facilities.computer-lab',
+                    'image' => 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+                    'description' => 'Modern computer labs with guided digital learning, practical sessions, and coding exposure for future-ready students.',
+                ],
+                [
+                    'icon' => 'fa-shield',
+                    'title' => 'Safe Campus',
+                    'route' => 'disclosure.safety',
+                    'image' => 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80',
+                    'description' => 'A secure campus with supervision, safety systems, and student-friendly processes that support daily confidence and care.',
+                ],
             ],
             // TODO: Replace with Achievement::latest()->take(4)->get();
             'achievements' => [

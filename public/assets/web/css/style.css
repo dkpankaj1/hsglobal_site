@@ -4263,7 +4263,15 @@ a:focus {
 }
 
 .home-stats {
-  background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+  background: var(--theme-main);
+}
+
+.home-stats .section-title-s3 h2 {
+  color: #fff;
+}
+
+.home-stats .section-title-s3 p {
+  color: #e0e0e0;
 }
 
 .home-stat-card {
