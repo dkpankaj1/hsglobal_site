@@ -76,6 +76,12 @@ Route::prefix('mandatory-disclosure')->name('disclosure.')->group(function () {
     Route::get('/financial-status',    [MandatoryDisclosureController::class, 'financialStatus'])->name('financial');
 });
 
+// ── Notifications ─────────────────────────────────────────────────
+Route::prefix('notifications')->name('notifications.')->group(function () {
+    Route::get('/',         [\App\Http\Controllers\NotificationController::class, 'index'])->name('list');
+    Route::get('/{id}',     [\App\Http\Controllers\NotificationController::class, 'show'])->name('show');
+});
+
 // ── Contact ───────────────────────────────────────────────────────
 Route::get('/contact',  [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');

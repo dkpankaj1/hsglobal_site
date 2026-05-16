@@ -9,7 +9,8 @@ class HomeController extends Controller
     public function index()
     {
         $school = MockData::aboutSchool();
+        $home = MockData::homePage();
 
-        return view('pages.home', compact('school'));
+        return view('pages.home', compact('school', 'home'));
     }
 }

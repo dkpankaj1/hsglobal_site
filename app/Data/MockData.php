@@ -93,6 +93,70 @@ class MockData
     }
 
     // ──────────────────────────────────────────────────────────────
+    // HOME
+    // ──────────────────────────────────────────────────────────────
+
+    public static function homePage(): array
+    {
+        return [
+            // TODO: Replace with Notification::featured()->limit(5)->get(['id', 'title']);
+            'notices' => [
+                ['id' => 1, 'title' => 'Admissions Open 2026-27 for Nursery to Class XI. Limited seats available.'],
+                ['id' => 2, 'title' => 'Summer Break Homework circular has been published in the parent portal.'],
+                ['id' => 3, 'title' => 'Inter-house Debate Competition scheduled on 25 May 2026.'],
+                ['id' => 4, 'title' => 'School transport route revision effective from Monday, 20 May 2026.'],
+                ['id' => 5, 'title' => 'CBSE mandatory disclosure documents are updated for academic session 2026-27.'],
+            ],
+            // TODO: Replace with dynamic counters from Student/Teacher/Result models.
+            'stats' => [
+                ['number' => '2500+', 'label' => 'Students'],
+                ['number' => '120+',  'label' => 'Qualified Teachers'],
+                ['number' => '100%',  'label' => 'Board Result (Class X)'],
+                ['number' => '35+',   'label' => 'Smart Classrooms'],
+            ],
+            // TODO: Replace with AcademicProgram::active()->get();
+            'programs' => [
+                [
+                    'title' => 'Foundational Stage (Pre-Primary)',
+                    'description' => 'Play-based learning with phonics, numeracy readiness, and social-emotional development.',
+                    'route' => 'admission.procedure',
+                ],
+                [
+                    'title' => 'Primary School (Classes I-V)',
+                    'description' => 'Strong basics in language, mathematics, environmental studies, art, and activity-based learning.',
+                    'route' => 'academics.curriculum',
+                ],
+                [
+                    'title' => 'Middle School (Classes VI-VIII)',
+                    'description' => 'Conceptual clarity, coding exposure, project work, and continuous formative assessments.',
+                    'route' => 'academics.examination',
+                ],
+                [
+                    'title' => 'Secondary & Senior Secondary',
+                    'description' => 'CBSE-aligned rigorous academics with stream guidance, lab work, and board exam preparation.',
+                    'route' => 'academics.fee',
+                ],
+            ],
+            // TODO: Replace with Facility::featured()->get();
+            'facilities' => [
+                ['icon' => 'fa-desktop',       'title' => 'Smart Classrooms', 'route' => 'facilities.smart-classrooms'],
+                ['icon' => 'fa-flask',         'title' => 'Science Labs',     'route' => 'facilities.science-lab'],
+                ['icon' => 'fa-book',          'title' => 'Library',          'route' => 'facilities.library'],
+                ['icon' => 'fa-futbol-o',      'title' => 'Sports Arena',     'route' => 'facilities.sports'],
+                ['icon' => 'fa-laptop',        'title' => 'Computer Labs',    'route' => 'facilities.computer-lab'],
+                ['icon' => 'fa-shield',        'title' => 'Safe Campus',      'route' => 'disclosure.safety'],
+            ],
+            // TODO: Replace with Achievement::latest()->take(4)->get();
+            'achievements' => [
+                'State-level Science Exhibition - 1st Position (2025)',
+                'CBSE Board Class XII Result - 98.2% school average',
+                'District Football Championship - Winners',
+                'National Olympiad - 27 students received merit certificates',
+            ],
+        ];
+    }
+
+    // ──────────────────────────────────────────────────────────────
     // ACADEMICS
     // ──────────────────────────────────────────────────────────────
 
@@ -536,5 +600,71 @@ class MockData
             'map_lat' => 28.6139,
             'map_lng' => 77.2090,
         ];
+    }
+
+    // ──────────────────────────────────────────────────────────────
+    // NOTIFICATIONS
+    // ──────────────────────────────────────────────────────────────
+
+    public static function notifications(): array
+    {
+        // TODO: Replace with Notification::latest()->paginate(10) when admin panel is ready.
+        return [
+            [
+                'id'       => 1,
+                'title'    => 'Admissions Open for 2026-27 Academic Session',
+                'category' => 'Admissions',
+                'date'     => '2026-05-15',
+                'excerpt'  => 'Registration forms are now available. Limited seats in all classes.',
+                'content'  => 'H.S. Global Academy is pleased to announce that admissions for the academic session 2026-27 are now open. We invite applications from deserving students for Classes Nursery to Class XI. Limited seats are available. Kindly visit the Admissions section for detailed procedure, eligibility criteria, and required documents.',
+            ],
+            [
+                'id'       => 2,
+                'title'    => 'Summer Holidays Homework Assignment Published',
+                'category' => 'Academics',
+                'date'     => '2026-05-12',
+                'excerpt'  => 'Holiday homework for all classes is now available in the parent portal.',
+                'content'  => 'The holiday homework assignment for the summer break (May – June 2026) has been published and is accessible through the parent portal. Students are encouraged to complete assignments during the break to maintain continuity in learning. Teachers will be available for clarifications via email.',
+            ],
+            [
+                'id'       => 3,
+                'title'    => 'Inter-House Debate Competition Scheduled',
+                'category' => 'Activities',
+                'date'     => '2026-05-10',
+                'excerpt'  => 'Debate competition between four school houses on May 25, 2026.',
+                'content'  => 'The annual Inter-House Debate Competition is scheduled for May 25, 2026 at the school auditorium. Classes VIII to XII are invited to participate. Topics will be announced one week in advance. Winners will be awarded certificates and cash prizes. Parents and staff are welcome to attend.',
+            ],
+            [
+                'id'       => 4,
+                'title'    => 'School Transport Route Revision Effective From May 20',
+                'category' => 'Transport',
+                'date'     => '2026-05-08',
+                'excerpt'  => 'New pickup points and timings for all transport routes.',
+                'content'  => 'Effective from Monday, May 20, 2026, the school transport routes have been reorganised to ensure better efficiency and on-time arrival. Updated pickup points, timings, and route maps have been shared with all parents. In case of any queries, please contact the Transport Office.',
+            ],
+            [
+                'id'       => 5,
+                'title'    => 'CBSE Mandatory Disclosure Documents Updated',
+                'category' => 'Important',
+                'date'     => '2026-05-05',
+                'excerpt'  => 'All mandatory disclosures for 2026-27 are now live.',
+                'content'  => 'As per CBSE norms, all mandatory disclosure documents for the academic session 2026-27 have been updated and are now available in the Mandatory Disclosure section of this website. Parents and guardians are requested to review these documents for transparency and compliance.',
+            ],
+            [
+                'id'       => 6,
+                'title'    => 'Annual Sports Day Preliminary Round Winners Announced',
+                'category' => 'Sports',
+                'date'     => '2026-05-02',
+                'excerpt'  => 'Congratulations to all students who qualified for the finals.',
+                'content'  => 'The results of the preliminary round of the Annual Sports Day have been declared. We congratulate all students who have qualified for the finals, scheduled for May 30, 2026. Best wishes to all participants.',
+            ],
+        ];
+    }
+
+    public static function notification(int $id): ?array
+    {
+        $notifications = self::notifications();
+        // TODO: Replace with Notification::findOrFail($id) when admin panel is ready.
+        return collect($notifications)->firstWhere('id', $id);
     }
 }
