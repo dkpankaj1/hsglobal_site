@@ -7,15 +7,16 @@
         ],
     ])
 
-    <section class="section-padding">
+    <section style="padding:50px 0;">
         <div class="container">
+            
             <div class="row">
 
                 {{-- Contact Information --}}
                 <div class="col col-md-4" style="margin-bottom:30px;">
                     <div class="section-title-s1">
                         <span>Get In Touch</span>
-                        <h2>Contact <span>Info</span></h2>
+                        <h2>Contact Info</h2>
                     </div>
 
                     <ul style="list-style:none; padding:0; margin-top:20px;">
@@ -42,7 +43,7 @@
                 <div class="col col-md-8">
                     <div class="section-title-s1">
                         <span>Send Us A Message</span>
-                        <h2>Contact <span>Form</span></h2>
+                        <h2>Contact Form</h2>
                     </div>
 
                     @if(session('success'))
@@ -123,6 +124,23 @@
                     </form>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <section style="padding:0 0 60px;">
+        <div class="container">
+            <div style="border-radius:8px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.08);">
+                <iframe
+                    src="https://www.google.com/maps?q=Haridwar,%20Uttarakhand&output=embed"
+                    width="100%"
+                    height="420"
+                    style="border:0; display:block;"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="HSGA School location map"
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>

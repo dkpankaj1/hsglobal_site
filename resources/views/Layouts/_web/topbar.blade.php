@@ -12,9 +12,9 @@
                 <div class="language-login clearfix">
 
                     <div class="client-login">
-                        <a href="#">
+                        <a href="{{ route('admission.enquiry') }}">
                             <i class="fa fa-key" aria-hidden="true"></i>
-                            Enquiry</a>
+                            Admission 2026-27</a>
                     </div>
                 </div>
             </div>

@@ -41,6 +41,9 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('assets/web/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/web/css/custom.css') }}" rel="stylesheet">
+
+    @stack('pageStyles')
 
 </head>
 
@@ -84,6 +87,19 @@
 
     <!-- Custom script for this template -->
     <script src="{{ asset('assets/web/js/script.js') }}"></script>
+
+    @stack('pageScripts')
+
+    <a class="floating-whatsapp"
+       href="https://wa.me/910000000000"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp">
+        <span class="floating-whatsapp-icon" aria-hidden="true">
+            <i class="fa fa-whatsapp"></i>
+        </span>
+        <span class="floating-whatsapp-text">Enquiry</span>
+    </a>
 </body>
 
 </html>
