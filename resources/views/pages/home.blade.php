@@ -8,6 +8,13 @@
 
     @push('pageScripts')
         <script src="{{ asset('assets/web/js/home-hero-slider.js') }}"></script>
+        @if(!empty($home['popup']['enabled']))
+            <script>
+                $(window).on('load', function () {
+                    $('#homePopupModal').modal('show');
+                });
+            </script>
+        @endif
     @endpush
 
     <!-- start of notices marquee -->
@@ -38,15 +45,11 @@
     @php
         $heroSlides = [
             [
-                'src' => 'https://bharatonline.co/uploads/sliders/slider1.jpg',
-                'title' => 'Learning For Life',
-            ],
-            [
-                'src' => 'https://bharatonline.co/uploads/sliders/slider2.jpg',
+                'src' =>asset('static/sliders/slider1.png'),
                 'title' => 'Modern Campus Experience',
             ],
             [
-                'src' => 'https://bharatonline.co/uploads/sliders/slider3.png',
+                'src' => asset('static/sliders/slider2.png'),
                 'title' => 'Future-Ready Students',
             ],
         ];
@@ -209,5 +212,40 @@
         </div>
     </section>
     <!-- end of achievements + cta -->
+
+    @if(!empty($home['popup']['enabled']))
+        <div class="modal fade home-popup-modal" id="homePopupModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-5 home-popup-media">
+                                <img src="{{ $home['popup']['image'] }}" alt="{{ $home['popup']['title'] }}">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="home-popup-body">
+                                    <div class="section-title-s1" style="margin-bottom:12px;">
+                                        <span>Important Notice</span>
+                                        <h2>Admission Update</h2>
+                                    </div>
+
+                                    <h3>{{ $home['popup']['title'] }}</h3>
+                                    <p>{{ $home['popup']['description'] }}</p>
+
+                                    <a href="{{ $home['popup']['link'] }}" class="btn theme-btn-s2">
+                                        {{ $home['popup']['link_text'] }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
 
 </x-web-layout>

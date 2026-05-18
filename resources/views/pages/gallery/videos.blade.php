@@ -8,11 +8,11 @@
         ],
     ])
 
-    <section class="section-padding">
+    <section style="padding:42px 0 54px;">
         <div class="container">
             <div class="section-title-s1">
                 <span>Gallery</span>
-                <h2>Video <span>Gallery</span></h2>
+                <h2>Video Gallery</h2>
             </div>
 
             <div class="row" style="margin-top:30px;">

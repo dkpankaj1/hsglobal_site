@@ -8,11 +8,11 @@
         ],
     ])
 
-    <section class="section-padding">
+    <section style="padding:50px 0;">
         <div class="container">
             <div class="section-title-s1">
                 <span>Academics</span>
-                <h2>Examination <span>Policy</span></h2>
+                <h2>Examination Policy</h2>
             </div>
             <p>{{ $data['overview'] }}</p>
 
@@ -20,7 +20,7 @@
                 <div class="col col-md-6">
                     <h4>Academic Terms</h4>
                     <table class="table table-bordered table-hover">
-                        <thead style="background-color:var(--main-color); color:#fff;">
+                        <thead style="background-color:var(--theme-main); color:#fff;">
                             <tr><th>Term</th><th>Period</th><th>Weightage</th></tr>
                         </thead>
                         <tbody>
@@ -38,7 +38,7 @@
                     <h4>Rules & Guidelines</h4>
                     <ul class="about-details">
                         @foreach($data['rules'] as $rule)
-                            <li><i class="fa fa-angle-right" style="color:var(--main-color); margin-right:6px;"></i> {{ $rule }}</li>
+                            <li><i class="fa fa-angle-right" style="color:var(--theme-main); margin-right:6px;"></i> {{ $rule }}</li>
                         @endforeach
                     </ul>
                 </div>

@@ -28,12 +28,66 @@ class MockData
             'description' => 'H.S. Global Academy is a premier CBSE-affiliated institution committed to holistic
                 education. Founded in 2005, we blend academic rigour with co-curricular excellence to nurture
                 every student\'s potential in a safe, inclusive environment.',
+            'long_description' => 'Established in 2005 by visionary educationist Mr. Harish Sharma, H.S. Global Academy has grown from a modest school with a handful of classrooms into one of the region\'s most respected centres of learning. Over two decades, the institution has remained unwavering in its belief that true education transcends textbooks — it shapes character, nurtures curiosity, and builds the resilience required to thrive in an ever-changing world. Our expansive campus spans several acres of green, safe, and stimulating environment designed to spark creativity and foster intellectual growth. We offer a seamless educational journey from Pre-Primary through Senior Secondary (Class XII), guided by a team of more than 120 highly qualified and deeply committed educators who treat every student as an individual with unique strengths. Our smart classrooms, well-stocked library, state-of-the-art science and computer laboratories, dedicated arts and music rooms, and professional-grade sports facilities together create an ecosystem where academic brilliance and all-round development go hand in hand. The school proudly maintains a consistent 100% board result record for Class X and XII, while simultaneously producing national-level athletes, award-winning artists, and technology innovators. Rooted in Indian values yet open to global perspectives, H.S. Global Academy continues to evolve — embracing modern pedagogy, environmental consciousness, and community engagement — to prepare every student to become a responsible, compassionate, and empowered citizen of the world.',
+            'gallery' => [
+                ['src' => asset('assets/web/images/about-us/gallery-1.jpg'), 'alt' => 'School Campus', 'caption' => 'Our Sprawling Campus'],
+                ['src' => asset('assets/web/images/about-us/gallery-2.jpg'), 'alt' => 'Smart Classrooms', 'caption' => 'Smart Classrooms'],
+                ['src' => asset('assets/web/images/about-us/gallery-3.jpg'), 'alt' => 'Science Laboratory', 'caption' => 'Science Laboratories'],
+                ['src' => asset('assets/web/images/about-us/gallery-4.jpg'), 'alt' => 'Sports Facilities', 'caption' => 'Sports & Recreation'],
+                ['src' => asset('assets/web/images/about-us/gallery-5.jpg'), 'alt' => 'Cultural Events', 'caption' => 'Cultural Events'],
+            ],
             'highlights'  => [
                 'CBSE Affiliated (Affiliation No. 2130XXX)',
                 'State-of-the-art Smart Classrooms',
                 'Fully equipped Science & Computer Labs',
                 'Dedicated Sports & Cultural facilities',
                 'Experienced and qualified faculty',
+            ],
+            'achievements' => [
+                [
+                    'icon'  => 'fa-trophy',
+                    'title' => 'State Science Exhibition',
+                    'desc'  => '1st Position at the State-level Science Exhibition 2025, beating over 200 participating schools.',
+                    'year'  => '2025',
+                ],
+                [
+                    'icon'  => 'fa-graduation-cap',
+                    'title' => 'Board Exam Excellence',
+                    'desc'  => 'CBSE Class XII school average of 98.2% — the highest in the district for the third consecutive year.',
+                    'year'  => '2025',
+                ],
+                [
+                    'icon'  => 'fa-futbol-o',
+                    'title' => 'District Football Champions',
+                    'desc'  => 'Our under-17 football team clinched the District Championship title, remaining unbeaten throughout the tournament.',
+                    'year'  => '2025',
+                ],
+                [
+                    'icon'  => 'fa-star',
+                    'title' => 'National Olympiad Merit',
+                    'desc'  => '27 students received national merit certificates across Mathematics, Science, and English Olympiads.',
+                    'year'  => '2025',
+                ],
+                [
+                    'icon'  => 'fa-paint-brush',
+                    'title' => 'National Arts Award',
+                    'desc'  => 'Two students were felicitated at the National Young Artists Summit for outstanding creative artwork.',
+                    'year'  => '2024',
+                ],
+                [
+                    'icon'  => 'fa-laptop',
+                    'title' => 'Tech Innovation Prize',
+                    'desc'  => 'School coding team won the Regional Tech Innovation Challenge with an AI-powered attendance solution.',
+                    'year'  => '2024',
+                ],
+            ],
+            'chairman' => [
+                'name'  => 'Mr. Harish Sharma',
+                'title' => 'Founder & Chairman',
+                'photo' => asset('assets/web/images/team/chairman.jpg'),
+                'story' => 'Born in a small town where quality schooling was a distant dream for most families, Mr. Harish Sharma grew up witnessing first-hand the transformative power of education. After completing his post-graduation in Education Management from Delhi University and spending several years as a teacher and school administrator, he returned to his roots with a singular purpose — to build a school that would provide every child, regardless of background, access to world-class education. In 2005, he laid the foundation stone of H.S. Global Academy with just three classrooms, twelve teachers, and an unwavering conviction that education is the greatest equaliser. Over the next two decades, under his visionary leadership, the school expanded to a fully equipped campus serving over 2,500 students. Mr. Sharma personally mentors teachers, champions inclusive policies, and believes that a school\'s true report card is the character and confidence of its graduates. His guiding philosophy — "Educate the mind, elevate the soul" — remains the North Star of every initiative at H.S. Global Academy.',
+                'message' => 'It is my privilege to lead an institution that has, over the years, become synonymous with quality education and all-round development. At H.S. Global Academy, we believe every child is unique, and our mission is to provide an environment where each student can discover and develop their true potential. I am proud of our dedicated faculty, committed parents, and brilliant students who make this journey worthwhile. As we look to the future, our commitment to excellence, inclusivity, and innovation will only grow stronger.',
+                'quote' => 'Educate the mind, elevate the soul.',
             ],
         ];
     }
@@ -99,6 +153,14 @@ class MockData
     public static function homePage(): array
     {
         return [
+            'popup' => [
+                'enabled' => true,
+                'title' => 'Admission Enquiry 2026-27',
+                'description' => 'Submit your admission enquiry to get details about eligibility, documents, and the admission process for the new session.',
+                'image' => asset('static/sliders/slider1.png'),
+                'link' => route('admission.enquiry'),
+                'link_text' => 'Apply Now',
+            ],
             // TODO: Replace with Notification::featured()->limit(5)->get(['id', 'title']);
             'notices' => [
                 ['id' => 1, 'title' => 'Admissions Open 2026-27 for Nursery to Class XI. Limited seats available.'],
@@ -207,6 +269,49 @@ class MockData
         ];
     }
 
+    public static function coCurricular(): array
+    {
+        return [
+            'intro' => 'At <strong>HS Global Academy</strong>, we believe that education extends beyond the classroom. Our <strong>co-curricular activities</strong> are designed to nurture creativity, teamwork, and leadership while helping students explore their talents and interests. Through a diverse range of activities, we ensure that every child develops the confidence and skills needed to excel in all aspects of life.',
+
+            'activities' => [
+                [
+                    'icon'  => 'fa-futbol-o',
+                    'title' => 'Sports and Physical Development',
+                    'body'  => 'We encourage a healthy and active lifestyle through various <strong>sports and physical activities</strong>. Our <strong>big playground</strong> provides ample space for outdoor games such as football, cricket, basketball, and athletics. Regular sports events and inter-house competitions promote teamwork, discipline, and a spirit of sportsmanship among students.',
+                ],
+                [
+                    'icon'  => 'fa-music',
+                    'title' => 'Art, Music, and Creativity',
+                    'body'  => 'To nurture creativity and artistic expression, we offer <strong>art, music, and dance programs</strong> that allow students to explore their imaginative side. Our well-equipped art and music rooms provide a space where students can develop their artistic talents, learn musical instruments, and engage in cultural activities that enhance their confidence and self-expression.',
+                ],
+                [
+                    'icon'  => 'fa-microphone',
+                    'title' => 'Public Speaking and Leadership',
+                    'body'  => 'HS Global Academy places a strong emphasis on <strong>communication and leadership skills</strong>. Through activities like debates, elocution, and public speaking, we help students develop critical thinking, articulation, and confidence. Participation in <strong>student council and leadership programs</strong> further equips them with essential decision-making and teamwork abilities.',
+                ],
+                [
+                    'icon'  => 'fa-users',
+                    'title' => 'Clubs and Skill Development',
+                    'body'  => 'We offer a variety of <strong>clubs and societies</strong> such as science clubs, literary clubs, and eco clubs that engage students in hands-on learning and skill development. These platforms encourage students to explore their passions, collaborate with peers, and apply their knowledge creatively.',
+                ],
+                [
+                    'icon'  => 'fa-globe',
+                    'title' => 'Cultural and Social Awareness Programs',
+                    'body'  => 'Our <strong>cultural events, celebrations, and community service programs</strong> instill a sense of social responsibility and respect for diverse cultures. These activities help students develop empathy, compassion, and a strong moral foundation, preparing them to be responsible global citizens.',
+                ],
+            ],
+
+            'why_points' => [
+                'Holistic development through a balance of academics and extracurricular activities.',
+                'Opportunities to discover and nurture individual talents.',
+                'Promotion of teamwork, leadership, and discipline.',
+            ],
+
+            'closing' => 'At <strong>HS Global Academy</strong>, we are committed to providing a dynamic environment where students thrive academically, creatively, and socially.',
+        ];
+    }
+
     public static function examinationPolicy(): array
     {
         return [
@@ -228,9 +333,28 @@ class MockData
     public static function schoolTiming(): array
     {
         return [
-            ['day' => 'Monday – Friday', 'timing' => '8:00 AM – 2:30 PM'],
-            ['day' => 'Saturday',        'timing' => '8:00 AM – 12:30 PM'],
-            ['day' => 'Sunday',          'timing' => 'Holiday'],
+            'schedule' => [
+                ['day' => 'Monday – Friday', 'timing' => '8:00 AM – 2:30 PM', 'type' => 'regular', 'icon' => 'fa-calendar'],
+                ['day' => 'Saturday',        'timing' => '8:00 AM – 12:30 PM', 'type' => 'half',    'icon' => 'fa-calendar-o'],
+                ['day' => 'Sunday',          'timing' => 'Holiday',            'type' => 'holiday',  'icon' => 'fa-home'],
+            ],
+            'daily_breakdown' => [
+                ['period' => 'Morning Assembly',    'time' => '7:50 AM – 8:10 AM',  'icon' => 'fa-sun-o'],
+                ['period' => 'Period 1 & 2',        'time' => '8:10 AM – 9:40 AM',  'icon' => 'fa-book'],
+                ['period' => 'Short Break',         'time' => '9:40 AM – 9:55 AM',  'icon' => 'fa-coffee'],
+                ['period' => 'Period 3 & 4',        'time' => '9:55 AM – 11:25 AM', 'icon' => 'fa-book'],
+                ['period' => 'Lunch Break',         'time' => '11:25 AM – 12:00 PM','icon' => 'fa-cutlery'],
+                ['period' => 'Period 5 & 6',        'time' => '12:00 PM – 1:30 PM', 'icon' => 'fa-book'],
+                ['period' => 'Period 7 / Activity', 'time' => '1:30 PM – 2:20 PM',  'icon' => 'fa-paint-brush'],
+                ['period' => 'Dispersal',           'time' => '2:30 PM',            'icon' => 'fa-flag-checkered'],
+            ],
+            'notes' => [
+                'Gates open at 7:40 AM. Students are expected to be seated by 7:50 AM.',
+                'Late arrivals must report to the office and carry a parent note.',
+                'Saturday schedule follows a condensed 4-period format.',
+                'Pre-Primary students are dismissed at 12:00 PM on all days.',
+                'Parents must collect students within 15 minutes of dispersal.',
+            ],
         ];
     }
 
@@ -481,8 +605,8 @@ class MockData
     {
         // TODO: Replace with DB/storage query
         return array_map(fn($i) => [
-            'src'      => asset("assets/web/images/gallery/photo-{$i}.jpg"),
-            'thumb'    => asset("assets/web/images/gallery/photo-{$i}.jpg"),
+            'src'      => asset("static/images/img_{$i}.jpeg"),
+            'thumb'    => asset("static/images/img_{$i}.jpeg"),
             'caption'  => "School Activity {$i}",
         ], range(1, 12));
     }
@@ -505,10 +629,19 @@ class MockData
             'achievements' => 'Student Achievements',
         ];
 
+        $starts = [
+            'sports'       => 1,
+            'cultural'     => 6,
+            'prize'        => 11,
+            'achievements' => 16,
+        ];
+
+        $startIndex = $starts[$type] ?? 1;
+
         return [
             'title'  => $titles[$type] ?? 'Events',
             'photos' => array_map(fn($i) => [
-                'src'     => asset("assets/web/images/gallery/{$type}-{$i}.jpg"),
+                'src'     => asset(sprintf('static/images/img_%d.jpeg', ((($startIndex - 1) + ($i - 1)) % 21) + 1)),
                 'caption' => "{$titles[$type]} – Photo {$i}",
             ], range(1, 8)),
         ];

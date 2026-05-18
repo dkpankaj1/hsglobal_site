@@ -8,9 +8,10 @@ class AcademicsController extends Controller
 {
     public function curriculum()
     {
-        $data = MockData::curriculum();
+        $data        = MockData::curriculum();
+        $coCurricular = MockData::coCurricular();
 
-        return view('pages.academics.curriculum', compact('data'));
+        return view('pages.academics.curriculum', compact('data', 'coCurricular'));
     }
 
     public function examinationPolicy()

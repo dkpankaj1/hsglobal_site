@@ -36,6 +36,8 @@ Route::prefix('academics')->name('academics.')->group(function () {
 // ── Admission ─────────────────────────────────────────────────────
 Route::prefix('admission')->name('admission.')->group(function () {
     Route::get('/procedure',           [AdmissionController::class, 'procedure'])->name('procedure');
+    Route::get('/enquiry',             [AdmissionController::class, 'enquiry'])->name('enquiry');
+    Route::post('/enquiry',            [AdmissionController::class, 'submitEnquiry'])->name('enquiry.submit');
     Route::get('/eligibility',         [AdmissionController::class, 'eligibility'])->name('eligibility');
     Route::get('/documents-required',  [AdmissionController::class, 'documents'])->name('documents');
     Route::get('/fee-payment-rules',   [AdmissionController::class, 'feePayment'])->name('fee-payment');
