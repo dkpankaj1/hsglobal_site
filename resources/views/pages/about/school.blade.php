@@ -79,7 +79,7 @@
         <div class="container">
             <div class="section-title-s1 text-center">
                 <span>Leadership</span>
-                <h2>The Visionary Behind the Institution</h2>
+                <h2>Message from the Director</h2>
             </div>
 
             <div class="row" style="margin-top:40px; align-items:center;">
@@ -113,7 +113,7 @@
                 <div class="col col-md-8" style="margin-bottom:30px;">
                     <div class="section-title-s1">
                         <span>His Journey</span>
-                        <h3>From a Classroom Dream to a Legacy of Excellence</h3>
+                        <h3>A Vision to Transform Education in Kushinagar</h3>
                     </div>
                     <p style="color:#555; font-size:15px; line-height:1.9; margin-top:16px;">
                         {{ $data['chairman']['story'] }}

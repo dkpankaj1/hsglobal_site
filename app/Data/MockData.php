@@ -17,18 +17,16 @@ class MockData
     public static function aboutSchool(): array
     {
         return [
-            'name'        => 'H.S. Global Academy',
+            'name' => 'H.S. Global Academy',
             'established' => '2019',
             'affiliation' => 'Central Board of Secondary Education (CBSE)',
-            'aff_no'      => '2130XXX',
-            'school_no'   => '56XXX',
-            'address'     => '123, Education Lane, New Delhi – 110001',
-            'email'       => 'info@hsglobalacademy.edu.in',
-            'phone'       => '+91-11-XXXX-XXXX',
-            'description' => 'H.S. Global Academy is a premier CBSE-affiliated institution committed to holistic
-                education. Founded in 2019, we blend academic rigour with co-curricular excellence to nurture
-                every student\'s potential in a safe, inclusive environment.',
-            'long_description' => 'Established in 2019 by visionary educationist Mr. Harish Sharma, H.S. Global Academy has grown from a modest school with a handful of classrooms into one of the region\'s most respected centres of learning. Over the years, the institution has remained unwavering in its belief that true education transcends textbooks — it shapes character, nurtures curiosity, and builds the resilience required to thrive in an ever-changing world. Our expansive campus spans several acres of green, safe, and stimulating environment designed to spark creativity and foster intellectual growth. We offer a seamless educational journey from Pre-Primary through Senior Secondary (Class XII), guided by a team of more than 120 highly qualified and deeply committed educators who treat every student as an individual with unique strengths. Our smart classrooms, well-stocked library, state-of-the-art science and computer laboratories, dedicated arts and music rooms, and professional-grade sports facilities together create an ecosystem where academic brilliance and all-round development go hand in hand. The school proudly maintains a consistent 100% board result record for Class X and XII, while simultaneously producing national-level athletes, award-winning artists, and technology innovators. Rooted in Indian values yet open to global perspectives, H.S. Global Academy continues to evolve — embracing modern pedagogy, environmental consciousness, and community engagement — to prepare every student to become a responsible, compassionate, and empowered citizen of the world.',
+            'aff_no' => 'Applied',
+            'school_no' => 'Applied',
+            'address' => 'Bhaishahi Bazar, Hata, Kushinagar, Uttar Pradesh – 274204',
+            'email' => 'contact@hsglobalacademy.in',
+            'phone' => '+91 89605 53332 / +91 94510 27766',
+            'description' => 'Welcome to HS Global Academy, the best school in Kushinagar, where education meets excellence. We are dedicated to providing high-quality learning experiences, modern infrastructure, and a nurturing environment that helps students achieve their full potential. Our school is known for its consistent academic success, innovative teaching methodologies, and highly qualified faculty who are committed to shaping future leaders.',
+            'long_description' => 'At HS Global Academy, we focus on both academic and extracurricular development, ensuring that students receive a well-rounded education. Our campus features state-of-the-art Biology, Physics, Chemistry, and Computer Labs, allowing students to gain hands-on experience and practical knowledge. We also have a well-stocked library that fosters a love for reading and research, along with a big playground that encourages physical fitness, sports, and teamwork. Beyond academics, we emphasize character building, discipline, and personality development, preparing students not just for exams but for life. Our safe and structured learning environment ensures that every child receives the attention and guidance they need to excel. With better performance in the area and a track record of excellence, HS Global Academy is the ideal choice for parents looking for the best education in Kushinagar. Join us today and give your child a brighter future with world-class education, modern facilities, and endless opportunities for growth.',
             'gallery' => [
                 ['src' => asset('assets/web/images/about-us/gallery-1.jpg'), 'alt' => 'School Campus', 'caption' => 'Our Sprawling Campus'],
                 ['src' => asset('assets/web/images/about-us/gallery-2.jpg'), 'alt' => 'Smart Classrooms', 'caption' => 'Smart Classrooms'],
@@ -36,58 +34,59 @@ class MockData
                 ['src' => asset('assets/web/images/about-us/gallery-4.jpg'), 'alt' => 'Sports Facilities', 'caption' => 'Sports & Recreation'],
                 ['src' => asset('assets/web/images/about-us/gallery-5.jpg'), 'alt' => 'Cultural Events', 'caption' => 'Cultural Events'],
             ],
-            'highlights'  => [
-                'CBSE Affiliated (Affiliation No. 2130XXX)',
-                'State-of-the-art Smart Classrooms',
-                'Fully equipped Science & Computer Labs',
-                'Dedicated Sports & Cultural facilities',
-                'Experienced and qualified faculty',
+            'highlights' => [
+                'Best School in Kushinagar',
+                'State-of-the-art Science & Computer Labs',
+                'Well-stocked Library & Big Playground',
+                'CCTV-secured Safe Campus',
+                'Experienced & Qualified Faculty',
+                'Holistic Academic & Co-curricular Development',
             ],
             'achievements' => [
                 [
-                    'icon'  => 'fa-trophy',
-                    'title' => 'State Science Exhibition',
-                    'desc'  => '1st Position at the State-level Science Exhibition 2025, beating over 200 participating schools.',
-                    'year'  => '2025',
+                    'icon' => 'fa-trophy',
+                    'title' => 'Best School in Kushinagar',
+                    'desc' => 'Recognised as the best school in Kushinagar for consistent academic excellence and holistic student development.',
+                    'year' => '2025',
                 ],
                 [
-                    'icon'  => 'fa-graduation-cap',
-                    'title' => 'Board Exam Excellence',
-                    'desc'  => 'CBSE Class XII school average of 98.2% — the highest in the district for the third consecutive year.',
-                    'year'  => '2025',
+                    'icon' => 'fa-graduation-cap',
+                    'title' => '100% Board Results',
+                    'desc' => 'HS Global Academy has maintained a 100% board result since its establishment, reflecting our commitment to academic excellence.',
+                    'year' => '2025',
                 ],
                 [
-                    'icon'  => 'fa-futbol-o',
-                    'title' => 'District Football Champions',
-                    'desc'  => 'Our under-17 football team clinched the District Championship title, remaining unbeaten throughout the tournament.',
-                    'year'  => '2025',
+                    'icon' => 'fa-futbol-o',
+                    'title' => 'Sports Excellence',
+                    'desc' => 'Our students actively participate in district and state-level sports events, bringing home medals and recognition for the school.',
+                    'year' => '2025',
                 ],
                 [
-                    'icon'  => 'fa-star',
-                    'title' => 'National Olympiad Merit',
-                    'desc'  => '27 students received national merit certificates across Mathematics, Science, and English Olympiads.',
-                    'year'  => '2025',
+                    'icon' => 'fa-star',
+                    'title' => 'Modern Infrastructure',
+                    'desc' => 'State-of-the-art Biology, Physics, Chemistry, and Computer Labs along with a well-stocked library and big playground.',
+                    'year' => '2024',
                 ],
                 [
-                    'icon'  => 'fa-paint-brush',
-                    'title' => 'National Arts Award',
-                    'desc'  => 'Two students were felicitated at the National Young Artists Summit for outstanding creative artwork.',
-                    'year'  => '2024',
+                    'icon' => 'fa-shield',
+                    'title' => 'Safe & Secure Campus',
+                    'desc' => 'CCTV surveillance, trained security personnel, and strict safety protocols ensure a safe and hygienic learning environment.',
+                    'year' => '2024',
                 ],
                 [
-                    'icon'  => 'fa-laptop',
-                    'title' => 'Tech Innovation Prize',
-                    'desc'  => 'School coding team won the Regional Tech Innovation Challenge with an AI-powered attendance solution.',
-                    'year'  => '2024',
+                    'icon' => 'fa-users',
+                    'title' => 'Experienced Faculty',
+                    'desc' => 'Our team of qualified and dedicated teachers provides personalised attention and guidance to each student.',
+                    'year' => '2024',
                 ],
             ],
             'chairman' => [
-                'name'  => 'Mr. Harish Sharma',
-                'title' => 'Founder & Chairman',
-                'photo' => asset('assets/web/images/team/chairman.jpg'),
-                'story' => 'Born in a small town where quality schooling was a distant dream for most families, Mr. Harish Sharma grew up witnessing first-hand the transformative power of education. After completing his post-graduation in Education Management from Delhi University and spending several years as a teacher and school administrator, he returned to his roots with a singular purpose — to build a school that would provide every child, regardless of background, access to world-class education. In 2019, he laid the foundation stone of H.S. Global Academy with just three classrooms, twelve teachers, and an unwavering conviction that education is the greatest equaliser. Over the years, under his visionary leadership, the school expanded to a fully equipped campus serving over 2,500 students. Mr. Sharma personally mentors teachers, champions inclusive policies, and believes that a school\'s true report card is the character and confidence of its graduates. His guiding philosophy — "Educate the mind, elevate the soul" — remains the North Star of every initiative at H.S. Global Academy.',
-                'message' => 'It is my privilege to lead an institution that has, over the years, become synonymous with quality education and all-round development. At H.S. Global Academy, we believe every child is unique, and our mission is to provide an environment where each student can discover and develop their true potential. I am proud of our dedicated faculty, committed parents, and brilliant students who make this journey worthwhile. As we look to the future, our commitment to excellence, inclusivity, and innovation will only grow stronger.',
-                'quote' => 'Educate the mind, elevate the soul.',
+                'name' => 'Mr. Sushil Kumar Singh',
+                'title' => 'Director',
+                'photo' => asset('assets/web/images/team/director.jpg'),
+                'story' => 'Mr. Sushil Kumar Singh, the visionary Director of HS Global Academy, has dedicated his life to bringing quality education to the heart of Kushinagar. Recognising that the region lacked a world-class institution where students could truly flourish, he established HS Global Academy in 2019 with a bold mission — to create a school that blends academic rigour with holistic development. Under his stewardship, the school has grown into one of the most respected educational institutions in the region, equipped with modern infrastructure, experienced faculty, and a nurturing campus environment. Mr. Singh firmly believes that every child deserves access to excellence, and this conviction drives every decision at HS Global Academy — from curriculum design to campus safety and beyond.',
+                'message' => 'HS Global Academy provides holistic education that nurtures young minds and prepares them for future success. With modern infrastructure, experienced faculty, and a focus on academic excellence and personality development, we create a safe and inspiring learning environment. I invite every parent to partner with us in shaping a bright future for their children.',
+                'quote' => 'Education is the greatest gift you can give your child.',
             ],
         ];
     }
@@ -95,16 +94,13 @@ class MockData
     public static function visionMission(): array
     {
         return [
-            'vision'  => 'To be a centre of excellence that nurtures young minds to become responsible, compassionate
-                and intellectually empowered global citizens.',
-            'mission' => 'We strive to provide a stimulating learning environment that fosters critical thinking,
-                creativity, and character development through quality education, innovative pedagogy,
-                and value-based practices.',
+            'vision' => 'To be the leading centre of holistic education in Kushinagar — nurturing young minds to become confident, responsible, and intellectually empowered individuals who contribute positively to society and the world.',
+            'mission' => 'To provide a safe, inclusive, and stimulating learning environment that blends academic excellence with co-curricular development, instilling strong values, critical thinking, creativity, and a lifelong love of learning in every student.',
             'core_values' => [
-                ['icon' => 'fa-star',         'title' => 'Excellence',   'text' => 'Pursuing the highest standards in academics and co-curricular activities.'],
-                ['icon' => 'fa-users',        'title' => 'Integrity',    'text' => 'Building trust through honesty and ethical behaviour.'],
-                ['icon' => 'fa-leaf',         'title' => 'Innovation',   'text' => 'Embracing creative and forward-thinking approaches to learning.'],
-                ['icon' => 'fa-heart',        'title' => 'Compassion',   'text' => 'Cultivating empathy and respect for every individual.'],
+                ['icon' => 'fa-star', 'title' => 'Excellence', 'text' => 'Pursuing the highest standards in academics, co-curricular activities, and personal development.'],
+                ['icon' => 'fa-users', 'title' => 'Integrity', 'text' => 'Building a culture of trust, honesty, and ethical behaviour in every student and staff member.'],
+                ['icon' => 'fa-leaf', 'title' => 'Innovation', 'text' => 'Embracing creative, forward-thinking approaches to teaching and learning for a future-ready generation.'],
+                ['icon' => 'fa-heart', 'title' => 'Compassion', 'text' => 'Cultivating empathy, respect, and a sense of responsibility towards fellow students and the community.'],
             ],
         ];
     }
@@ -113,33 +109,22 @@ class MockData
     {
         $data = [
             'chairman' => [
-                'name'    => 'Mr. Harish Sharma',
-                'role'    => "Chairman's Message",
-                'photo'   => asset('assets/web/images/team/chairman.jpg'),
-                'message' => 'It is my privilege to lead an institution that has, over the years, become
-                    synonymous with quality education and all-round development. At H.S. Global Academy,
-                    we believe every child is unique, and our mission is to provide an environment where
-                    each student can discover and develop their true potential. I am proud of our dedicated
-                    faculty, committed parents, and brilliant students who make this journey worthwhile.',
+                'name' => 'Mr. Sushil Kumar Singh',
+                'role' => "Director's Message",
+                'photo' => asset('static/images/director.jpg'),
+                'message' => 'HS Global Academy provides holistic education that nurtures young minds and prepares them for future success. With modern infrastructure, experienced faculty, and a focus on academic excellence and personality development, we create a safe and inspiring learning environment. Our goal is to ensure that every student who walks through our gates leaves as a confident, capable, and compassionate individual ready to make a difference in the world.',
             ],
             'director' => [
-                'name'    => 'Mrs. Seema Gupta',
-                'role'    => "Director's Message",
-                'photo'   => asset('assets/web/images/team/director.jpg'),
-                'message' => 'Education is the most powerful tool to change the world. At H.S. Global Academy,
-                    we are committed to delivering world-class education while remaining rooted in our cultural
-                    values. Our strategic focus on technology-enabled learning, sports, and arts ensures that
-                    every student graduates as a well-rounded individual ready to face the challenges of tomorrow.',
+                'name' => 'Mr. Sushil Kumar Singh',
+                'role' => "Director's Message",
+                'photo' => asset('static/images/director.jpg'),
+                'message' => 'HS Global Academy provides holistic education that nurtures young minds and prepares them for future success. With modern infrastructure, experienced faculty, and a focus on academic excellence and personality development, we create a safe and inspiring learning environment. Our goal is to ensure that every student who walks through our gates leaves as a confident, capable, and compassionate individual ready to make a difference in the world.',
             ],
             'principal' => [
-                'name'    => 'Dr. Anjali Verma',
-                'role'    => "Principal's Message",
-                'photo'   => asset('assets/web/images/team/principal.jpg'),
-                'message' => 'Welcome to H.S. Global Academy! As principal, I am deeply committed to creating a
-                    school culture where curiosity is celebrated, learning is joyful, and every student feels
-                    valued. We maintain a strong academic curriculum while also prioritising sports, arts, and
-                    community service. Together, with our parents and teachers, we are shaping the leaders of
-                    tomorrow.',
+                'name' => 'Mr. Roshan Singh',
+                'role' => "Principal's Message",
+                'photo' => asset('static/images/principal.jpg'),
+                'message' => 'At HS Global Academy, we are committed to fostering academic excellence, discipline, and strong values. Our goal is to create a nurturing environment where students develop critical thinking, creativity, and leadership skills to excel in an ever-evolving world. I believe every child has the potential to achieve greatness, and our role is to guide, encourage, and inspire them every step of the way.',
             ],
         ];
 
@@ -163,18 +148,18 @@ class MockData
             ],
             // TODO: Replace with Notification::featured()->limit(5)->get(['id', 'title']);
             'notices' => [
-                ['id' => 1, 'title' => 'Admissions Open 2026-27 for Nursery to Class XI. Limited seats available.'],
-                ['id' => 2, 'title' => 'Summer Break Homework circular has been published in the parent portal.'],
-                ['id' => 3, 'title' => 'Inter-house Debate Competition scheduled on 25 May 2026.'],
-                ['id' => 4, 'title' => 'School transport route revision effective from Monday, 20 May 2026.'],
-                ['id' => 5, 'title' => 'CBSE mandatory disclosure documents are updated for academic session 2026-27.'],
+                ['id' => 1, 'title' => 'Admission Open 2026-27 – Nursery to Class XI. Limited seats available. Enquire today!'],
+                ['id' => 2, 'title' => 'Latest images from Sports Meet 2025 are now available in the Gallery section.'],
+                ['id' => 3, 'title' => 'Fees information for session 2026-27 has been updated. Please check the Fee Structure page.'],
+                ['id' => 4, 'title' => 'HS Global Academy welcomes you to a world-class education in Kushinagar.'],
+                ['id' => 5, 'title' => 'Follow us on Facebook & Instagram @hsglobal_academy for the latest updates.'],
             ],
             // TODO: Replace with dynamic counters from Student/Teacher/Result models.
             'stats' => [
-                ['number' => '2500+', 'label' => 'Students'],
-                ['number' => '120+',  'label' => 'Qualified Teachers'],
-                ['number' => '100%',  'label' => 'Board Result (Class X)'],
-                ['number' => '5000+',   'label' => 'Satisfied Parents'],
+                ['number' => '1000+', 'label' => 'Students'],
+                ['number' => '50+', 'label' => 'Qualified Teachers'],
+                ['number' => '100%', 'label' => 'Board Result'],
+                ['number' => '2000+', 'label' => 'Satisfied Parents'],
             ],
             // TODO: Replace with AcademicProgram::active()->get();
             'programs' => [
@@ -205,51 +190,51 @@ class MockData
                     'icon' => 'fa-desktop',
                     'title' => 'Smart Classrooms',
                     'route' => 'facilities.smart-classrooms',
-                    'image' => 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',
-                    'description' => 'Spacious, well-organised classrooms with digital teaching tools, proper ventilation, and a focused academic environment.',
+                    'image' => asset('static/images/facilities_1.jpg'),
+                    'description' => 'Spacious, well-organised classrooms with proper ventilation, modern furnishings, and a focused academic environment for effective learning.',
                 ],
                 [
                     'icon' => 'fa-flask',
                     'title' => 'Science Labs',
                     'route' => 'facilities.science-lab',
-                    'image' => 'https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=1200&q=80',
-                    'description' => 'Hands-on Physics, Chemistry, and Biology labs designed for practical exploration, safety, and concept clarity.',
+                    'image' => asset('static/images/facilities_3.jpg'),
+                    'description' => 'State-of-the-art Biology, Physics, and Chemistry labs for hands-on practical experience and concept clarity aligned with the curriculum.',
                 ],
                 [
                     'icon' => 'fa-book',
                     'title' => 'Library',
                     'route' => 'facilities.library',
-                    'image' => 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80',
-                    'description' => 'A quiet and resource-rich reading space with books, references, and digital learning support for all grades.',
+                    'image' => asset('static/images/facilities_5.jpg'),
+                    'description' => 'A well-stocked library that fosters a love for reading and research, offering books, references, and periodicals for all grades.',
                 ],
                 [
                     'icon' => 'fa-futbol-o',
-                    'title' => 'Sports Arena',
+                    'title' => 'Big Playground',
                     'route' => 'facilities.sports',
-                    'image' => 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80',
-                    'description' => 'Outdoor and indoor sports infrastructure that encourages fitness, teamwork, discipline, and competitive spirit.',
+                    'image' => asset('static/images/facilities_4.jpg'),
+                    'description' => 'A spacious playground that encourages physical fitness, outdoor sports, teamwork, discipline, and an active, healthy lifestyle.',
                 ],
                 [
                     'icon' => 'fa-laptop',
                     'title' => 'Computer Labs',
                     'route' => 'facilities.computer-lab',
-                    'image' => 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
-                    'description' => 'Modern computer labs with guided digital learning, practical sessions, and coding exposure for future-ready students.',
+                    'image' => asset('static/images/facilities_2.jpg'),
+                    'description' => 'Modern computer lab with practical sessions, digital learning tools, and coding exposure to prepare students for a technology-driven future.',
                 ],
                 [
                     'icon' => 'fa-shield',
                     'title' => 'Safe Campus',
                     'route' => 'disclosure.safety',
-                    'image' => 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80',
-                    'description' => 'A secure campus with supervision, safety systems, and student-friendly processes that support daily confidence and care.',
+                    'image' => asset('static/images/facilities_6.jpg'),
+                    'description' => 'CCTV surveillance, trained security staff, and strict safety protocols ensure a secure, clean, and caring environment for every student.',
                 ],
             ],
             // TODO: Replace with Achievement::latest()->take(4)->get();
             'achievements' => [
-                'State-level Science Exhibition - 1st Position (2025)',
-                'CBSE Board Class XII Result - 98.2% school average',
-                'District Football Championship - Winners',
-                'National Olympiad - 27 students received merit certificates',
+                'Best School in Kushinagar – Recognised by the community',
+                'Consistent 100% Board Results since establishment',
+                'State-of-the-art Labs & Modern Infrastructure',
+                'Active Sports & Cultural programmes with district-level participation',
             ],
         ];
     }
@@ -261,10 +246,10 @@ class MockData
     public static function curriculum(): array
     {
         return [
-            ['class' => 'Nursery – KG',   'subjects' => ['English', 'Hindi', 'Mathematics', 'Environmental Science', 'Art & Craft', 'Music']],
-            ['class' => 'Class I – V',    'subjects' => ['English', 'Hindi', 'Mathematics', 'EVS', 'Computer Science', 'Art', 'Physical Education']],
-            ['class' => 'Class VI – VIII','subjects' => ['English', 'Hindi', 'Mathematics', 'Science', 'Social Science', 'Sanskrit', 'Computer Science', 'Physical Education']],
-            ['class' => 'Class IX – X',   'subjects' => ['English', 'Hindi', 'Mathematics', 'Science', 'Social Science', 'Information Technology (Optional)']],
+            ['class' => 'Nursery – KG', 'subjects' => ['English', 'Hindi', 'Mathematics', 'Environmental Science', 'Art & Craft', 'Music']],
+            ['class' => 'Class I – V', 'subjects' => ['English', 'Hindi', 'Mathematics', 'EVS', 'Computer Science', 'Art', 'Physical Education']],
+            ['class' => 'Class VI – VIII', 'subjects' => ['English', 'Hindi', 'Mathematics', 'Science', 'Social Science', 'Sanskrit', 'Computer Science', 'Physical Education']],
+            ['class' => 'Class IX – X', 'subjects' => ['English', 'Hindi', 'Mathematics', 'Science', 'Social Science', 'Information Technology (Optional)']],
             ['class' => 'Class XI – XII', 'subjects' => ['Science Stream: Physics, Chemistry, Maths/Biology, English, Computer Science', 'Commerce Stream: Accountancy, Business Studies, Economics, English, Maths/IP']],
         ];
     }
@@ -276,29 +261,29 @@ class MockData
 
             'activities' => [
                 [
-                    'icon'  => 'fa-futbol-o',
+                    'icon' => 'fa-futbol-o',
                     'title' => 'Sports and Physical Development',
-                    'body'  => 'We encourage a healthy and active lifestyle through various <strong>sports and physical activities</strong>. Our <strong>big playground</strong> provides ample space for outdoor games such as football, cricket, basketball, and athletics. Regular sports events and inter-house competitions promote teamwork, discipline, and a spirit of sportsmanship among students.',
+                    'body' => 'We encourage a healthy and active lifestyle through various <strong>sports and physical activities</strong>. Our <strong>big playground</strong> provides ample space for outdoor games such as football, cricket, basketball, and athletics. Regular sports events and inter-house competitions promote teamwork, discipline, and a spirit of sportsmanship among students.',
                 ],
                 [
-                    'icon'  => 'fa-music',
+                    'icon' => 'fa-music',
                     'title' => 'Art, Music, and Creativity',
-                    'body'  => 'To nurture creativity and artistic expression, we offer <strong>art, music, and dance programs</strong> that allow students to explore their imaginative side. Our well-equipped art and music rooms provide a space where students can develop their artistic talents, learn musical instruments, and engage in cultural activities that enhance their confidence and self-expression.',
+                    'body' => 'To nurture creativity and artistic expression, we offer <strong>art, music, and dance programs</strong> that allow students to explore their imaginative side. Our well-equipped art and music rooms provide a space where students can develop their artistic talents, learn musical instruments, and engage in cultural activities that enhance their confidence and self-expression.',
                 ],
                 [
-                    'icon'  => 'fa-microphone',
+                    'icon' => 'fa-microphone',
                     'title' => 'Public Speaking and Leadership',
-                    'body'  => 'HS Global Academy places a strong emphasis on <strong>communication and leadership skills</strong>. Through activities like debates, elocution, and public speaking, we help students develop critical thinking, articulation, and confidence. Participation in <strong>student council and leadership programs</strong> further equips them with essential decision-making and teamwork abilities.',
+                    'body' => 'HS Global Academy places a strong emphasis on <strong>communication and leadership skills</strong>. Through activities like debates, elocution, and public speaking, we help students develop critical thinking, articulation, and confidence. Participation in <strong>student council and leadership programs</strong> further equips them with essential decision-making and teamwork abilities.',
                 ],
                 [
-                    'icon'  => 'fa-users',
+                    'icon' => 'fa-users',
                     'title' => 'Clubs and Skill Development',
-                    'body'  => 'We offer a variety of <strong>clubs and societies</strong> such as science clubs, literary clubs, and eco clubs that engage students in hands-on learning and skill development. These platforms encourage students to explore their passions, collaborate with peers, and apply their knowledge creatively.',
+                    'body' => 'We offer a variety of <strong>clubs and societies</strong> such as science clubs, literary clubs, and eco clubs that engage students in hands-on learning and skill development. These platforms encourage students to explore their passions, collaborate with peers, and apply their knowledge creatively.',
                 ],
                 [
-                    'icon'  => 'fa-globe',
+                    'icon' => 'fa-globe',
                     'title' => 'Cultural and Social Awareness Programs',
-                    'body'  => 'Our <strong>cultural events, celebrations, and community service programs</strong> instill a sense of social responsibility and respect for diverse cultures. These activities help students develop empathy, compassion, and a strong moral foundation, preparing them to be responsible global citizens.',
+                    'body' => 'Our <strong>cultural events, celebrations, and community service programs</strong> instill a sense of social responsibility and respect for diverse cultures. These activities help students develop empathy, compassion, and a strong moral foundation, preparing them to be responsible global citizens.',
                 ],
             ],
 
@@ -316,9 +301,9 @@ class MockData
     {
         return [
             'overview' => 'The school follows the CBSE Continuous and Comprehensive Evaluation (CCE) framework.',
-            'terms'    => [
-                ['term' => 'Term I (FA1 + FA2 + SA1)',  'period' => 'April – September', 'weightage' => '50%'],
-                ['term' => 'Term II (FA3 + FA4 + SA2)', 'period' => 'October – March',   'weightage' => '50%'],
+            'terms' => [
+                ['term' => 'Term I (FA1 + FA2 + SA1)', 'period' => 'April – September', 'weightage' => '50%'],
+                ['term' => 'Term II (FA3 + FA4 + SA2)', 'period' => 'October – March', 'weightage' => '50%'],
             ],
             'rules' => [
                 'Minimum 75% attendance is mandatory to appear in examinations.',
@@ -335,18 +320,18 @@ class MockData
         return [
             'schedule' => [
                 ['day' => 'Monday – Friday', 'timing' => '8:00 AM – 2:30 PM', 'type' => 'regular', 'icon' => 'fa-calendar'],
-                ['day' => 'Saturday',        'timing' => '8:00 AM – 12:30 PM', 'type' => 'half',    'icon' => 'fa-calendar-o'],
-                ['day' => 'Sunday',          'timing' => 'Holiday',            'type' => 'holiday',  'icon' => 'fa-home'],
+                ['day' => 'Saturday', 'timing' => '8:00 AM – 12:30 PM', 'type' => 'half', 'icon' => 'fa-calendar-o'],
+                ['day' => 'Sunday', 'timing' => 'Holiday', 'type' => 'holiday', 'icon' => 'fa-home'],
             ],
             'daily_breakdown' => [
-                ['period' => 'Morning Assembly',    'time' => '7:50 AM – 8:10 AM',  'icon' => 'fa-sun-o'],
-                ['period' => 'Period 1 & 2',        'time' => '8:10 AM – 9:40 AM',  'icon' => 'fa-book'],
-                ['period' => 'Short Break',         'time' => '9:40 AM – 9:55 AM',  'icon' => 'fa-coffee'],
-                ['period' => 'Period 3 & 4',        'time' => '9:55 AM – 11:25 AM', 'icon' => 'fa-book'],
-                ['period' => 'Lunch Break',         'time' => '11:25 AM – 12:00 PM','icon' => 'fa-cutlery'],
-                ['period' => 'Period 5 & 6',        'time' => '12:00 PM – 1:30 PM', 'icon' => 'fa-book'],
-                ['period' => 'Period 7 / Activity', 'time' => '1:30 PM – 2:20 PM',  'icon' => 'fa-paint-brush'],
-                ['period' => 'Dispersal',           'time' => '2:30 PM',            'icon' => 'fa-flag-checkered'],
+                ['period' => 'Morning Assembly', 'time' => '7:50 AM – 8:10 AM', 'icon' => 'fa-sun-o'],
+                ['period' => 'Period 1 & 2', 'time' => '8:10 AM – 9:40 AM', 'icon' => 'fa-book'],
+                ['period' => 'Short Break', 'time' => '9:40 AM – 9:55 AM', 'icon' => 'fa-coffee'],
+                ['period' => 'Period 3 & 4', 'time' => '9:55 AM – 11:25 AM', 'icon' => 'fa-book'],
+                ['period' => 'Lunch Break', 'time' => '11:25 AM – 12:00 PM', 'icon' => 'fa-cutlery'],
+                ['period' => 'Period 5 & 6', 'time' => '12:00 PM – 1:30 PM', 'icon' => 'fa-book'],
+                ['period' => 'Period 7 / Activity', 'time' => '1:30 PM – 2:20 PM', 'icon' => 'fa-paint-brush'],
+                ['period' => 'Dispersal', 'time' => '2:30 PM', 'icon' => 'fa-flag-checkered'],
             ],
             'notes' => [
                 'Gates open at 7:40 AM. Students are expected to be seated by 7:50 AM.',
@@ -393,24 +378,24 @@ class MockData
                 'Winter' => 'White shirt, grey skirt/salwar, navy-blue V-neck pullover, black shoes.',
             ],
             'pe_uniform' => 'School house T-shirt, white track pants, white canvas shoes.',
-            'note'        => 'Hair must be neatly tied. No jewellery except small studs for girls.',
+            'note' => 'Hair must be neatly tied. No jewellery except small studs for girls.',
         ];
     }
 
     public static function bookList(): array
     {
         return [
-            ['class' => 'Class I',   'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'My Big Book of EVS', 'Computer Masti 1']],
-            ['class' => 'Class II',  'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'My Big Book of EVS', 'Computer Masti 2']],
+            ['class' => 'Class I', 'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'My Big Book of EVS', 'Computer Masti 1']],
+            ['class' => 'Class II', 'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'My Big Book of EVS', 'Computer Masti 2']],
             ['class' => 'Class III', 'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT EVS', 'Computer Masti 3']],
-            ['class' => 'Class IV',  'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT EVS', 'Computer Masti 4']],
-            ['class' => 'Class V',   'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT EVS', 'Computer Masti 5']],
-            ['class' => 'Class VI',  'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT Science', 'NCERT Social Science', 'NCERT Sanskrit']],
+            ['class' => 'Class IV', 'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT EVS', 'Computer Masti 4']],
+            ['class' => 'Class V', 'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT EVS', 'Computer Masti 5']],
+            ['class' => 'Class VI', 'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT Science', 'NCERT Social Science', 'NCERT Sanskrit']],
             ['class' => 'Class VII', 'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT Science', 'NCERT Social Science', 'NCERT Sanskrit']],
-            ['class' => 'Class VIII','books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT Science', 'NCERT Social Science', 'NCERT Sanskrit']],
-            ['class' => 'Class IX',  'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT Science', 'NCERT Social Science']],
-            ['class' => 'Class X',   'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT Science', 'NCERT Social Science']],
-            ['class' => 'Class XI',  'books' => ['As per stream: Science / Commerce books as per CBSE guidelines.']],
+            ['class' => 'Class VIII', 'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT Science', 'NCERT Social Science', 'NCERT Sanskrit']],
+            ['class' => 'Class IX', 'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT Science', 'NCERT Social Science']],
+            ['class' => 'Class X', 'books' => ['NCERT English', 'NCERT Hindi', 'NCERT Maths', 'NCERT Science', 'NCERT Social Science']],
+            ['class' => 'Class XI', 'books' => ['As per stream: Science / Commerce books as per CBSE guidelines.']],
             ['class' => 'Class XII', 'books' => ['As per stream: Science / Commerce books as per CBSE guidelines.']],
         ];
     }
@@ -418,10 +403,10 @@ class MockData
     public static function feeStructure(): array
     {
         return [
-            ['class' => 'Nursery – KG',   'admission' => '5,000', 'tuition' => '1,800/mo', 'annual' => '3,000'],
-            ['class' => 'Class I – V',    'admission' => '6,000', 'tuition' => '2,200/mo', 'annual' => '3,500'],
-            ['class' => 'Class VI – VIII','admission' => '7,000', 'tuition' => '2,800/mo', 'annual' => '4,000'],
-            ['class' => 'Class IX – X',   'admission' => '8,000', 'tuition' => '3,200/mo', 'annual' => '4,500'],
+            ['class' => 'Nursery – KG', 'admission' => '5,000', 'tuition' => '1,800/mo', 'annual' => '3,000'],
+            ['class' => 'Class I – V', 'admission' => '6,000', 'tuition' => '2,200/mo', 'annual' => '3,500'],
+            ['class' => 'Class VI – VIII', 'admission' => '7,000', 'tuition' => '2,800/mo', 'annual' => '4,000'],
+            ['class' => 'Class IX – X', 'admission' => '8,000', 'tuition' => '3,200/mo', 'annual' => '4,500'],
             ['class' => 'Class XI – XII', 'admission' => '9,000', 'tuition' => '3,800/mo', 'annual' => '5,000'],
         ];
     }
@@ -433,25 +418,25 @@ class MockData
     public static function admissionProcedure(): array
     {
         return [
-            ['step' => 1, 'title' => 'Collect Prospectus',     'desc' => 'Obtain the school prospectus and registration form from the school office or download from the website.'],
-            ['step' => 2, 'title' => 'Submit Application',     'desc' => 'Fill in the registration form and submit it along with required documents and registration fee.'],
-            ['step' => 3, 'title' => 'Interaction / Test',     'desc' => 'The child and parents are invited for an interaction session. For Classes VI onwards, a written test may be conducted.'],
+            ['step' => 1, 'title' => 'Collect Prospectus', 'desc' => 'Obtain the school prospectus and registration form from the school office or download from the website.'],
+            ['step' => 2, 'title' => 'Submit Application', 'desc' => 'Fill in the registration form and submit it along with required documents and registration fee.'],
+            ['step' => 3, 'title' => 'Interaction / Test', 'desc' => 'The child and parents are invited for an interaction session. For Classes VI onwards, a written test may be conducted.'],
             ['step' => 4, 'title' => 'Admission Confirmation', 'desc' => 'On selection, an admission offer letter is issued. Fee payment confirms the seat.'],
-            ['step' => 5, 'title' => 'Orientation',            'desc' => 'New students attend an orientation programme before the academic session begins.'],
+            ['step' => 5, 'title' => 'Orientation', 'desc' => 'New students attend an orientation programme before the academic session begins.'],
         ];
     }
 
     public static function eligibilityCriteria(): array
     {
         return [
-            ['class' => 'Nursery',          'age' => '3+ years as on 31st March of admission year'],
-            ['class' => 'LKG',              'age' => '4+ years as on 31st March of admission year'],
-            ['class' => 'UKG',              'age' => '5+ years as on 31st March of admission year'],
-            ['class' => 'Class I',          'age' => '6+ years as on 31st March of admission year'],
-            ['class' => 'Class II – V',     'age' => 'Passing previous class from a recognised school'],
-            ['class' => 'Class VI – VIII',  'age' => 'Passing previous class + qualifying interaction/test'],
-            ['class' => 'Class IX – X',     'age' => 'Passing previous class from CBSE/equivalent board + TC'],
-            ['class' => 'Class XI',         'age' => 'Passing Class X from CBSE/equivalent board (min 60%)'],
+            ['class' => 'Nursery', 'age' => '3+ years as on 31st March of admission year'],
+            ['class' => 'LKG', 'age' => '4+ years as on 31st March of admission year'],
+            ['class' => 'UKG', 'age' => '5+ years as on 31st March of admission year'],
+            ['class' => 'Class I', 'age' => '6+ years as on 31st March of admission year'],
+            ['class' => 'Class II – V', 'age' => 'Passing previous class from a recognised school'],
+            ['class' => 'Class VI – VIII', 'age' => 'Passing previous class + qualifying interaction/test'],
+            ['class' => 'Class IX – X', 'age' => 'Passing previous class from CBSE/equivalent board + TC'],
+            ['class' => 'Class XI', 'age' => 'Passing Class X from CBSE/equivalent board (min 60%)'],
         ];
     }
 
@@ -496,7 +481,7 @@ class MockData
     public static function tcSample(): array
     {
         return [
-            'note'   => 'The Transfer Certificate (TC) is issued on school letterhead under the Principal\'s signature.',
+            'note' => 'The Transfer Certificate (TC) is issued on school letterhead under the Principal\'s signature.',
             'fields' => [
                 'Name of Student',
                 'Mother\'s Name / Father\'s Name',
@@ -519,77 +504,76 @@ class MockData
     {
         $facilities = [
             'infrastructure' => [
-                'title'       => 'Infrastructure',
-                'icon'        => 'fa-building',
-                'description' => 'Our sprawling campus spans over 3 acres with purpose-built blocks for primary and secondary sections.',
-                'highlights'  => [
-                    '30+ spacious, well-ventilated classrooms',
-                    'Dedicated blocks for Science, Commerce & Arts streams',
-                    'Central Assembly Hall (capacity: 1,000)',
+                'title' => 'Infrastructure',
+                'icon' => 'fa-building',
+                'description' => 'HS Global Academy\'s campus in Bhaishahi Bazar, Kushinagar is designed to provide a safe, inclusive, and inspiring atmosphere where students feel encouraged to learn, explore, and grow.',
+                'highlights' => [
+                    'Spacious, well-ventilated modern classrooms',
+                    'Dedicated blocks for different academic sections',
+                    'Central Assembly area for morning prayers & events',
                     'Modern administrative block',
-                    'Separate hostel facility (optional)',
                     'CCTV surveillance across the entire campus',
+                    'Clean and hygienic campus with eco-friendly practices',
                 ],
             ],
             'smart-classrooms' => [
-                'title'       => 'Smart Classrooms',
-                'icon'        => 'fa-desktop',
-                'description' => 'All classrooms are equipped with interactive smart boards and audio-visual systems for enhanced learning.',
-                'highlights'  => [
-                    '40 smart classrooms with interactive flat panels',
-                    'High-speed Wi-Fi connectivity throughout the building',
-                    'Digital content library integrated with CBSE curriculum',
-                    'Teacher training programme for EdTech tools',
-                    'Online assessment and real-time progress tracking',
+                'title' => 'Smart Classrooms',
+                'icon' => 'fa-desktop',
+                'description' => 'Our well-equipped classrooms provide a focused academic environment with proper ventilation, seating, and digital teaching tools to enhance student engagement and learning outcomes.',
+                'highlights' => [
+                    'Spacious, well-organised classrooms with modern furnishings',
+                    'Digital teaching aids and audio-visual support',
+                    'Conducive learning environment with proper lighting',
+                    'Interactive collaborative learning spaces',
+                    'Regular maintenance for a clean and orderly atmosphere',
                 ],
             ],
             'library' => [
-                'title'       => 'Library',
-                'icon'        => 'fa-book',
-                'description' => 'Our well-stocked library houses over 15,000 books, periodicals, and digital resources.',
-                'highlights'  => [
-                    '15,000+ books across all subjects and genres',
-                    'Dedicated reading room with seating for 80 students',
-                    'E-library with access to digital journals and NCERT e-books',
-                    'Daily newspaper and monthly magazine subscriptions',
-                    'Barcode-based book issue/return system',
+                'title' => 'Library',
+                'icon' => 'fa-book',
+                'description' => 'Our well-stocked library cultivates a love for reading and research, offering a wide range of books, reference materials, and resources for students across all classes.',
+                'highlights' => [
+                    'Wide collection of books across all subjects and grades',
+                    'Dedicated reading room with comfortable seating',
+                    'Reference section with encyclopaedias and dictionaries',
+                    'Daily newspaper and periodical subscriptions',
+                    'Quiet, inspiring space to foster a love of reading',
                 ],
             ],
             'science-lab' => [
-                'title'       => 'Science Lab',
-                'icon'        => 'fa-flask',
-                'description' => 'Separate, fully equipped laboratories for Physics, Chemistry, and Biology.',
-                'highlights'  => [
-                    'Physics Lab with modern apparatus (30 setups)',
+                'title' => 'Science Lab',
+                'icon' => 'fa-flask',
+                'description' => 'Our state-of-the-art Biology, Physics, and Chemistry labs provide students with hands-on experience and practical knowledge to complement classroom learning.',
+                'highlights' => [
+                    'Separate, fully equipped Physics Lab',
                     'Chemistry Lab with individual working benches',
-                    'Biology Lab with microscopes and specimen collection',
-                    'Annual science fair and project exhibitions',
-                    'Trained lab assistants for each department',
+                    'Biology Lab with microscopes and specimen collections',
+                    'Regular practical sessions aligned with the curriculum',
+                    'Trained lab assistants for safe and effective experiments',
                 ],
             ],
             'computer-lab' => [
-                'title'       => 'Computer Lab',
-                'icon'        => 'fa-laptop',
-                'description' => 'Two state-of-the-art computer labs with the latest hardware and software.',
-                'highlights'  => [
-                    '60 high-configuration workstations',
-                    'Licensed Microsoft Office & programming tools',
-                    'Dedicated broadband internet (100 Mbps)',
-                    'Web filtering and safe browsing enabled',
-                    'Robotics & Coding workshops for all grades',
+                'title' => 'Computer Lab',
+                'icon' => 'fa-laptop',
+                'description' => 'Our modern computer lab provides students with guided digital learning, practical sessions, and coding exposure to prepare them for a technology-driven future.',
+                'highlights' => [
+                    'High-configuration computer workstations for all students',
+                    'Internet connectivity for research and digital learning',
+                    'Licensed software for academic and creative work',
+                    'Safe browsing environment with web filtering',
+                    'Coding and digital literacy sessions for all grades',
                 ],
             ],
             'sports' => [
-                'title'       => 'Sports Facility',
-                'icon'        => 'fa-trophy',
-                'description' => 'Comprehensive sports infrastructure to develop physical fitness and sportsmanship.',
-                'highlights'  => [
-                    'Full-size cricket ground with practice nets',
-                    'Football, Basketball & Volleyball courts',
-                    'Badminton & Table Tennis facilities (indoor)',
-                    'Athletics track (200 m)',
-                    'Annual Sports Day with inter-house competitions',
-                    'Qualified physical education teachers & coaches',
+                'title' => 'Sports Facility',
+                'icon' => 'fa-trophy',
+                'description' => 'Our big playground and sports facilities encourage physical fitness, teamwork, discipline, and a competitive spirit among students of all ages.',
+                'highlights' => [
+                    'Big playground for outdoor sports and physical activities',
+                    'Cricket, Football, Basketball and athletics facilities',
+                    'Regular sports events and inter-house competitions',
+                    'Annual Sports Day celebrating student athletic achievements',
+                    'Qualified physical education teachers and coaches',
                 ],
             ],
         ];
@@ -605,43 +589,43 @@ class MockData
     {
         // TODO: Replace with DB/storage query
         return array_map(fn($i) => [
-            'src'      => asset("static/images/img_{$i}.jpeg"),
-            'thumb'    => asset("static/images/img_{$i}.jpeg"),
-            'caption'  => "School Activity {$i}",
+            'src' => asset("static/images/img_{$i}.jpeg"),
+            'thumb' => asset("static/images/img_{$i}.jpeg"),
+            'caption' => "School Activity {$i}",
         ], range(1, 12));
     }
 
     public static function galleryVideos(): array
     {
         return [
-            ['title' => 'Annual Day 2024',           'url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'thumb' => asset('assets/web/images/gallery/video-thumb-1.jpg')],
-            ['title' => 'Sports Day Highlights 2024','url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'thumb' => asset('assets/web/images/gallery/video-thumb-2.jpg')],
-            ['title' => 'Science Exhibition 2024',   'url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'thumb' => asset('assets/web/images/gallery/video-thumb-3.jpg')],
+            ['title' => 'Annual Day 2024', 'url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'thumb' => asset('assets/web/images/gallery/video-thumb-1.jpg')],
+            ['title' => 'Sports Day Highlights 2024', 'url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'thumb' => asset('assets/web/images/gallery/video-thumb-2.jpg')],
+            ['title' => 'Science Exhibition 2024', 'url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'thumb' => asset('assets/web/images/gallery/video-thumb-3.jpg')],
         ];
     }
 
     public static function galleryEvents(string $type): array
     {
         $titles = [
-            'sports'   => 'Sports Events',
+            'sports' => 'Sports Events',
             'cultural' => 'Cultural Programs',
-            'prize'    => 'Prize Distribution',
+            'prize' => 'Prize Distribution',
             'achievements' => 'Student Achievements',
         ];
 
         $starts = [
-            'sports'       => 1,
-            'cultural'     => 6,
-            'prize'        => 11,
+            'sports' => 1,
+            'cultural' => 6,
+            'prize' => 11,
             'achievements' => 16,
         ];
 
         $startIndex = $starts[$type] ?? 1;
 
         return [
-            'title'  => $titles[$type] ?? 'Events',
+            'title' => $titles[$type] ?? 'Events',
             'photos' => array_map(fn($i) => [
-                'src'     => asset(sprintf('static/images/img_%d.jpeg', ((($startIndex - 1) + ($i - 1)) % 21) + 1)),
+                'src' => asset(sprintf('static/images/img_%d.jpeg', ((($startIndex - 1) + ($i - 1)) % 21) + 1)),
                 'caption' => "{$titles[$type]} – Photo {$i}",
             ], range(1, 8)),
         ];
@@ -654,66 +638,65 @@ class MockData
     public static function disclosureGeneralInfo(): array
     {
         return [
-            ['label' => 'Name of School',             'value' => 'H.S. Global Academy'],
-            ['label' => 'Affiliation No.',             'value' => '2130XXX'],
-            ['label' => 'School No.',                  'value' => '56XXX'],
-            ['label' => 'Complete Address',            'value' => '123, Education Lane, New Delhi – 110001'],
-            ['label' => 'Principal Name',              'value' => 'Dr. Anjali Verma'],
-            ['label' => 'Contact No.',                 'value' => '+91-11-XXXX-XXXX'],
-            ['label' => 'Email',                       'value' => 'info@hsglobalacademy.edu.in'],
-            ['label' => 'Year of Establishment',       'value' => '2019'],
-            ['label' => 'Status of School',            'value' => 'Co-Educational'],
-            ['label' => 'Type of Affiliation',         'value' => 'Permanent'],
-            ['label' => 'Period of Affiliation',       'value' => '01/04/2019 – 31/03/2030'],
-            ['label' => 'NOC Issuing State Govt.',     'value' => 'Government of Delhi'],
-            ['label' => 'NOC No.',                     'value' => 'DL/EDU/XXX/2004'],
-            ['label' => 'Is the school recognised?',   'value' => 'Yes'],
-            ['label' => 'Status of CBSE Affiliation',  'value' => 'Permanent'],
+            ['label' => 'Name of School', 'value' => 'H.S. Global Academy'],
+            ['label' => 'Affiliation No.', 'value' => 'Applied'],
+            ['label' => 'School No.', 'value' => 'Applied'],
+            ['label' => 'Complete Address', 'value' => 'Bhaishahi Bazar, Hata, Kushinagar, Uttar Pradesh – 274204'],
+            ['label' => 'Principal Name', 'value' => 'Mr. Roshan Singh'],
+            ['label' => 'Contact No.', 'value' => '+91 89605 53332, +91 94510 27766'],
+            ['label' => 'Email', 'value' => 'contact@hsglobalacademy.in'],
+            ['label' => 'Year of Establishment', 'value' => '2019'],
+            ['label' => 'Status of School', 'value' => 'Co-Educational'],
+            ['label' => 'Type of Affiliation', 'value' => 'CBSE – Applied'],
+            ['label' => 'Period of Affiliation', 'value' => 'Applied'],
+            ['label' => 'NOC Issuing State Govt.', 'value' => 'Government of Uttar Pradesh'],
+            ['label' => 'NOC No.', 'value' => 'Applied'],
+            ['label' => 'Is the school recognised?', 'value' => 'Yes'],
+            ['label' => 'Status of CBSE Affiliation', 'value' => 'Applied'],
         ];
     }
 
     public static function disclosureSchoolManagement(): array
     {
         return [
-            ['name' => 'Mr. Harish Sharma',  'designation' => 'Chairman',          'qualification' => 'M.Com, LLB'],
-            ['name' => 'Mrs. Seema Gupta',   'designation' => 'Director',           'qualification' => 'MBA'],
-            ['name' => 'Dr. Anjali Verma',   'designation' => 'Principal',          'qualification' => 'Ph.D, M.Ed'],
-            ['name' => 'Mr. Rakesh Tiwari',  'designation' => 'Manager',            'qualification' => 'B.Com, LLB'],
-            ['name' => 'Mrs. Priya Singh',   'designation' => 'Parent Representative','qualification' => 'M.A.'],
-            ['name' => 'Mr. Suresh Kumar',   'designation' => 'Teacher Representative','qualification' => 'M.Sc, B.Ed'],
+            ['name' => 'Mr. Sushil Kumar Singh', 'designation' => 'Director', 'qualification' => 'As per records'],
+            ['name' => 'Mr. Roshan Singh', 'designation' => 'Principal', 'qualification' => 'As per records'],
+            ['name' => 'To be updated', 'designation' => 'Manager', 'qualification' => 'As per records'],
+            ['name' => 'To be updated', 'designation' => 'Parent Representative', 'qualification' => 'As per records'],
+            ['name' => 'To be updated', 'designation' => 'Teacher Representative', 'qualification' => 'As per records'],
         ];
     }
 
     public static function disclosureInfrastructure(): array
     {
         return [
-            ['item' => 'Total Campus Area',            'detail' => '3 Acres (12,141 sq. m.)'],
-            ['item' => 'No. of Classrooms',            'detail' => '32'],
-            ['item' => 'Size of Each Classroom',       'detail' => '6m × 8m'],
-            ['item' => 'No. of Labs (Science)',        'detail' => '3 (Physics, Chemistry, Biology)'],
-            ['item' => 'Computer Lab',                 'detail' => '2 Labs – 60 systems total'],
-            ['item' => 'Library Area',                 'detail' => '250 sq. m.'],
-            ['item' => 'Sports Area',                  'detail' => '5,000 sq. m.'],
-            ['item' => 'Separate Toilets (Boys)',      'detail' => 'Yes'],
-            ['item' => 'Separate Toilets (Girls)',     'detail' => 'Yes'],
-            ['item' => 'Ramps for Differently Abled',  'detail' => 'Yes'],
-            ['item' => 'Drinking Water (RO)',          'detail' => 'Available throughout campus'],
-            ['item' => 'Gymnasium / Indoor Hall',      'detail' => 'Yes'],
+            ['item' => 'Total Campus Area', 'detail' => 'As per records'],
+            ['item' => 'No. of Classrooms', 'detail' => 'As per records'],
+            ['item' => 'Size of Each Classroom', 'detail' => 'As per records'],
+            ['item' => 'No. of Labs (Science)', 'detail' => '3 (Physics, Chemistry, Biology)'],
+            ['item' => 'Computer Lab', 'detail' => 'Available'],
+            ['item' => 'Library Area', 'detail' => 'Available'],
+            ['item' => 'Sports Area', 'detail' => 'Big Playground – Available'],
+            ['item' => 'Separate Toilets (Boys)', 'detail' => 'Yes'],
+            ['item' => 'Separate Toilets (Girls)', 'detail' => 'Yes'],
+            ['item' => 'Ramps for Differently Abled', 'detail' => 'As per records'],
+            ['item' => 'Drinking Water (RO)', 'detail' => 'Available throughout campus'],
+            ['item' => 'Gymnasium / Indoor Hall', 'detail' => 'Yes'],
         ];
     }
 
     public static function disclosureStaff(): array
     {
         return [
-            ['category' => 'Principal',          'required' => 1,  'available' => 1,  'trained' => 1],
-            ['category' => 'Vice Principal',      'required' => 1,  'available' => 1,  'trained' => 1],
-            ['category' => 'PGT Teachers',        'required' => 15, 'available' => 15, 'trained' => 15],
-            ['category' => 'TGT Teachers',        'required' => 20, 'available' => 20, 'trained' => 20],
-            ['category' => 'PRT Teachers',        'required' => 18, 'available' => 18, 'trained' => 18],
-            ['category' => 'Lab Assistants',      'required' => 3,  'available' => 3,  'trained' => 3],
-            ['category' => 'Computer Instructors','required' => 2,  'available' => 2,  'trained' => 2],
-            ['category' => 'Librarian',           'required' => 1,  'available' => 1,  'trained' => 1],
-            ['category' => 'Physical Education',  'required' => 2,  'available' => 2,  'trained' => 2],
+            ['category' => 'Principal', 'required' => 1, 'available' => 1, 'trained' => 1],
+            ['category' => 'Vice Principal', 'required' => 1, 'available' => 1, 'trained' => 1],
+            ['category' => 'PGT Teachers', 'required' => 15, 'available' => 15, 'trained' => 15],
+            ['category' => 'TGT Teachers', 'required' => 20, 'available' => 20, 'trained' => 20],
+            ['category' => 'PRT Teachers', 'required' => 18, 'available' => 18, 'trained' => 18],
+            ['category' => 'Lab Assistants', 'required' => 3, 'available' => 3, 'trained' => 3],
+            ['category' => 'Computer Instructors', 'required' => 2, 'available' => 2, 'trained' => 2],
+            ['category' => 'Librarian', 'required' => 1, 'available' => 1, 'trained' => 1],
+            ['category' => 'Physical Education', 'required' => 2, 'available' => 2, 'trained' => 2],
         ];
     }
 
@@ -735,23 +718,23 @@ class MockData
     public static function disclosureTransport(): array
     {
         return [
-            ['route' => 'Route A – North Zone',   'areas' => 'Model Town, Rohini, Pitampura',   'buses' => 2],
-            ['route' => 'Route B – South Zone',   'areas' => 'Lajpat Nagar, Saket, Vasant Kunj','buses' => 2],
-            ['route' => 'Route C – East Zone',    'areas' => 'Laxmi Nagar, Preet Vihar',         'buses' => 1],
-            ['route' => 'Route D – West Zone',    'areas' => 'Dwarka, Janakpuri, Uttam Nagar',   'buses' => 2],
+            ['route' => 'Route A – North Zone', 'areas' => 'Model Town, Rohini, Pitampura', 'buses' => 2],
+            ['route' => 'Route B – South Zone', 'areas' => 'Lajpat Nagar, Saket, Vasant Kunj', 'buses' => 2],
+            ['route' => 'Route C – East Zone', 'areas' => 'Laxmi Nagar, Preet Vihar', 'buses' => 1],
+            ['route' => 'Route D – West Zone', 'areas' => 'Dwarka, Janakpuri, Uttam Nagar', 'buses' => 2],
         ];
     }
 
     public static function disclosureFinancial(): array
     {
         return [
-            ['head' => 'Fee Collection (Annual)',  'amount' => '₹ 1,20,00,000'],
-            ['head' => 'Development Fund',         'amount' => '₹ 15,00,000'],
-            ['head' => 'Salary Expenses',          'amount' => '₹ 75,00,000'],
-            ['head' => 'Infrastructure Upgrades',  'amount' => '₹ 20,00,000'],
-            ['head' => 'Library & Lab',            'amount' => '₹ 8,00,000'],
-            ['head' => 'Sports & Activities',      'amount' => '₹ 5,00,000'],
-            ['head' => 'Misc. Administrative',     'amount' => '₹ 7,00,000'],
+            ['head' => 'Fee Collection (Annual)', 'amount' => '₹ 1,20,00,000'],
+            ['head' => 'Development Fund', 'amount' => '₹ 15,00,000'],
+            ['head' => 'Salary Expenses', 'amount' => '₹ 75,00,000'],
+            ['head' => 'Infrastructure Upgrades', 'amount' => '₹ 20,00,000'],
+            ['head' => 'Library & Lab', 'amount' => '₹ 8,00,000'],
+            ['head' => 'Sports & Activities', 'amount' => '₹ 5,00,000'],
+            ['head' => 'Misc. Administrative', 'amount' => '₹ 7,00,000'],
         ];
     }
 
@@ -762,12 +745,12 @@ class MockData
     public static function contactInfo(): array
     {
         return [
-            'address' => '123, Education Lane, New Delhi – 110001',
-            'phone'   => '+91-11-XXXX-XXXX',
-            'email'   => 'info@hsglobalacademy.edu.in',
-            'timings' => 'Mon – Sat: 8:00 AM – 4:00 PM',
-            'map_lat' => 28.6139,
-            'map_lng' => 77.2090,
+            'address' => 'Bhaishahi Bazar, Hata, Kushinagar, Uttar Pradesh – 274204',
+            'phone' => '+91 89605 53332 / +91 94510 27766',
+            'email' => 'contact@hsglobalacademy.in',
+            'timings' => 'Mon – Sat: 8:00 AM – 2:30 PM',
+            'map_lat' => 26.7310,
+            'map_lng' => 83.9960,
         ];
     }
 
@@ -780,52 +763,52 @@ class MockData
         // TODO: Replace with Notification::latest()->paginate(10) when admin panel is ready.
         return [
             [
-                'id'       => 1,
-                'title'    => 'Admissions Open for 2026-27 Academic Session',
+                'id' => 1,
+                'title' => 'Admission Open 2026-27 — HS Global Academy, Kushinagar',
                 'category' => 'Admissions',
-                'date'     => '2026-05-15',
-                'excerpt'  => 'Registration forms are now available. Limited seats in all classes.',
-                'content'  => 'H.S. Global Academy is pleased to announce that admissions for the academic session 2026-27 are now open. We invite applications from deserving students for Classes Nursery to Class XI. Limited seats are available. Kindly visit the Admissions section for detailed procedure, eligibility criteria, and required documents.',
+                'date' => '2026-05-15',
+                'excerpt' => 'Admissions are open for the 2026-27 session. Limited seats available for Nursery to Class XI.',
+                'content' => 'HS Global Academy, Bhaishahi Bazar, Hata, Kushinagar is pleased to announce that admissions for the academic session 2026-27 are now open. We invite applications from deserving students for Classes Nursery to Class XI. Limited seats are available. Kindly visit the Admissions section for the detailed procedure, eligibility criteria, and required documents. For enquiries, call +91 89605 53332 or +91 94510 27766.',
             ],
             [
-                'id'       => 2,
-                'title'    => 'Summer Holidays Homework Assignment Published',
+                'id' => 2,
+                'title' => 'Sports Meet 2025 — Latest Images Now Available',
                 'category' => 'Academics',
-                'date'     => '2026-05-12',
-                'excerpt'  => 'Holiday homework for all classes is now available in the parent portal.',
-                'content'  => 'The holiday homework assignment for the summer break (May – June 2026) has been published and is accessible through the parent portal. Students are encouraged to complete assignments during the break to maintain continuity in learning. Teachers will be available for clarifications via email.',
+                'date' => '2026-04-10',
+                'excerpt' => 'Check out the latest photos from Sports Meet 2025 in the Gallery section.',
+                'content' => 'The latest images from the Sports Meet 2025, held at the HS Global Academy campus in Kushinagar, are now available in the Gallery section. The event saw enthusiastic participation from students across all classes in various track and field events. We congratulate all participants and winners!',
             ],
             [
-                'id'       => 3,
-                'title'    => 'Inter-House Debate Competition Scheduled',
-                'category' => 'Activities',
-                'date'     => '2026-05-10',
-                'excerpt'  => 'Debate competition between four school houses on May 25, 2026.',
-                'content'  => 'The annual Inter-House Debate Competition is scheduled for May 25, 2026 at the school auditorium. Classes VIII to XII are invited to participate. Topics will be announced one week in advance. Winners will be awarded certificates and cash prizes. Parents and staff are welcome to attend.',
+                'id' => 3,
+                'title' => 'Fee Structure 2026-27 Updated',
+                'category' => 'Academics',
+                'date' => '2026-04-01',
+                'excerpt' => 'The updated fee structure for the 2026-27 academic session is now available.',
+                'content' => 'The fee structure for the academic session 2026-27 has been updated and is available for download from the Academics section of this website. Parents are requested to review the updated fees and make payments as per the schedule. For any queries regarding fee payment, please contact the school office at +91 89605 53332.',
             ],
             [
-                'id'       => 4,
-                'title'    => 'School Transport Route Revision Effective From May 20',
-                'category' => 'Transport',
-                'date'     => '2026-05-08',
-                'excerpt'  => 'New pickup points and timings for all transport routes.',
-                'content'  => 'Effective from Monday, May 20, 2026, the school transport routes have been reorganised to ensure better efficiency and on-time arrival. Updated pickup points, timings, and route maps have been shared with all parents. In case of any queries, please contact the Transport Office.',
+                'id' => 4,
+                'title' => 'Welcome to HS Global Academy — Best School in Kushinagar',
+                'category' => 'General',
+                'date' => '2026-03-15',
+                'excerpt' => 'HS Global Academy is dedicated to providing world-class education in Kushinagar.',
+                'content' => 'HS Global Academy, located in Bhaishahi Bazar, Hata, Kushinagar, Uttar Pradesh, is committed to providing world-class education in a safe and nurturing environment. With state-of-the-art Science and Computer Labs, a well-stocked library, a big playground, and a team of experienced faculty, we ensure every student achieves their full potential. Contact us at contact@hsglobalacademy.in or follow us on Instagram @hsglobal_academy.',
             ],
             [
-                'id'       => 5,
-                'title'    => 'CBSE Mandatory Disclosure Documents Updated',
+                'id' => 5,
+                'title' => 'Safe Campus Initiative — CCTV & Security Systems Installed',
                 'category' => 'Important',
-                'date'     => '2026-05-05',
-                'excerpt'  => 'All mandatory disclosures for 2026-27 are now live.',
-                'content'  => 'As per CBSE norms, all mandatory disclosure documents for the academic session 2026-27 have been updated and are now available in the Mandatory Disclosure section of this website. Parents and guardians are requested to review these documents for transparency and compliance.',
+                'date' => '2026-02-20',
+                'excerpt' => 'Campus-wide CCTV surveillance and security systems are now fully operational.',
+                'content' => 'The safety and well-being of our students is our top priority. HS Global Academy has installed a comprehensive CCTV surveillance system and a well-trained security team across the campus. Strict safety protocols are in place to ensure that students feel safe and secure at all times. We maintain a clean and hygienic environment that supports healthy learning and overall development.',
             ],
             [
-                'id'       => 6,
-                'title'    => 'Annual Sports Day Preliminary Round Winners Announced',
+                'id' => 6,
+                'title' => 'Eco-Friendly Campus Practices at HS Global Academy',
                 'category' => 'Sports',
-                'date'     => '2026-05-02',
-                'excerpt'  => 'Congratulations to all students who qualified for the finals.',
-                'content'  => 'The results of the preliminary round of the Annual Sports Day have been declared. We congratulate all students who have qualified for the finals, scheduled for May 30, 2026. Best wishes to all participants.',
+                'date' => '2026-01-15',
+                'excerpt' => 'HS Global Academy promotes eco-friendly and sustainable practices on campus.',
+                'content' => 'HS Global Academy is committed to instilling a sense of environmental responsibility in our students. Our school promotes eco-friendly practices such as waste management, energy conservation, and maintaining greenery on campus. Through various awareness programs and activities, we encourage students to become responsible stewards of the environment.',
             ],
         ];
     }

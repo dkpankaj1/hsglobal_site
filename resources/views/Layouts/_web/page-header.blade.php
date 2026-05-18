@@ -1,4 +1,4 @@
-<section class="page-title" style="max-height:150px; overflow:hidden;">
+<section class="page-title" style="max-height:150px; overflow:hidden; background-image: url('{{ asset('static/images/page-header.png') }}');" >
 </section>
 
 <section class="breadcrumb-bar">

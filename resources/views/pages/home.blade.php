@@ -64,7 +64,7 @@
                 <div class="col col-md-6">
                     <div class="section-title-s1">
                         <span>Welcome To {{ $school['name'] }}</span>
-                        <h2>A Future-Ready <span>CBSE School</span> For Holistic Growth</h2>
+                        <h2>A Future-Ready CBSE School For Holistic Growth</h2>
                     </div>
                     <div class="about-details">
                         <p>{{ $school['description'] }}</p>

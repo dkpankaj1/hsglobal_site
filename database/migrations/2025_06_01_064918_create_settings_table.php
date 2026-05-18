@@ -41,23 +41,23 @@ return new class extends Migration {
 
         $defaultSettings = [
             // Brand Settings
-            'brand_name' => 'SmartEducationPRO',
+            'brand_name' => 'HS Global Academy',
 
             // Contact Information
-            'contact_email' => 'info@kadso.com',
-            'contact_phone' => '+91 9876543210',
-            'contact_address' => '123, Main Street, Anytown, India',
+            'contact_email' => 'contact@hsglobalacademy.in',
+            'contact_phone' => '+91 89605 53332, +91 94510 27766',
+            'contact_address' => 'Bhaishahi Bazar, Hata, Kushinagar, U.P.',
 
             // Social Media Links
-            'facebook_link' => 'https://www.facebook.com/#',
+            'facebook_link' => 'https://www.facebook.com/profile.php?id=61573020811414',
             'twitter_link' => 'https://www.twitter.com/#',
-            'instagram_link' => 'https://www.instagram.com/#',
+            'instagram_link' => 'https://www.instagram.com/hsglobal_academy/',
             'linkedin_link' => 'https://www.linkedin.com/company/#',
 
             // SEO Settings
-            'meta_title' => 'Smart Education Web - Your Gateway to Quality Education',
-            'meta_description' => 'Smart Education Web provides quality education and learning resources for students and educators.',
-            'meta_keywords' => 'education, learning, online education, smart education, quality education',
+            'meta_title' => 'HS Global Academy - Best School in Kushinagar',
+            'meta_description' => 'HS Global Academy provides holistic education that nurtures young minds and prepares them for future success. With modern infrastructure, experienced faculty, and a focus on academic excellence and personality development.',
+            'meta_keywords' => 'HS Global Academy, best school in Kushinagar, education, school admission, Kushinagar school, UP school',
 
 
             // Timestamps
