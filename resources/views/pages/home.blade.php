@@ -78,9 +78,9 @@
                 </div>
                 <div class="col col-md-6 about-image-col">
                     <div class="img-holder">
-                        <img src="{{asset('assets/web/images/about-us/img-1.jpg')}}" alt="" class="img img-responsive">
-                        <img src="{{asset('assets/web/images/about-us/img-2.jpg')}}" alt="" class="img img-responsive">
-                        <img src="{{asset('assets/web/images/about-us/img-3.jpg')}}" alt="" class="img img-responsive">
+                        <img src="{{asset('assets/web/images/about-us/about_2.png')}}" alt="" class="img img-responsive">
+                        <img src="{{asset('assets/web/images/about-us/about_1.png')}}" alt="" class="img img-responsive">
+                        <img src="{{asset('assets/web/images/about-us/about_3.png')}}" alt="" class="img img-responsive">
                     </div>
                 </div>
             </div> <!-- end row -->

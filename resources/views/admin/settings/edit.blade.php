@@ -24,16 +24,14 @@
                 <!-- Brand Images -->
                 <div class="row mt-4 justify-items-center">
                     <div class="col-12">
-                        <h4 class="mb-3">Brand Images</h4>
+                        <h4 class="mb-3">Logo & Favicon</h4>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="mb-3">
                             <label for="logo" class="form-label">Logo</label>
                             <div class="form-control d-flex justify-content-center align-items-center my-1"
                                 style="height: 100px">
-                                @if (isset($setting->logo))
-                                    <img src="{{ asset($setting->logo) }}" alt="Logo" height="60">
-                                @endif
+                                <img src="{{ $setting->logo_url }}" alt="Logo" height="60">
                             </div>
                             <input type="file" class="form-control" name="logo" accept="image/*">
                             @error('logo')
@@ -41,15 +39,26 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="footer_logo" class="form-label">Footer Logo</label>
+                            <div class="form-control d-flex justify-content-center align-items-center my-1"
+                                style="height: 100px;background-color: #080808;">
+                                <img src="{{ $setting->footer_logo_url }}" alt="Footer Logo" height="60">
+                            </div>
+                            <input type="file" class="form-control" name="footer_logo" accept="image/*">
+                            @error('footer_logo')
+                                <div class="invalid-feedback d-block">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="mb-3">
                             <label for="favicon" class="form-label">Favicon</label>
                             <div class="form-control d-flex justify-content-center align-items-center my-1"
                                 style="height: 100px">
-                                @if (isset($setting->favicon))
-                                    <img src="{{ asset($setting->favicon) }}" alt="Favicon" height="32">
-                                @endif
+                                <img src="{{ $setting->favicon_url }}" alt="Favicon" height="32">
                             </div>
                             <input type="file" class="form-control" name="favicon" accept="image/x-icon,image/png">
                             @error('favicon')

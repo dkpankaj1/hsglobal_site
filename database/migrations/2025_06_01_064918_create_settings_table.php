@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->id();
             $table->string('brand_name')->nullable();
             $table->string('logo')->nullable();
+            $table->string('footer_logo')->nullable();
             $table->string('favicon')->nullable();
 
             // Contact Information

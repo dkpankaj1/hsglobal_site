@@ -34,7 +34,7 @@
         <li class="dropdown">
             <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-dark" data-bs-toggle="dropdown"
                 href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <img src="{{ auth()->user()->avatar }}" alt="user-image" class="rounded-circle">
+                <img src="{{ auth()->user()->profile_image }}" alt="user-image" class="rounded-circle">
                 <span class="ms-1 d-none d-md-inline-block">
                     {{ auth()->user()->name }} <i class="mdi mdi-chevron-down"></i>
                 </span>
@@ -69,7 +69,7 @@
                         </path>
                         <circle cx="12" cy="12" r="3"></circle>
                     </svg>
-                    <span>Proile Update</span>
+                    <span>Profile Update</span>
                 </a>
 
                 <!-- item-->

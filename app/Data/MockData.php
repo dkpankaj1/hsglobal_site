@@ -18,7 +18,7 @@ class MockData
     {
         return [
             'name'        => 'H.S. Global Academy',
-            'established' => '2005',
+            'established' => '2019',
             'affiliation' => 'Central Board of Secondary Education (CBSE)',
             'aff_no'      => '2130XXX',
             'school_no'   => '56XXX',
@@ -26,9 +26,9 @@ class MockData
             'email'       => 'info@hsglobalacademy.edu.in',
             'phone'       => '+91-11-XXXX-XXXX',
             'description' => 'H.S. Global Academy is a premier CBSE-affiliated institution committed to holistic
-                education. Founded in 2005, we blend academic rigour with co-curricular excellence to nurture
+                education. Founded in 2019, we blend academic rigour with co-curricular excellence to nurture
                 every student\'s potential in a safe, inclusive environment.',
-            'long_description' => 'Established in 2005 by visionary educationist Mr. Harish Sharma, H.S. Global Academy has grown from a modest school with a handful of classrooms into one of the region\'s most respected centres of learning. Over two decades, the institution has remained unwavering in its belief that true education transcends textbooks — it shapes character, nurtures curiosity, and builds the resilience required to thrive in an ever-changing world. Our expansive campus spans several acres of green, safe, and stimulating environment designed to spark creativity and foster intellectual growth. We offer a seamless educational journey from Pre-Primary through Senior Secondary (Class XII), guided by a team of more than 120 highly qualified and deeply committed educators who treat every student as an individual with unique strengths. Our smart classrooms, well-stocked library, state-of-the-art science and computer laboratories, dedicated arts and music rooms, and professional-grade sports facilities together create an ecosystem where academic brilliance and all-round development go hand in hand. The school proudly maintains a consistent 100% board result record for Class X and XII, while simultaneously producing national-level athletes, award-winning artists, and technology innovators. Rooted in Indian values yet open to global perspectives, H.S. Global Academy continues to evolve — embracing modern pedagogy, environmental consciousness, and community engagement — to prepare every student to become a responsible, compassionate, and empowered citizen of the world.',
+            'long_description' => 'Established in 2019 by visionary educationist Mr. Harish Sharma, H.S. Global Academy has grown from a modest school with a handful of classrooms into one of the region\'s most respected centres of learning. Over the years, the institution has remained unwavering in its belief that true education transcends textbooks — it shapes character, nurtures curiosity, and builds the resilience required to thrive in an ever-changing world. Our expansive campus spans several acres of green, safe, and stimulating environment designed to spark creativity and foster intellectual growth. We offer a seamless educational journey from Pre-Primary through Senior Secondary (Class XII), guided by a team of more than 120 highly qualified and deeply committed educators who treat every student as an individual with unique strengths. Our smart classrooms, well-stocked library, state-of-the-art science and computer laboratories, dedicated arts and music rooms, and professional-grade sports facilities together create an ecosystem where academic brilliance and all-round development go hand in hand. The school proudly maintains a consistent 100% board result record for Class X and XII, while simultaneously producing national-level athletes, award-winning artists, and technology innovators. Rooted in Indian values yet open to global perspectives, H.S. Global Academy continues to evolve — embracing modern pedagogy, environmental consciousness, and community engagement — to prepare every student to become a responsible, compassionate, and empowered citizen of the world.',
             'gallery' => [
                 ['src' => asset('assets/web/images/about-us/gallery-1.jpg'), 'alt' => 'School Campus', 'caption' => 'Our Sprawling Campus'],
                 ['src' => asset('assets/web/images/about-us/gallery-2.jpg'), 'alt' => 'Smart Classrooms', 'caption' => 'Smart Classrooms'],
@@ -85,7 +85,7 @@ class MockData
                 'name'  => 'Mr. Harish Sharma',
                 'title' => 'Founder & Chairman',
                 'photo' => asset('assets/web/images/team/chairman.jpg'),
-                'story' => 'Born in a small town where quality schooling was a distant dream for most families, Mr. Harish Sharma grew up witnessing first-hand the transformative power of education. After completing his post-graduation in Education Management from Delhi University and spending several years as a teacher and school administrator, he returned to his roots with a singular purpose — to build a school that would provide every child, regardless of background, access to world-class education. In 2005, he laid the foundation stone of H.S. Global Academy with just three classrooms, twelve teachers, and an unwavering conviction that education is the greatest equaliser. Over the next two decades, under his visionary leadership, the school expanded to a fully equipped campus serving over 2,500 students. Mr. Sharma personally mentors teachers, champions inclusive policies, and believes that a school\'s true report card is the character and confidence of its graduates. His guiding philosophy — "Educate the mind, elevate the soul" — remains the North Star of every initiative at H.S. Global Academy.',
+                'story' => 'Born in a small town where quality schooling was a distant dream for most families, Mr. Harish Sharma grew up witnessing first-hand the transformative power of education. After completing his post-graduation in Education Management from Delhi University and spending several years as a teacher and school administrator, he returned to his roots with a singular purpose — to build a school that would provide every child, regardless of background, access to world-class education. In 2019, he laid the foundation stone of H.S. Global Academy with just three classrooms, twelve teachers, and an unwavering conviction that education is the greatest equaliser. Over the years, under his visionary leadership, the school expanded to a fully equipped campus serving over 2,500 students. Mr. Sharma personally mentors teachers, champions inclusive policies, and believes that a school\'s true report card is the character and confidence of its graduates. His guiding philosophy — "Educate the mind, elevate the soul" — remains the North Star of every initiative at H.S. Global Academy.',
                 'message' => 'It is my privilege to lead an institution that has, over the years, become synonymous with quality education and all-round development. At H.S. Global Academy, we believe every child is unique, and our mission is to provide an environment where each student can discover and develop their true potential. I am proud of our dedicated faculty, committed parents, and brilliant students who make this journey worthwhile. As we look to the future, our commitment to excellence, inclusivity, and innovation will only grow stronger.',
                 'quote' => 'Educate the mind, elevate the soul.',
             ],
@@ -174,7 +174,7 @@ class MockData
                 ['number' => '2500+', 'label' => 'Students'],
                 ['number' => '120+',  'label' => 'Qualified Teachers'],
                 ['number' => '100%',  'label' => 'Board Result (Class X)'],
-                ['number' => '35+',   'label' => 'Smart Classrooms'],
+                ['number' => '5000+',   'label' => 'Satisfied Parents'],
             ],
             // TODO: Replace with AcademicProgram::active()->get();
             'programs' => [
@@ -661,10 +661,10 @@ class MockData
             ['label' => 'Principal Name',              'value' => 'Dr. Anjali Verma'],
             ['label' => 'Contact No.',                 'value' => '+91-11-XXXX-XXXX'],
             ['label' => 'Email',                       'value' => 'info@hsglobalacademy.edu.in'],
-            ['label' => 'Year of Establishment',       'value' => '2005'],
+            ['label' => 'Year of Establishment',       'value' => '2019'],
             ['label' => 'Status of School',            'value' => 'Co-Educational'],
             ['label' => 'Type of Affiliation',         'value' => 'Permanent'],
-            ['label' => 'Period of Affiliation',       'value' => '01/04/2005 – 31/03/2030'],
+            ['label' => 'Period of Affiliation',       'value' => '01/04/2019 – 31/03/2030'],
             ['label' => 'NOC Issuing State Govt.',     'value' => 'Government of Delhi'],
             ['label' => 'NOC No.',                     'value' => 'DL/EDU/XXX/2004'],
             ['label' => 'Is the school recognised?',   'value' => 'Yes'],

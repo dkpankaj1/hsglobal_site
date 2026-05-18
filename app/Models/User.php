@@ -29,4 +29,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function getProfileImageAttribute()
+    {
+        return $this->avatar ? $this->avatar : asset('static/avatar/user.png');
+    }
 }

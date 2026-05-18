@@ -3,21 +3,22 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Starter | Drezoc - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>{{ $setting?->brand_name ?? 'Admin' }} | Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Drezoc - Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Admin Dashboard" name="description" />
     <meta content="MyraStudio" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/backend/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ $setting?->favicon_url ?? asset('assets/backend/images/favicon.ico') }}">
 
     <!-- App css -->
     <link href="{{ asset('assets/backend/css/style.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/backend/css/icons.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/backend/libs/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css" />
     <script src="{{ asset('assets/backend/js/config.js') }}"></script>
-
+    <link href="{{ asset('assets/backend/css/fixes.css') }}" rel="stylesheet" type="text/css">
+    
 </head>
 
 <body>

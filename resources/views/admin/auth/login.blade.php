@@ -6,7 +6,9 @@
                 <div class="d-flex align-items-center min-vh-100">
                     <div class="w-100 d-block card shadow-lg rounded my-5 overflow-hidden">
                         <div class="row">
-                            <div class="col-lg-5 d-none d-lg-block bg-login rounded-left"></div>
+                            <div class="col-lg-5 d-none d-lg-block bg-login rounded-left" 
+                            style="background: url({{ asset('static/background/main.jpeg') }}) center center; background-size: cover;"
+                            ></div>
                             <div class="col-lg-7">
                                 <div class="p-5">
                                     <div class="text-center w-75 mx-auto auth-logo mb-4">
@@ -36,7 +38,7 @@
                                         </div>
 
                                         <div class="form-group mb-3">
-                                            <x-input-label name="password" text="Email Address" />
+                                            <x-input-label name="password" text="Password" />
                                             <x-input-field name="password" type="password" placeholder="Enter your password" />
                                         </div>
 

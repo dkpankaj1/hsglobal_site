@@ -20,6 +20,7 @@ class SettingController extends Controller
         $request->validate([
             'brand_name' => 'required|string|max:255',
             'logo' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'footer_logo' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'favicon' => 'nullable|mimes:ico,png|max:1024',
             'contact_email' => 'required|email|max:255',
             'contact_phone' => 'required|string|max:20',
@@ -39,7 +40,7 @@ class SettingController extends Controller
             $setting = Setting::first();
             $imageHandler = new ImageHandler('logo');
 
-            $data = $request->except(['logo', 'favicon']);
+            $data = $request->except(['logo', 'footer_logo', 'favicon']);
 
             if ($request->hasFile('logo')) {
 
@@ -47,6 +48,14 @@ class SettingController extends Controller
                     $imageHandler->delete($setting->logo);
                 }
                 $data['logo'] = $imageHandler->upload($request->file('logo'));
+            }
+
+            if ($request->hasFile('footer_logo')) {
+
+                if (isset($setting->footer_logo)) {
+                    $imageHandler->delete($setting->footer_logo);
+                }
+                $data['footer_logo'] = $imageHandler->upload($request->file('footer_logo'));
             }
 
             if ($request->hasFile('favicon')) {
