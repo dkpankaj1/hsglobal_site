@@ -9,17 +9,19 @@
     <meta name="author" content="themexriver">
 
     <!-- Page Title -->
-    <title> Industry, Factory and Engineering HTML5 Template </title>
+    <title>{{ $setting?->meta_title ?? $setting?->brand_name ?? 'HSGA School' }}</title>
+
+    <!-- SEO Meta Tags -->
+    @if($setting?->meta_description)
+    <meta name="description" content="{{ $setting->meta_description }}">
+    @endif
+    @if($setting?->meta_keywords)
+    <meta name="keywords" content="{{ $setting->meta_keywords }}">
+    @endif
 
     <!-- Favicon and Touch Icons -->
-    <link href="{{ asset('assets/web/images/favicon/favicon.png') }}" rel="shortcut icon" type="image/png">
-    <link href="{{ asset('assets/web/images/favicon/apple-touch-icon.png') }}" rel="apple-touch-icon">
-    <link href="{{ asset('assets/web/images/favicon/apple-touch-icon-72x72.png') }}" rel="apple-touch-icon"
-        sizes="72x72">
-    <link href="{{ asset('assets/web/images/favicon/apple-touch-icon-114x114.png') }}" rel="apple-touch-icon"
-        sizes="114x114">
-    <link href="{{ asset('assets/web/images/favicon/apple-touch-icon-144x144.png') }}" rel="apple-touch-icon"
-        sizes="144x144">
+    <link href="{{ $setting?->favicon_url ?? asset('static/logo/favicon.png') }}" rel="shortcut icon" type="image/png">
+    <link href="{{ $setting?->favicon_url ?? asset('static/logo/favicon.png') }}" rel="apple-touch-icon">
 
     <!-- Icon fonts -->
     <link href="{{ asset('assets/web/css/font-awesome.min.css') }}" rel="stylesheet">

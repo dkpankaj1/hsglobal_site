@@ -132,7 +132,7 @@
         <div class="container">
             <div style="border-radius:8px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.08);">
                 <iframe
-                    src="https://www.google.com/maps?q=Haridwar,%20Uttarakhand&output=embed"
+                    src="https://www.google.com/maps?q=HS+Global+Academy,+Bhaishahi+Bazar,+Hata,+Kushinagar,+Uttar+Pradesh+274204&output=embed"
                     width="100%"
                     height="420"
                     style="border:0; display:block;"

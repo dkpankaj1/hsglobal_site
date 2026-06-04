@@ -3,9 +3,8 @@
         <div class="row">
             <div class="col col-sm-6 contact-info">
                 <ul>
-                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> mail@solid-industry.co.uk</li>
-                    <li><i class="fa fa-volume-control-phone" aria-hidden="true"></i> +012 (3456) 88 974
-                    </li>
+                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ $setting?->contact_email ?? 'info@hsgaschool.in' }}</li>
+                    <li><i class="fa fa-volume-control-phone" aria-hidden="true"></i> {{ $setting?->contact_phone ?? '+91 00000 00000' }}</li>
                 </ul>
             </div>
             <div class="col col-sm-6 language-login-wrapper">
