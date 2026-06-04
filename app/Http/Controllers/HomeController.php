@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Data\MockData;
+use App\Models\ImportantNotice;
 
 class HomeController extends Controller
 {
@@ -10,6 +11,9 @@ class HomeController extends Controller
     {
         $school = MockData::aboutSchool();
         $home = MockData::homePage();
+
+        $importantNotice = ImportantNotice::first();
+
         $authorities = [
             [
                 'name' => 'Mr. Harish Sharma',
@@ -34,6 +38,6 @@ class HomeController extends Controller
             ],
         ];
 
-        return view('pages.home', compact('school', 'home', 'authorities'));
+        return view('pages.home', compact('school', 'home', 'authorities', 'importantNotice'));
     }
 }

@@ -8,9 +8,9 @@
 
     @push('pageScripts')
         <script src="{{ asset('assets/web/js/home-hero-slider.js') }}"></script>
-        @if(!empty($home['popup']['enabled']))
+        @if (!empty($home['popup']['enabled']))
             <script>
-                $(window).on('load', function () {
+                $(window).on('load', function() {
                     $('#homePopupModal').modal('show');
                 });
             </script>
@@ -24,10 +24,10 @@
                 <span class="notice-label"><i class="fa fa-bullhorn" aria-hidden="true"></i> Notices</span>
                 <div class="marquee-wrapper">
                     <marquee behavior="scroll" direction="left" scrollamount="5" onmouseout="this.start();">
-                        @foreach($home['notices'] as $notice)
+                        @foreach ($home['notices'] as $notice)
                             <a href="{{ route('notifications.show', $notice['id']) }}"
                                 class="notice-item">{{ $notice['title'] }}</a>
-                            @if(!$loop->last)
+                            @if (!$loop->last)
                                 <span class="notice-separator"><i class="fa fa-circle" aria-hidden="true"></i></span>
                             @endif
                         @endforeach
@@ -45,7 +45,7 @@
     @php
         $heroSlides = [
             [
-                'src' =>asset('static/sliders/slider1.png'),
+                'src' => asset('static/sliders/slider1.png'),
                 'title' => 'Modern Campus Experience',
             ],
             [
@@ -69,7 +69,7 @@
                     <div class="about-details">
                         <p>{{ $school['description'] }}</p>
                         <ul class="home-check-list">
-                            @foreach($school['highlights'] as $item)
+                            @foreach ($school['highlights'] as $item)
                                 <li><i class="fa fa-check-circle" aria-hidden="true"></i> {{ $item }}</li>
                             @endforeach
                         </ul>
@@ -78,9 +78,12 @@
                 </div>
                 <div class="col col-md-6 about-image-col">
                     <div class="img-holder">
-                        <img src="{{asset('assets/web/images/about-us/about_2.png')}}" alt="" class="img img-responsive">
-                        <img src="{{asset('assets/web/images/about-us/about_1.png')}}" alt="" class="img img-responsive">
-                        <img src="{{asset('assets/web/images/about-us/about_3.png')}}" alt="" class="img img-responsive">
+                        <img src="{{ asset('assets/web/images/about-us/about_2.png') }}" alt=""
+                            class="img img-responsive">
+                        <img src="{{ asset('assets/web/images/about-us/about_1.png') }}" alt=""
+                            class="img img-responsive">
+                        <img src="{{ asset('assets/web/images/about-us/about_3.png') }}" alt=""
+                            class="img img-responsive">
                     </div>
                 </div>
             </div> <!-- end row -->
@@ -98,7 +101,7 @@
                 </div>
             </div>
             <div class="row start-count">
-                @foreach($home['stats'] as $stat)
+                @foreach ($home['stats'] as $stat)
                     <div class="col col-sm-6 col-md-3">
                         <div class="home-stat-card">
 
@@ -108,7 +111,9 @@
                                     $suffix = preg_replace('/[0-9]/', '', $stat['number']);
                                 @endphp
                                 <span class="counter" data-count="{{ $number }}" data-duration="2000">00</span>
-                                @if($suffix)<span>{{ $suffix }}</span>@endif
+                                @if ($suffix)
+                                    <span>{{ $suffix }}</span>
+                                @endif
                             </h3>
                             <p>{{ $stat['label'] }}</p>
 
@@ -128,16 +133,18 @@
             <div class="row section-title-s3">
                 <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <h2>School <span>Authorities</span></h2>
-                    <p>Meet the leadership team guiding academic excellence, discipline, and the long-term vision of the school.</p>
+                    <p>Meet the leadership team guiding academic excellence, discipline, and the long-term vision of the
+                        school.</p>
                 </div>
             </div>
 
             <div class="row home-authority-grid">
-                @foreach($authorities as $authority)
+                @foreach ($authorities as $authority)
                     <div class="col col-sm-6 col-md-4">
                         <article class="home-authority-card">
                             <div class="home-authority-photo">
-                                <img src="{{ $authority['photo'] }}" alt="{{ $authority['name'] }}" class="img-responsive">
+                                <img src="{{ $authority['photo'] }}" alt="{{ $authority['name'] }}"
+                                    class="img-responsive">
                             </div>
 
                             <div class="home-authority-content">
@@ -166,7 +173,7 @@
                 </div>
             </div>
             <div class="row home-facility-grid">
-                @foreach($home['facilities'] as $facility)
+                @foreach ($home['facilities'] as $facility)
                     <div class="col col-sm-6 col-md-4">
                         <a href="{{ route($facility['route']) }}" class="home-facility-card">
                             <div class="home-facility-media">
@@ -194,7 +201,7 @@
                         <h2>Excellence In <span>Academics & Activities</span></h2>
                     </div>
                     <ul class="home-check-list">
-                        @foreach($home['achievements'] as $achievement)
+                        @foreach ($home['achievements'] as $achievement)
                             <li><i class="fa fa-trophy" aria-hidden="true"></i> {{ $achievement }}</li>
                         @endforeach
                     </ul>
@@ -202,7 +209,8 @@
                 <div class="col col-md-5">
                     <div class="home-admission-cta">
                         <h3>Admissions Open</h3>
-                        <p>Join {{ $school['name'] }} for session 2026-27. Enquire today for eligibility, documents, and
+                        <p>Join {{ $school['name'] }} for session 2026-27. Enquire today for eligibility, documents,
+                            and
                             fee details.</p>
                         <a href="{{ route('admission.procedure') }}" class="theme-btn-s1">Admission Procedure</a>
                         <a href="{{ route('contact') }}" class="theme-btn-s2">Contact Us</a>
@@ -213,8 +221,9 @@
     </section>
     <!-- end of achievements + cta -->
 
-    @if(!empty($home['popup']['enabled']))
-        <div class="modal fade home-popup-modal" id="homePopupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    @if ($importantNotice->enabled)
+        <div class="modal fade home-popup-modal" id="homePopupModal" tabindex="-1" role="dialog"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -224,21 +233,23 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-5 home-popup-media">
-                                <img src="{{ $home['popup']['image'] }}" alt="{{ $home['popup']['title'] }}">
+                                <img src="{{ $importantNotice->banner_url }}" alt="{{ $importantNotice->title }}">
                             </div>
                             <div class="col-md-7">
                                 <div class="home-popup-body">
                                     <div class="section-title-s1" style="margin-bottom:12px;">
                                         <span>Important Notice</span>
-                                        <h2>Admission Update</h2>
+                                        <h2>{{ $importantNotice->heading }}</h2>
                                     </div>
 
-                                    <h3>{{ $home['popup']['title'] }}</h3>
-                                    <p>{{ $home['popup']['description'] }}</p>
-
-                                    <a href="{{ $home['popup']['link'] }}" class="btn theme-btn-s2">
-                                        {{ $home['popup']['link_text'] }}
-                                    </a>
+                                    <h3>{{ $importantNotice->title }}</h3>
+                                    <p>{{ $importantNotice->description }}</p>
+                                    @isset($importantNotice->action)
+                                        <hr>
+                                        <a href="{{ $importantNotice->action }}" class="btn theme-btn-s2">
+                                            Process
+                                        </a>
+                                    @endisset
                                 </div>
                             </div>
                         </div>

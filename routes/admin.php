@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ImportantNoticeController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ThemeController;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         Route::get('login', [AuthController::class, 'create'])->name('login');
         Route::post('login', [AuthController::class, 'store']);
-
     });
 
     // auth Route
@@ -24,7 +24,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-         Route::post('themes/toggle', [ThemeController::class, 'toggle'])->name('themes.toggle');
+        Route::get('important-notice', [ImportantNoticeController::class, 'edit'])
+            ->name('important-notice.edit');
+        Route::put('important-notice', [ImportantNoticeController::class, 'update'])
+            ->name('important-notice.update');
+
+        Route::post('themes/toggle', [ThemeController::class, 'toggle'])->name('themes.toggle');
 
         Route::group(['prefix' => "settings", 'as' => 'settings.'], function () {
             Route::get('/edit', [SettingController::class, 'edit'])->name('edit');
@@ -40,7 +45,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         });
 
         Route::post('logout', [AuthController::class, 'destroy'])->name('logout');
-
     });
-
 });
