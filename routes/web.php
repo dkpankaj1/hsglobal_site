@@ -67,15 +67,11 @@ Route::prefix('gallery')->name('gallery.')->group(function () {
 
 // ── Mandatory Disclosure ──────────────────────────────────────────
 Route::prefix('mandatory-disclosure')->name('disclosure.')->group(function () {
-    Route::get('/general-information', [MandatoryDisclosureController::class, 'generalInfo'])->name('general');
-    Route::get('/school-management',   [MandatoryDisclosureController::class, 'schoolManagement'])->name('management');
-    Route::get('/documents',           [MandatoryDisclosureController::class, 'documents'])->name('documents');
-    Route::get('/infrastructure',      [MandatoryDisclosureController::class, 'infrastructure'])->name('infrastructure');
-    Route::get('/fee-structure',       [MandatoryDisclosureController::class, 'feeStructure'])->name('fee');
-    Route::get('/staff-details',       [MandatoryDisclosureController::class, 'staffDetails'])->name('staff');
-    Route::get('/safety-details',      [MandatoryDisclosureController::class, 'safetyDetails'])->name('safety');
-    Route::get('/transport-details',   [MandatoryDisclosureController::class, 'transport'])->name('transport');
-    Route::get('/financial-status',    [MandatoryDisclosureController::class, 'financialStatus'])->name('financial');
+    Route::get('/', [MandatoryDisclosureController::class, 'index'])->name('index');
+    Route::get('/private/{token}', [MandatoryDisclosureController::class, 'download'])
+        ->whereUuid('token')
+        ->name('download');
+    Route::get('/public/{slug}', [MandatoryDisclosureController::class, 'show'])->name('show');
 });
 
 // ── Notifications ─────────────────────────────────────────────────

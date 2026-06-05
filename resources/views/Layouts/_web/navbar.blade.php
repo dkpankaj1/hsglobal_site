@@ -15,7 +15,8 @@
                 <li><a href="{{ route('home') }}">Home</a></li>
 
                 <li class="menu-item-has-children">
-                    <a href="{{ route('about.school') }}">About Us <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <a href="{{ route('about.school') }}">About Us <i class="fa fa-angle-down"
+                            aria-hidden="true"></i></a>
                     <ul class="sub-menu" style="display: none;">
                         <li><a href="{{ route('about.school') }}">About School</a></li>
                         <li><a href="{{ route('about.vision') }}">Vision &amp; Mission</a></li>
@@ -26,7 +27,8 @@
                 </li>
 
                 <li class="menu-item-has-children">
-                    <a href="{{ route('academics.curriculum') }}">Academics <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <a href="{{ route('academics.curriculum') }}">Academics <i class="fa fa-angle-down"
+                            aria-hidden="true"></i></a>
                     <ul class="sub-menu" style="display: none;">
                         <li><a href="{{ route('academics.curriculum') }}">Curriculum</a></li>
                         <li><a href="{{ route('academics.examination') }}">Examination Policy</a></li>
@@ -39,7 +41,8 @@
                 </li>
 
                 <li class="menu-item-has-children">
-                    <a href="{{ route('admission.procedure') }}">Admission <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <a href="{{ route('admission.procedure') }}">Admission <i class="fa fa-angle-down"
+                            aria-hidden="true"></i></a>
                     <ul class="sub-menu" style="display: none;">
                         <li><a href="{{ route('admission.procedure') }}">Admission Procedure</a></li>
                         <li><a href="{{ route('admission.eligibility') }}">Eligibility Criteria</a></li>
@@ -51,7 +54,8 @@
                 </li>
 
                 <li class="menu-item-has-children">
-                    <a href="{{ route('facilities.infrastructure') }}">Facilities <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <a href="{{ route('facilities.infrastructure') }}">Facilities <i class="fa fa-angle-down"
+                            aria-hidden="true"></i></a>
                     <ul class="sub-menu" style="display: none;">
                         <li><a href="{{ route('facilities.infrastructure') }}">Infrastructure</a></li>
                         <li><a href="{{ route('facilities.smart-classrooms') }}">Smart Classrooms</a></li>
@@ -63,7 +67,8 @@
                 </li>
 
                 <li class="menu-item-has-children">
-                    <a href="{{ route('gallery.photos') }}">Gallery <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <a href="{{ route('gallery.photos') }}">Gallery <i class="fa fa-angle-down"
+                            aria-hidden="true"></i></a>
                     <ul class="sub-menu" style="display: none;">
                         <li><a href="{{ route('gallery.photos') }}">Photo Gallery</a></li>
                         <li><a href="{{ route('gallery.videos') }}">Video Gallery</a></li>
@@ -74,18 +79,14 @@
                     </ul>
                 </li>
 
+
                 <li class="menu-item-has-children">
-                    <a href="{{ route('disclosure.general') }}">Mandatory Disclosure <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <a href="{{ route('disclosure.index') }}">Mandatory Disclosure <i class="fa fa-angle-down"
+                            aria-hidden="true"></i></a>
                     <ul class="sub-menu" style="display: none;">
-                        <li><a href="{{ route('disclosure.general') }}">General Information</a></li>
-                        <li><a href="{{ route('disclosure.management') }}">School Management</a></li>
-                        <li><a href="{{ route('disclosure.documents') }}">Documents &amp; Information</a></li>
-                        <li><a href="{{ route('disclosure.infrastructure') }}">Infrastructure Details</a></li>
-                        <li><a href="{{ route('disclosure.fee') }}">Fee Structure</a></li>
-                        <li><a href="{{ route('disclosure.staff') }}">Staff Details</a></li>
-                        <li><a href="{{ route('disclosure.safety') }}">Safety Details</a></li>
-                        <li><a href="{{ route('disclosure.transport') }}">Transport Details</a></li>
-                        <li><a href="{{ route('disclosure.financial') }}">Financial Status</a></li>
+                        @foreach (\App\Models\MandatoryDisclosure::where('is_public', true)->orderBy('name')->get() as $item)
+                            <li><a href="{{ route('disclosure.show', $item->slug) }}">{{ $item->name }}</a></li>
+                        @endforeach
                     </ul>
                 </li>
 

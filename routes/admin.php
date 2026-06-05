@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ImportantNoticeController;
+use App\Http\Controllers\Admin\MandatoryDisclosureController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ThemeController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             ->name('important-notice.edit');
         Route::put('important-notice', [ImportantNoticeController::class, 'update'])
             ->name('important-notice.update');
+
+        Route::resource('mandatory-disclosure', MandatoryDisclosureController::class);
 
         Route::post('themes/toggle', [ThemeController::class, 'toggle'])->name('themes.toggle');
 

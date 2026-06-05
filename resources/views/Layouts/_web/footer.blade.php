@@ -4,16 +4,23 @@
             <div class="col col-lg-5 col-md-6 col-sm-12">
                 <div class="widget hsga-footer-brand">
                     <a href="{{ route('home') }}" class="logo" style="display:inline-block; margin-bottom:14px;">
-                        <img src="{{ $setting?->footer_logo_url ?? asset('static/logo/logo_footer.png') }}" alt="{{ $setting?->brand_name ?? 'HSGA School' }} logo" style="max-height:72px; display:block;">
+                        <img src="{{ $setting?->footer_logo_url ?? asset('static/logo/logo_footer.png') }}"
+                            alt="{{ $setting?->brand_name ?? 'HSGA School' }} logo"
+                            style="max-height:72px; display:block;">
                     </a>
                     <p>
                         Building confident learners through strong academics, disciplined values, and meaningful
                         co-curricular growth in a safe school environment.
                     </p>
                     <ul class="hsga-contact-list">
-                        <li><i class="fa fa-map-marker"></i>{{ $setting?->contact_address ?? 'Haridwar, Uttarakhand' }}</li>
-                        <li><i class="fa fa-phone"></i><a href="tel:{{ $setting?->contact_phone ?? '+910000000000' }}">{{ $setting?->contact_phone ?? '+91 00000 00000' }}</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="mailto:{{ $setting?->contact_email ?? 'info@hsgaschool.in' }}">{{ $setting?->contact_email ?? 'info@hsgaschool.in' }}</a></li>
+                        <li><i class="fa fa-map-marker"></i>{{ $setting?->contact_address ?? 'Haridwar, Uttarakhand' }}
+                        </li>
+                        <li><i class="fa fa-phone"></i><a
+                                href="tel:{{ $setting?->contact_phone ?? '+910000000000' }}">{{ $setting?->contact_phone ?? '+91 00000 00000' }}</a>
+                        </li>
+                        <li><i class="fa fa-envelope"></i><a
+                                href="mailto:{{ $setting?->contact_email ?? 'info@hsgaschool.in' }}">{{ $setting?->contact_email ?? 'info@hsgaschool.in' }}</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -39,24 +46,27 @@
                         <li><a href="{{ route('facilities.library') }}">Library</a></li>
                         <li><a href="{{ route('gallery.videos') }}">Video Gallery</a></li>
                         <li><a href="{{ route('notifications.list') }}">Notifications</a></li>
-                        <li><a href="{{ route('disclosure.general') }}">Mandatory Disclosure</a></li>
+                        <li><a href="{{ route('disclosure.index') }}">Mandatory Disclosure</a></li>
                     </ul>
                     <div class="hsga-social-wrap">
-                        @if($setting?->facebook_link)
-                        <a href="{{ $setting->facebook_link }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                        @if ($setting?->facebook_link)
+                            <a href="{{ $setting->facebook_link }}" target="_blank" rel="noopener noreferrer"
+                                aria-label="Facebook"><i class="fa fa-facebook"></i></a>
                         @else
-                        <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
                         @endif
-                        @if($setting?->instagram_link)
-                        <a href="{{ $setting->instagram_link }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                        @if ($setting?->instagram_link)
+                            <a href="{{ $setting->instagram_link }}" target="_blank" rel="noopener noreferrer"
+                                aria-label="Instagram"><i class="fa fa-instagram"></i></a>
                         @else
-                        <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
                         @endif
                         <a href="#" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
-                        @if($setting?->linkedin_link)
-                        <a href="{{ $setting->linkedin_link }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                        @if ($setting?->linkedin_link)
+                            <a href="{{ $setting->linkedin_link }}" target="_blank" rel="noopener noreferrer"
+                                aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
                         @else
-                        <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
                         @endif
                     </div>
                 </div>
@@ -70,8 +80,11 @@
         <div class="row">
             <div class="col col-xs-12">
                 <p class="copyright">
-                    &copy; {{ date('Y') }} <a href="{{ route('home') }}">{{ $setting?->brand_name ?? 'HSGA School' }}</a>. All Rights Reserved.
-                    &nbsp;|&nbsp; Developed by <a href="https://dipankarwebdev.co.in" target="_blank" rel="noopener noreferrer">TechWizi</a>
+                    &copy; {{ date('Y') }} <a
+                        href="{{ route('home') }}">{{ $setting?->brand_name ?? 'HSGA School' }}</a>. All Rights
+                    Reserved.
+                    &nbsp;|&nbsp; Developed by <a href="https://dipankarwebdev.co.in" target="_blank"
+                        rel="noopener noreferrer">TechWizi</a>
                 </p>
             </div>
         </div>

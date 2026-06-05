@@ -45,7 +45,7 @@ return new class extends Migration {
 
             // Contact Information
             'contact_email' => 'contact@hsglobalacademy.in',
-            'contact_phone' => '+91 89605 53332, +91 94510 27766',
+            'contact_phone' => '+91 9451027766',
             'contact_address' => 'Bhaishahi Bazar, Hata, Kushinagar, U.P.',
 
             // Social Media Links
