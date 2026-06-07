@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Data\MockData;
 use App\Models\ImageSlider;
 use App\Models\ImportantNotice;
+use App\Models\NoticeBoard;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,12 @@ class HomeController extends Controller
                 'title' => $item->alt_text
             ];
         });
+
+        $home['notices'] = NoticeBoard::where('is_publish', true)
+            ->latest()
+            ->take(5)
+            ->get(['id', 'title'])
+            ->toArray();
 
         $importantNotice = ImportantNotice::firstOrCreate();
 

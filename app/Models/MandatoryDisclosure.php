@@ -41,7 +41,7 @@ class MandatoryDisclosure extends Model
             return null;
         }
 
-        return asset('upload/' . $this->document);
+        return asset($this->document);
     }
 
     /**

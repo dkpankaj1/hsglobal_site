@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Data\MockData;
+use App\Models\NoticeBoard;
 
 class NotificationController extends Controller
 {
     public function index()
     {
-        $notifications = MockData::notifications();
+        $notifications = NoticeBoard::where('is_publish', true)
+            ->latest()
+            ->paginate(12);
 
         return view('pages.notifications.index', compact('notifications'));
     }
 
     public function show($id)
     {
-        $notification = MockData::notification($id);
-
-        if (!$notification) {
-            abort(404, 'Notification not found');
-        }
+        $notification = NoticeBoard::where('is_publish', true)->findOrFail($id);
 
         return view('pages.notifications.show', compact('notification'));
     }

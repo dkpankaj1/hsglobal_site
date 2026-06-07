@@ -30,7 +30,7 @@ class DocumentHandler
 
             $file->move($this->folder, $filename);
 
-            return $this->folderName . '/' . $filename;
+            return 'upload/' . $this->folderName . '/' . $filename;
         } catch (\Exception) {
             return null;
         }

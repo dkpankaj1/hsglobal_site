@@ -34,6 +34,14 @@
             </a>
         </li>
 
+        <li class="menu-title">Notices</li>
+        <li class="menu-item">
+            <a href="{{ route('admin.notice-board.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="clipboard-list"></i></span>
+                <span class="menu-text"> Notice Board </span>
+            </a>
+        </li>
+
         <li class="menu-title">Pages</li>
 
 
