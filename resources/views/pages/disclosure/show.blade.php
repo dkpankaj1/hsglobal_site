@@ -9,9 +9,9 @@
         ],
     ])
 
-    <section class="blog-with-sidebar-section section-padding disclosure-page">
+    <section class="blog-with-sidebar-section disclosure-page" style="padding:50px 0;">
         <div class="container">
-            <div class="section-title-s1 disclosure-heading">
+            <div class="section-title-s1 disclosure-heading" style="margin-bottom: 1.5rem;">
                 <span>Mandatory Disclosure</span>
                 <h2>{{ $disclosure->name }}</h2>
             </div>

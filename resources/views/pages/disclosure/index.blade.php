@@ -6,15 +6,12 @@
         'breadcrumb' => [['label' => 'Mandatory Disclosure']],
     ])
 
-    <section class="section-padding">
+    <section style="padding:50px 0;">
         <div class="container">
             <div class="section-title-s1">
                 <span>Mandatory Disclosure</span>
                 <h2>Public Documents</h2>
             </div>
-
-
-
             <div class="table-responsive" style="margin-top:30px;">
                 <table class="table table-bordered table-hover">
                     <thead style="background-color:var(--main-color); color:#000;">

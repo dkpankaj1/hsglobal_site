@@ -26,6 +26,14 @@
             </a>
         </li>
 
+        <li class="menu-title">Sliders</li>
+        <li class="menu-item">
+            <a href="{{ route('admin.image-slider.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="image"></i></span>
+                <span class="menu-text"> Image Slider </span>
+            </a>
+        </li>
+
         <li class="menu-title">Pages</li>
 
 

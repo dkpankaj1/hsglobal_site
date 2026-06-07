@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Data\MockData;
+use App\Models\ImageSlider;
 use App\Models\ImportantNotice;
 
 class HomeController extends Controller
@@ -11,8 +12,14 @@ class HomeController extends Controller
     {
         $school = MockData::aboutSchool();
         $home = MockData::homePage();
+        $heroSlides  = ImageSlider::all()->map(function ($item) {
+            return [
+                'src' => $item->slider_image_url,
+                'title' => $item->alt_text
+            ];
+        });
 
-        $importantNotice = ImportantNotice::first();
+        $importantNotice = ImportantNotice::firstOrCreate();
 
         $authorities = [
             [
@@ -38,6 +45,12 @@ class HomeController extends Controller
             ],
         ];
 
-        return view('pages.home', compact('school', 'home', 'authorities', 'importantNotice'));
+        return view('pages.home', compact(
+            'school',
+            'home',
+            'authorities',
+            'importantNotice',
+            'heroSlides'
+        ));
     }
 }

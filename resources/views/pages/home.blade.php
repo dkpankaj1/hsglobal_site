@@ -41,22 +41,7 @@
     </section>
     <!-- end of notices marquee -->
 
-
-    @php
-        $heroSlides = [
-            [
-                'src' => asset('static/sliders/slider1.png'),
-                'title' => 'Modern Campus Experience',
-            ],
-            [
-                'src' => asset('static/sliders/slider2.png'),
-                'title' => 'Future-Ready Students',
-            ],
-        ];
-    @endphp
     <x-web.hero-slider :slides="$heroSlides" :autoplay-ms="5000" />
-
-
 
     <section class="about-us " style="padding: 3rem;">
         <div class="container">
