@@ -9,14 +9,14 @@
     <meta name="author" content="themexriver">
 
     <!-- Page Title -->
-    <title>{{ $setting?->meta_title ?? $setting?->brand_name ?? 'HSGA School' }}</title>
+    <title>{{ $setting?->meta_title ?? ($setting?->brand_name ?? 'HSGA School') }}</title>
 
     <!-- SEO Meta Tags -->
-    @if($setting?->meta_description)
-    <meta name="description" content="{{ $setting->meta_description }}">
+    @if ($setting?->meta_description)
+        <meta name="description" content="{{ $setting->meta_description }}">
     @endif
-    @if($setting?->meta_keywords)
-    <meta name="keywords" content="{{ $setting->meta_keywords }}">
+    @if ($setting?->meta_keywords)
+        <meta name="keywords" content="{{ $setting->meta_keywords }}">
     @endif
 
     <!-- Favicon and Touch Icons -->
@@ -55,14 +55,14 @@
     <div class="page-wrapper">
 
         <!-- start preloader -->
-       @include('Layouts._web.loader')
+        @include('layouts._web.loader')
         <!-- end preloader -->
 
         <!-- Start header -->
         <header class="site-header header-style-2">
-            @include('Layouts._web.topbar')
-            @include('Layouts._web.bottom-bar')
-            @include('Layouts._web.navbar')
+            @include('layouts._web.topbar')
+            @include('layouts._web.bottom-bar')
+            @include('layouts._web.navbar')
         </header>
         <!-- end of header -->
 
@@ -71,7 +71,7 @@
 
 
         <!-- start footer-->
-        @include('Layouts._web.footer')
+        @include('layouts._web.footer')
         <!-- end footer-->
 
     </div>
@@ -92,11 +92,8 @@
 
     @stack('pageScripts')
 
-    <a class="floating-whatsapp"
-       href="https://wa.me/910000000000"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Chat on WhatsApp">
+    <a class="floating-whatsapp" href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp">
         <span class="floating-whatsapp-icon" aria-hidden="true">
             <i class="fa fa-whatsapp"></i>
         </span>

@@ -1,11 +1,8 @@
 ﻿<x-web-layout>
 
-    @include('Layouts._web.page-header', [
-        'title'      => 'Vision & Mission',
-        'breadcrumb' => [
-            ['label' => 'About Us', 'url' => route('about.school')],
-            ['label' => 'Vision & Mission'],
-        ],
+    @include('layouts._web.page-header', [
+        'title' => 'Vision & Mission',
+        'breadcrumb' => [['label' => 'About Us', 'url' => route('about.school')], ['label' => 'Vision & Mission']],
     ])
 
     <section class="section-padding">
@@ -37,9 +34,10 @@
             </div>
 
             <div class="row" style="margin-top:20px;">
-                @foreach($data['core_values'] as $value)
+                @foreach ($data['core_values'] as $value)
                     <div class="col col-sm-6 col-md-3" style="margin-bottom:25px; text-align:center;">
-                        <i class="fa {{ $value['icon'] }} fa-3x" style="color:var(--main-color); margin-bottom:12px;"></i>
+                        <i class="fa {{ $value['icon'] }} fa-3x"
+                            style="color:var(--main-color); margin-bottom:12px;"></i>
                         <h4>{{ $value['title'] }}</h4>
                         <p>{{ $value['text'] }}</p>
                     </div>

@@ -1,7 +1,7 @@
 ﻿{{-- Reusable disclosure table view --}}
 <x-web-layout>
 
-    @include('Layouts._web.page-header', [
+    @include('layouts._web.page-header', [
         'title' => $pageTitle,
         'breadcrumb' => [
             ['label' => 'Mandatory Disclosure', 'url' => route('disclosure.index')],

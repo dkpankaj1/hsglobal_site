@@ -1,6 +1,6 @@
 <x-web-layout>
 
-    @include('Layouts._web.page-header', [
+    @include('layouts._web.page-header', [
         'title' => 'Notice Board',
         'breadcrumb' => [['label' => 'Notice Board']],
     ])

@@ -1,7 +1,7 @@
 {{-- Show a single mandatory disclosure --}}
 <x-web-layout>
 
-    @include('Layouts._web.page-header', [
+    @include('layouts._web.page-header', [
         'title' => $disclosure->name,
         'breadcrumb' => [
             ['label' => 'Mandatory Disclosure', 'url' => route('disclosure.index')],

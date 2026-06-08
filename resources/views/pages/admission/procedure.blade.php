@@ -1,9 +1,9 @@
 ﻿<x-web-layout>
 
-    @include('Layouts._web.page-header', [
-        'title'      => 'Admission Procedure',
+    @include('layouts._web.page-header', [
+        'title' => 'Admission Procedure',
         'breadcrumb' => [
-            ['label' => 'Admission',          'url' => route('admission.procedure')],
+            ['label' => 'Admission', 'url' => route('admission.procedure')],
             ['label' => 'Admission Procedure'],
         ],
     ])
@@ -22,31 +22,38 @@
             <div class="row" style="margin-top:8px;">
                 <div class="col col-md-8" style="margin-bottom:28px;">
                     <div style="position:relative; padding-left:44px;">
-                        <div style="position:absolute; left:18px; top:14px; bottom:14px; width:2px; background:#dfe6f3;"></div>
-
-                        @foreach($data as $step)
-                        <div style="position:relative; margin-bottom:18px;">
-                            <div style="position:absolute; left:-33px; top:20px; width:18px; height:18px; border-radius:50%; background:var(--theme-main); box-shadow:0 0 0 3px #eef3ff;"></div>
-                            <div style="background:#fff; border:1px solid #e7edf7; border-left:4px solid var(--theme-main); border-radius:8px; padding:18px 18px 16px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
-                                <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:6px;">
-                                    <h4 style="margin:0; font-size:17px; color:var(--theme-main); font-weight:700;">
-                                        {{ $step['title'] }}
-                                    </h4>
-                                    <span style="display:inline-block; min-width:70px; text-align:center; background:#eef3ff; color:var(--theme-main); border:1px solid #c9d8f6; border-radius:20px; padding:3px 10px; font-size:12px; font-weight:700;">
-                                        STEP {{ str_pad($step['step'], 2, '0', STR_PAD_LEFT) }}
-                                    </span>
-                                </div>
-                                <p style="margin:0; color:#555; line-height:1.8; font-size:14px;">
-                                    {{ $step['desc'] }}
-                                </p>
-                            </div>
+                        <div style="position:absolute; left:18px; top:14px; bottom:14px; width:2px; background:#dfe6f3;">
                         </div>
+
+                        @foreach ($data as $step)
+                            <div style="position:relative; margin-bottom:18px;">
+                                <div
+                                    style="position:absolute; left:-33px; top:20px; width:18px; height:18px; border-radius:50%; background:var(--theme-main); box-shadow:0 0 0 3px #eef3ff;">
+                                </div>
+                                <div
+                                    style="background:#fff; border:1px solid #e7edf7; border-left:4px solid var(--theme-main); border-radius:8px; padding:18px 18px 16px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+                                    <div
+                                        style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:6px;">
+                                        <h4 style="margin:0; font-size:17px; color:var(--theme-main); font-weight:700;">
+                                            {{ $step['title'] }}
+                                        </h4>
+                                        <span
+                                            style="display:inline-block; min-width:70px; text-align:center; background:#eef3ff; color:var(--theme-main); border:1px solid #c9d8f6; border-radius:20px; padding:3px 10px; font-size:12px; font-weight:700;">
+                                            STEP {{ str_pad($step['step'], 2, '0', STR_PAD_LEFT) }}
+                                        </span>
+                                    </div>
+                                    <p style="margin:0; color:#555; line-height:1.8; font-size:14px;">
+                                        {{ $step['desc'] }}
+                                    </p>
+                                </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>
 
                 <div class="col col-md-4" style="margin-bottom:28px;">
-                    <div style="background:#f7faff; border:1px solid #dfe9fb; border-radius:8px; padding:18px 18px 16px; margin-bottom:16px;">
+                    <div
+                        style="background:#f7faff; border:1px solid #dfe9fb; border-radius:8px; padding:18px 18px 16px; margin-bottom:16px;">
                         <h5 style="margin:0 0 10px; font-weight:700; color:#243b6b;">
                             <i class="fa fa-clock-o" style="color:var(--theme-main); margin-right:6px;"></i>
                             Process Timeline
@@ -59,7 +66,8 @@
                         </ul>
                     </div>
 
-                    <div style="background:#fff; border:1px solid #ececec; border-radius:8px; padding:18px 18px 16px; margin-bottom:16px;">
+                    <div
+                        style="background:#fff; border:1px solid #ececec; border-radius:8px; padding:18px 18px 16px; margin-bottom:16px;">
                         <h5 style="margin:0 0 10px; font-weight:700; color:#333;">
                             <i class="fa fa-check-square-o" style="color:var(--theme-main); margin-right:6px;"></i>
                             Before You Apply
@@ -84,7 +92,8 @@
                 </div>
             </div>
 
-            <div style="margin-top:10px; background:#fff; border:1px solid #e7edf7; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.04); overflow:hidden;">
+            <div
+                style="margin-top:10px; background:#fff; border:1px solid #e7edf7; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.04); overflow:hidden;">
                 <div style="background:#f7faff; border-bottom:1px solid #e3ebfb; padding:14px 18px;">
                     <h4 style="margin:0; font-size:17px; font-weight:700; color:#243b6b;">
                         <i class="fa fa-folder-open-o" style="color:var(--theme-main); margin-right:7px;"></i>
@@ -92,15 +101,17 @@
                     </h4>
                 </div>
                 <div class="row" style="padding:16px 12px 4px;">
-                    @foreach($documents as $doc)
-                    <div class="col col-md-6" style="margin-bottom:12px;">
-                        <div style="display:flex; align-items:flex-start; gap:10px; padding:8px 10px;">
-                            <span style="width:22px; height:22px; border-radius:50%; background:#eef3ff; border:1px solid #c9d8f6; color:var(--theme-main); display:flex; align-items:center; justify-content:center; font-size:12px; flex-shrink:0; margin-top:1px;">
-                                <i class="fa fa-check"></i>
-                            </span>
-                            <p style="margin:0; font-size:13px; color:#555; line-height:1.75;">{{ $doc }}</p>
+                    @foreach ($documents as $doc)
+                        <div class="col col-md-6" style="margin-bottom:12px;">
+                            <div style="display:flex; align-items:flex-start; gap:10px; padding:8px 10px;">
+                                <span
+                                    style="width:22px; height:22px; border-radius:50%; background:#eef3ff; border:1px solid #c9d8f6; color:var(--theme-main); display:flex; align-items:center; justify-content:center; font-size:12px; flex-shrink:0; margin-top:1px;">
+                                    <i class="fa fa-check"></i>
+                                </span>
+                                <p style="margin:0; font-size:13px; color:#555; line-height:1.75;">{{ $doc }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>

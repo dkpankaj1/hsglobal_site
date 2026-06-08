@@ -1,6 +1,6 @@
 ﻿<x-web-layout>
 
-    @include('Layouts._web.page-header', [
+    @include('layouts._web.page-header', [
         'title' => 'About School',
         'breadcrumb' => [['label' => 'About Us', 'url' => route('about.school')], ['label' => 'About School']],
     ])

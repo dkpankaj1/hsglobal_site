@@ -1,7 +1,7 @@
 {{-- List all public mandatory disclosures --}}
 <x-web-layout>
 
-    @include('Layouts._web.page-header', [
+    @include('layouts._web.page-header', [
         'title' => 'Mandatory Disclosure',
         'breadcrumb' => [['label' => 'Mandatory Disclosure']],
     ])

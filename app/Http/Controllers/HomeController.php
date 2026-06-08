@@ -29,24 +29,18 @@ class HomeController extends Controller
         $importantNotice = ImportantNotice::firstOrCreate();
 
         $authorities = [
+
             [
-                'name' => 'Mr. Harish Sharma',
-                'role' => 'Chairman',
-                'summary' => 'The school is committed to nurturing confident, disciplined, and future-ready learners through value-based education and a supportive campus environment.',
-                'photo' => asset('static/images/director.jpg'),
-                'route' => 'about.chairman',
-            ],
-            [
-                'name' => 'Mrs. Seema Gupta',
+                'name' => 'Mr. Sushil Kumar Singh',
                 'role' => 'Director',
-                'summary' => 'With strong academic planning, experienced faculty, and a focus on holistic development, the institution creates a safe and inspiring learning journey for every child.',
+                'summary' => 'Committed to providing quality education through innovation, discipline, and holistic development, ensuring every student reaches their full potential.',
                 'photo' => asset('static/images/director.jpg'),
                 'route' => 'about.director',
             ],
             [
-                'name' => 'Dr. Anjali Verma',
+                'name' => 'Mr. Roshan Singh',
                 'role' => 'Principal',
-                'summary' => 'The school fosters academic excellence, creativity, leadership, and character so students can grow into capable individuals prepared for an evolving world.',
+                'summary' => 'Dedicated to nurturing academic excellence, strong values, and leadership skills, preparing students for success in a dynamic world.',
                 'photo' => asset('static/images/principal.jpg'),
                 'route' => 'about.principal',
             ],
