@@ -3,9 +3,48 @@
 namespace App\Http\Controllers;
 
 use App\Data\MockData;
+use App\Models\MandatoryDisclosure;
 
 class MandatoryDisclosureController extends Controller
 {
+    /**
+     * List all public disclosures.
+     */
+    public function index()
+    {
+        $disclosures = MandatoryDisclosure::where('is_public', true)
+            ->orderBy('name')
+            ->get();
+
+        return view('pages.disclosure.index', compact('disclosures'));
+    }
+
+    /**
+     * Show a single disclosure by slug.
+     */
+    public function show(string $slug)
+    {
+        $disclosure = MandatoryDisclosure::where('slug', $slug)
+            ->where('is_public', true)
+            ->firstOrFail();
+
+        $disclosures = MandatoryDisclosure::where('is_public', true)
+            ->orderBy('name')
+            ->get();
+
+        return view('pages.disclosure.show', compact('disclosure', 'disclosures'));
+    }
+
+    public function download(string $token)
+    {
+        $disclosure = MandatoryDisclosure::where('token', $token)->firstOrFail();
+
+        if (empty($disclosure->document)) {
+            abort(404, 'Document not found.');
+        }
+        return response()->download(public_path('upload/' . $disclosure->document), $disclosure->name);
+    }
+
     public function generalInfo()
     {
         $data = MockData::disclosureGeneralInfo();
@@ -40,7 +79,7 @@ class MandatoryDisclosureController extends Controller
             ['name' => 'Recognition Certificate',             'file' => '#'],
             ['name' => 'Building Safety Certificate',         'file' => '#'],
             ['name' => 'Fire Safety Certificate',             'file' => '#'],
-            ['name' => 'DEO Certificate (Self-Certification)','file' => '#'],
+            ['name' => 'DEO Certificate (Self-Certification)', 'file' => '#'],
             ['name' => 'Water & Sanitation Certificate',      'file' => '#'],
         ];
 

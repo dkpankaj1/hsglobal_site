@@ -12,9 +12,33 @@
 
         <li class="menu-title">Notifications</li>
         <li class="menu-item">
-            <a href="{{ route('admin.important-notice.update') }}" class="menu-link waves-effect">
+            <a href="{{ route('admin.important-notice.edit') }}" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="megaphone"></i></span>
                 <span class="menu-text"> Important Notice </span>
+            </a>
+        </li>
+
+        <li class="menu-title">Disclosures</li>
+        <li class="menu-item">
+            <a href="{{ route('admin.mandatory-disclosure.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="file-text"></i></span>
+                <span class="menu-text"> Mandatory Disclosure </span>
+            </a>
+        </li>
+
+        <li class="menu-title">Sliders</li>
+        <li class="menu-item">
+            <a href="{{ route('admin.image-slider.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="image"></i></span>
+                <span class="menu-text"> Image Slider </span>
+            </a>
+        </li>
+
+        <li class="menu-title">Notices</li>
+        <li class="menu-item">
+            <a href="{{ route('admin.notice-board.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="clipboard-list"></i></span>
+                <span class="menu-text"> Notice Board </span>
             </a>
         </li>
 

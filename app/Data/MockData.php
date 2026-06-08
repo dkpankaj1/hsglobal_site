@@ -224,7 +224,7 @@ class MockData
                 [
                     'icon' => 'fa-shield',
                     'title' => 'Safe Campus',
-                    'route' => 'disclosure.safety',
+                    'route' => 'disclosure.index',
                     'image' => asset('static/images/facilities_6.jpg'),
                     'description' => 'CCTV surveillance, trained security staff, and strict safety protocols ensure a secure, clean, and caring environment for every student.',
                 ],
