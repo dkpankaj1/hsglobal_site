@@ -1,4 +1,7 @@
-<x-app-layout>
+<x-app-layout pageTitle="Edit Notice" :breadcrumbs="[
+    ['label' => 'Notice Board', 'url' => route('admin.notice-board.index')],
+    ['label' => 'Edit', 'url' => null],
+]">
 
     <div class="row">
         <div class="col-lg-8">

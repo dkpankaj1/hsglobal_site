@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout pageTitle="Mandatory Disclosures" :breadcrumbs="[['label' => 'Mandatory Disclosures', 'url' => null]]">
 
     <div class="row">
         <div class="col-12">

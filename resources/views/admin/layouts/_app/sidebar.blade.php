@@ -42,6 +42,30 @@
             </a>
         </li>
 
+        <li class="menu-title">Gallery</li>
+
+        <li class="menu-item">
+            <a href="#menuGallery" data-bs-toggle="collapse" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="images"></i></span>
+                <span class="menu-text"> Gallery </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="menuGallery">
+                <ul class="sub-menu">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.video-gallery.index') }}" class="menu-link">
+                            <span class="menu-text">Video Gallery</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('admin.gallery.index') }}" class="menu-link">
+                            <span class="menu-text">Photo Gallery</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
         <li class="menu-title">Pages</li>
 
 

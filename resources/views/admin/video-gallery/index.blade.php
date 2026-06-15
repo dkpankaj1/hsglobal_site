@@ -1,12 +1,12 @@
-<x-app-layout pageTitle="Image Sliders" :breadcrumbs="[['label' => 'Image Sliders', 'url' => null]]">
+<x-app-layout pageTitle="Video Gallery" :breadcrumbs="[['label' => 'Video Gallery', 'url' => null]]">
 
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="header-title">Image Sliders</h4>
-                        <a href="{{ route('admin.image-slider.create') }}" class="btn btn-primary">
+                        <h4 class="header-title">Video Gallery</h4>
+                        <a href="{{ route('admin.video-gallery.create') }}" class="btn btn-primary">
                             <i class="ri-add-line me-1"></i> Add New
                         </a>
                     </div>
@@ -17,36 +17,46 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Image</th>
-                                    <th>Alt Text</th>
+                                    <th>Name</th>
+                                    <th>YouTube URL</th>
+                                    <th>Status</th>
                                     <th>Created</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($sliders as $slider)
+                                @forelse ($videos as $video)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $video->name }}</td>
                                         <td>
-                                            <img src="{{ $slider->slider_image_url }}" alt="{{ $slider->alt_text }}"
-                                                style="width: 120px; height: 50px; object-fit: cover; border-radius: 4px;">
+                                            <a href="{{ $video->yt_url }}" target="_blank"
+                                                class="text-truncate d-inline-block" style="max-width: 250px;">
+                                                {{ $video->yt_url }}
+                                            </a>
                                         </td>
-                                        <td>{{ $slider->alt_text }}</td>
-                                        <td>{{ $slider->created_at->format('d M, Y') }}</td>
+                                        <td>
+                                            @if ($video->is_published)
+                                                <span class="badge bg-success">Published</span>
+                                            @else
+                                                <span class="badge bg-secondary">Draft</span>
+                                            @endif
+                                        </td>
+                                        <td>{{ $video->created_at->format('d M, Y') }}</td>
                                         <td>
                                             <div class="d-flex gap-1">
-                                                <a href="{{ route('admin.image-slider.show', $slider) }}"
+                                                <a href="{{ route('admin.video-gallery.show', $video) }}"
                                                     class="btn btn-sm btn-info" title="View">
                                                     View
                                                 </a>
-                                                <a href="{{ route('admin.image-slider.edit', $slider) }}"
+                                                <a href="{{ route('admin.video-gallery.edit', $video) }}"
                                                     class="btn btn-sm btn-primary" title="Edit">
                                                     Edit
                                                 </a>
                                                 <button type="button" class="btn btn-sm btn-danger" title="Delete"
                                                     data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                                    data-id="{{ $slider->id }}" data-name="{{ $slider->alt_text }}"
-                                                    data-action="{{ route('admin.image-slider.destroy', $slider) }}">
+                                                    data-id="{{ $video->id }}" data-name="{{ $video->name }}"
+                                                    data-action="{{ route('admin.video-gallery.destroy', $video) }}">
                                                     Delete
                                                 </button>
                                             </div>
@@ -54,14 +64,14 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="5" class="text-center py-4">
+                                        <td colspan="6" class="text-center py-4">
                                             <div class="text-muted">
                                                 <i class="ri-inbox-line d-block mb-2" style="font-size: 2rem;"></i>
-                                                No image sliders found.
+                                                No video gallery entries found.
                                                 <br>
-                                                <a href="{{ route('admin.image-slider.create') }}"
+                                                <a href="{{ route('admin.video-gallery.create') }}"
                                                     class="btn btn-sm btn-primary mt-2">
-                                                    <i class="ri-add-line me-1"></i> Add First Slider
+                                                    <i class="ri-add-line me-1"></i> Add First Video
                                                 </a>
                                             </div>
                                         </td>
@@ -71,9 +81,9 @@
                         </table>
                     </div>
 
-                    @if ($sliders->hasPages())
+                    @if ($videos->hasPages())
                         <div class="mt-3">
-                            {{ $sliders->links() }}
+                            {{ $videos->links() }}
                         </div>
                     @endif
                 </div>

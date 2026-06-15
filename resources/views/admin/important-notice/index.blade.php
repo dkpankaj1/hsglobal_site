@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout pageTitle="Important Notice" :breadcrumbs="[['label' => 'Important Notice', 'url' => null]]">
 
     <div class="card">
         <div class="card-body">

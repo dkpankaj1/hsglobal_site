@@ -1,4 +1,7 @@
-<x-app-layout>
+<x-app-layout pageTitle="{{ $slider->alt_text }}" :breadcrumbs="[
+    ['label' => 'Image Sliders', 'url' => route('admin.image-slider.index')],
+    ['label' => $slider->alt_text, 'url' => null],
+]">
 
     <div class="row">
         <div class="col-lg-8">

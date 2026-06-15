@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout pageTitle="Edit Profile" :breadcrumbs="[['label' => 'Profile', 'url' => route('admin.account.index')], ['label' => 'Edit', 'url' => null]]">
 
     <form action="{{ route('admin.account.update') }}" method="post" enctype="multipart/form-data">
         @csrf

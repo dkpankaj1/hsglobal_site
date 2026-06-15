@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="{{ Session::get('theme', 'light') }}" data-menu-color="dark" data-topbar-color="{{ Session::get('theme', 'light') }}">
+<html lang="en" data-bs-theme="{{ Session::get('theme', 'light') }}" data-menu-color="dark"
+    data-topbar-color="{{ Session::get('theme', 'light') }}">
 
 <head>
     <meta charset="utf-8" />
@@ -18,7 +19,7 @@
     <link href="{{ asset('assets/backend/libs/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css" />
     <script src="{{ asset('assets/backend/js/config.js') }}"></script>
     <link href="{{ asset('assets/backend/css/fixes.css') }}" rel="stylesheet" type="text/css">
-    
+
 </head>
 
 <body>
@@ -62,14 +63,21 @@
                     <div class="py-3 py-lg-4">
                         <div class="row">
                             <div class="col-lg-6">
-                                <h4 class="page-title mb-0">Starter</h4>
+                                <h4 class="page-title mb-0">{{ $pageTitle }}</h4>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-none d-lg-block">
                                     <ol class="breadcrumb m-0 float-end">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Extra Pages</a>
-                                        </li>
-                                        <li class="breadcrumb-item active">Starter</li>
+                                        <li class="breadcrumb-item"><a
+                                                href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                        @foreach ($breadcrumbs as $crumb)
+                                            @if ($loop->last)
+                                                <li class="breadcrumb-item active">{{ $crumb['label'] }}</li>
+                                            @else
+                                                <li class="breadcrumb-item"><a
+                                                        href="{{ $crumb['url'] }}">{{ $crumb['label'] }}</a></li>
+                                            @endif
+                                        @endforeach
                                     </ol>
                                 </div>
                             </div>

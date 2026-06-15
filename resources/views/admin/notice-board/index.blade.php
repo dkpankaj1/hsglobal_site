@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout pageTitle="Notice Board" :breadcrumbs="[['label' => 'Notice Board', 'url' => null]]">
 
     <div class="row">
         <div class="col-12">

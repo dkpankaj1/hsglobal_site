@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout pageTitle="Settings" :breadcrumbs="[['label' => 'Settings', 'url' => null]]">
 
     <div class="card">
         <div class="card-body">

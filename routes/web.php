@@ -7,6 +7,7 @@ use App\Http\Controllers\AcademicsController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\FacilitiesController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\VideoGalleryController;
 use App\Http\Controllers\MandatoryDisclosureController;
 use App\Http\Controllers\ContactController;
 
@@ -57,12 +58,12 @@ Route::prefix('facilities')->name('facilities.')->group(function () {
 
 // ── Gallery ───────────────────────────────────────────────────────
 Route::prefix('gallery')->name('gallery.')->group(function () {
-    Route::get('/photos',             [GalleryController::class, 'photos'])->name('photos');
-    Route::get('/videos',             [GalleryController::class, 'videos'])->name('videos');
-    Route::get('/sports-events',      [GalleryController::class, 'sportsEvents'])->name('sports');
-    Route::get('/cultural-programs',  [GalleryController::class, 'culturalPrograms'])->name('cultural');
-    Route::get('/prize-distribution', [GalleryController::class, 'prizeDistribution'])->name('prize');
-    Route::get('/achievements',       [GalleryController::class, 'achievements'])->name('achievements');
+    // Video Gallery (top-level)
+    Route::get('/videos', [VideoGalleryController::class, 'index'])->name('videos');
+
+    // Photo Galleries
+    Route::get('/photos', [GalleryController::class, 'index'])->name('photos');
+    Route::get('/{slug}', [GalleryController::class, 'show'])->name('show');
 });
 
 // ── Mandatory Disclosure ──────────────────────────────────────────

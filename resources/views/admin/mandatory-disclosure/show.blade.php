@@ -1,4 +1,7 @@
-<x-app-layout>
+<x-app-layout pageTitle="{{ $disclosure->name }}" :breadcrumbs="[
+    ['label' => 'Mandatory Disclosures', 'url' => route('admin.mandatory-disclosure.index')],
+    ['label' => $disclosure->name, 'url' => null],
+]">
 
     <div class="row">
         <div class="col-lg-8">

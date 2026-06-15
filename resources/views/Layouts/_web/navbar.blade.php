@@ -67,15 +67,15 @@
                 </li>
 
                 <li class="menu-item-has-children">
-                    <a href="{{ route('gallery.photos') }}">Gallery <i class="fa fa-angle-down"
+                    <a href="{{ route('gallery.videos') }}">Gallery <i class="fa fa-angle-down"
                             aria-hidden="true"></i></a>
                     <ul class="sub-menu" style="display: none;">
-                        <li><a href="{{ route('gallery.photos') }}">Photo Gallery</a></li>
                         <li><a href="{{ route('gallery.videos') }}">Video Gallery</a></li>
-                        <li><a href="{{ route('gallery.sports') }}">Sports Events</a></li>
-                        <li><a href="{{ route('gallery.cultural') }}">Cultural Programs</a></li>
-                        <li><a href="{{ route('gallery.prize') }}">Prize Distribution</a></li>
-                        <li><a href="{{ route('gallery.achievements') }}">Student Achievements</a></li>
+                        <li><a href="{{ route('gallery.photos') }}">Photo Gallery</a></li>
+                        @foreach (\App\Models\Gallery::where('is_published', true)->latest()->limit(8)->get() as $menuGallery)
+                            <li><a href="{{ route('gallery.show', $menuGallery->slug) }}">{{ $menuGallery->name }}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </li>
 

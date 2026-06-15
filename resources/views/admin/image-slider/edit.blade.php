@@ -1,4 +1,7 @@
-<x-app-layout>
+<x-app-layout pageTitle="Edit Slider" :breadcrumbs="[
+    ['label' => 'Image Sliders', 'url' => route('admin.image-slider.index')],
+    ['label' => 'Edit', 'url' => null],
+]">
 
     <div class="row">
         <div class="col-lg-8">

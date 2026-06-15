@@ -1,4 +1,7 @@
-<x-app-layout>
+<x-app-layout pageTitle="Change Password" :breadcrumbs="[
+    ['label' => 'Profile', 'url' => route('admin.account.index')],
+    ['label' => 'Change Password', 'url' => null],
+]">
 
     <form action="{{ route('admin.account.password') }}" method="post">
         @csrf
@@ -11,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                        
+
                         <div class="mb-3">
                             <x-input-label name="current_password" text="Current Password" />
                             <x-input-field name="current_password" type="password" placeholder="Current Password" />
@@ -24,8 +27,9 @@
 
                         <div class="mb-3">
                             <x-input-label name="password_confirmation" text="Confirm Password" />
-                            <x-input-field name="password_confirmation" type="password" placeholder="Confirm Password" />
-                        </div>                      
+                            <x-input-field name="password_confirmation" type="password"
+                                placeholder="Confirm Password" />
+                        </div>
 
                         <hr>
 

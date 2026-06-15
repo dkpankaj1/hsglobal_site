@@ -1,4 +1,7 @@
-<x-app-layout>
+<x-app-layout pageTitle="{{ $notice->title }}" :breadcrumbs="[
+    ['label' => 'Notice Board', 'url' => route('admin.notice-board.index')],
+    ['label' => $notice->title, 'url' => null],
+]">
 
     <div class="row">
         <div class="col-lg-8">
