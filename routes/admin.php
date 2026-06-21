@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutSettingController;
+use App\Http\Controllers\Admin\AcademicPageController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AdmissionEnquiryController;
+use App\Http\Controllers\Admin\AdmissionPageController;
 use App\Http\Controllers\Admin\AdmissionSettingController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\ContactEnquiryController;
@@ -104,6 +106,20 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             ->name('authority.principal');
         Route::put('authority/principal', [SchoolAuthorityController::class, 'principalUpdate'])
             ->name('authority.principal.update');
+
+        // ── Academics Pages ───────────────────────────────────────
+        Route::prefix('academics/pages')->name('academics.pages.')->group(function () {
+            Route::get('/', [AcademicPageController::class, 'index'])->name('index');
+            Route::get('{page}/edit', [AcademicPageController::class, 'edit'])->name('edit');
+            Route::put('{page}', [AcademicPageController::class, 'update'])->name('update');
+        });
+
+        // ── Admission Pages ───────────────────────────────────────
+        Route::prefix('admission/pages')->name('admission.pages.')->group(function () {
+            Route::get('/', [AdmissionPageController::class, 'index'])->name('index');
+            Route::get('{page}/edit', [AdmissionPageController::class, 'edit'])->name('edit');
+            Route::put('{page}', [AdmissionPageController::class, 'update'])->name('update');
+        });
 
         Route::resource('gallery', GalleryController::class);
 

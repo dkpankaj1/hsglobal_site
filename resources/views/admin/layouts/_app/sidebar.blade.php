@@ -38,6 +38,97 @@
             </a>
         </li>
 
+        <li class="menu-title">Academics</li>
+        <li class="menu-item">
+            <a href="#menuAcademics" data-bs-toggle="collapse" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="book-open"></i></span>
+                <span class="menu-text"> Academics Pages </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="menuAcademics">
+                <ul class="nav flex-column sub-menu">
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.academics.pages.edit', 'curriculum') }}">
+                            <span class="menu-text">Curriculum</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.academics.pages.edit', 'examination-policy') }}">
+                            <span class="menu-text">Examination Policy</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.academics.pages.edit', 'school-timing') }}">
+                            <span class="menu-text">School Timing</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.academics.pages.edit', 'rules-regulations') }}">
+                            <span class="menu-text">Rules &amp; Regulations</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.academics.pages.edit', 'uniform-regulations') }}">
+                            <span class="menu-text">Uniform Regulations</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.academics.pages.edit', 'book-list') }}">
+                            <span class="menu-text">Book List</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.academics.pages.edit', 'fee-structure') }}">
+                            <span class="menu-text">Fee Structure</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="menu-title">Admission</li>
+        <li class="menu-item">
+            <a href="#menuAdmission" data-bs-toggle="collapse" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>
+                <span class="menu-text"> Admission Pages </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="menuAdmission">
+                <ul class="nav flex-column sub-menu">
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.admission.pages.edit', 'admission-procedure') }}">
+                            <span class="menu-text">Admission Procedure</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.admission.pages.edit', 'eligibility-criteria') }}">
+                            <span class="menu-text">Eligibility Criteria</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.admission.pages.edit', 'documents-required') }}">
+                            <span class="menu-text">Documents Required</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.admission.pages.edit', 'fee-payment-rules') }}">
+                            <span class="menu-text">Fee Payment Rules</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.admission.pages.edit', 'withdrawal-transfer') }}">
+                            <span class="menu-text">Withdrawal / Transfer</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.admission.pages.edit', 'tc-sample') }}">
+                            <span class="menu-text">TC Sample</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
         <li class="menu-title">Authorities</li>
         <li class="menu-item">
             <a href="#menuAuthority" data-bs-toggle="collapse" class="menu-link waves-effect">

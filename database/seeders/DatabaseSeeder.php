@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdmissionSettingSeeder::class,
             SchoolAuthoritySeeder::class,
+            PageSeeder::class,
         ]);
     }
 }
