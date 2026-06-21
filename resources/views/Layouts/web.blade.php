@@ -92,8 +92,8 @@
 
     @stack('pageScripts')
 
-    <a class="floating-whatsapp" href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp">
+    <a class="floating-whatsapp" href="https://wa.me/{{ $setting->whatsapp_number ?? 9100000000 }}" target="_blank"
+        rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <span class="floating-whatsapp-icon" aria-hidden="true">
             <i class="fa fa-whatsapp"></i>
         </span>
