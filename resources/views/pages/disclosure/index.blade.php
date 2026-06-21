@@ -28,7 +28,7 @@
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $disclosure->name }}</td>
                                 <td class="text-center">
-                                    @if ($disclosure->document)
+                                    @if ($disclosure->document && $disclosure->is_public)
                                         <a href="{{ $disclosure->document_url }}" target="_blank"
                                             class="btn btn-sm btn-success">
                                             <i class="fa fa-download"></i>
@@ -36,10 +36,12 @@
                                     @endif
                                 </td>
                                 <td class="text-center">
-                                    <a href="{{ route('disclosure.show', $disclosure->slug) }}"
-                                        class="btn btn-sm btn-primary">
-                                        View Details <i class="fa fa-arrow-right ms-1"></i>
-                                    </a>
+                                    @if ($disclosure->is_public)
+                                        <a href="{{ route('disclosure.show', $disclosure->slug) }}"
+                                            class="btn btn-sm btn-primary">
+                                            View Details <i class="fa fa-arrow-right ms-1"></i>
+                                        </a>
+                                    @endif
                                 </td>
                             </tr>
                         @empty

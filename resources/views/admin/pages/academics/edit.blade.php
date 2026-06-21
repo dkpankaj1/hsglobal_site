@@ -152,8 +152,8 @@
                             <label for="file"
                                 class="form-label">{{ $page->file ? 'Replace File' : 'Upload File' }}</label>
                             <input type="file" class="form-control @error('file') is-invalid @enderror"
-                                id="file" name="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx">
-                            <small class="text-muted">PDF, DOC, XLS, PPT. Max: 10MB.</small>
+                                id="file" name="file" accept=".pdf">
+                            <small class="text-muted">PDF only. Max: 10MB.</small>
                             @error('file')
                                 <div class="invalid-feedback d-block">{{ $message }}</div>
                             @enderror
@@ -166,11 +166,17 @@
         {{-- Submit --}}
         <div class="row mt-3">
             <div class="col-12">
-                <div class="text-end">
-                    <a href="{{ route('admin.academics.pages.index') }}" class="btn btn-light me-2">Cancel</a>
-                    <button type="submit" class="btn btn-primary">
-                        <i data-lucide="save" class="me-1" style="width:16px; height:16px;"></i> Update Page
-                    </button>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-end">
+                            <a href="{{ route('admin.academics.pages.index') }}"
+                                class="btn btn-light me-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary">
+                                <i data-lucide="save" class="me-1" style="width:16px; height:16px;"></i> Update
+                                Page
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

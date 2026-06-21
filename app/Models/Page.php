@@ -53,6 +53,18 @@ class Page extends Model
         return $this->file ? basename($this->file) : null;
     }
 
+    /**
+     * Check if the attached file is a PDF.
+     */
+    public function getIsPdfAttribute(): bool
+    {
+        if (empty($this->file)) {
+            return false;
+        }
+
+        return strtolower(pathinfo($this->file, PATHINFO_EXTENSION)) === 'pdf';
+    }
+
     // ── Scopes ─────────────────────────────────────────────────────
 
     public function scopePublished($query)

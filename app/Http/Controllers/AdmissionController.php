@@ -17,7 +17,6 @@ class AdmissionController extends Controller
     protected function page(string $slug)
     {
         $page = Page::where('slug', $slug)->published()->firstOrFail();
-
         return view('pages.dynamic', [
             'page'       => $page,
             'section'    => 'Admission',

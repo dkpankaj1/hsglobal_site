@@ -12,8 +12,7 @@ class MandatoryDisclosureController extends Controller
      */
     public function index()
     {
-        $disclosures = MandatoryDisclosure::where('is_public', true)
-            ->orderBy('name')
+        $disclosures = MandatoryDisclosure::orderBy('name')
             ->get();
 
         return view('pages.disclosure.index', compact('disclosures'));

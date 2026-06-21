@@ -87,7 +87,7 @@ class AcademicPageController extends Controller
             'meta_keywords'    => 'nullable|string|max:500',
             'is_published'     => 'boolean',
             'image'            => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
-            'file'             => 'nullable|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx|max:10240',
+            'file'             => 'nullable|file|mimes:pdf|max:10240',
             'delete_image'     => 'boolean',
             'delete_file'      => 'boolean',
         ]);
