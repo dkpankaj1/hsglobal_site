@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Data\MockData;
+use App\Models\SchoolAuthority;
 
 class AboutController extends Controller
 {
@@ -22,21 +23,39 @@ class AboutController extends Controller
 
     public function chairmanMessage()
     {
-        $data = MockData::leaderMessage('chairman');
+        $data = SchoolAuthority::where('role', 'chairman')
+            ->where('is_published', true)
+            ->first();
+
+        if (!$data) {
+            abort(404);
+        }
 
         return view('pages.about.message', compact('data'));
     }
 
     public function directorMessage()
     {
-        $data = MockData::leaderMessage('director');
+        $data = SchoolAuthority::where('role', 'director')
+            ->where('is_published', true)
+            ->first();
+
+        if (!$data) {
+            abort(404);
+        }
 
         return view('pages.about.message', compact('data'));
     }
 
     public function principalMessage()
     {
-        $data = MockData::leaderMessage('principal');
+        $data = SchoolAuthority::where('role', 'principal')
+            ->where('is_published', true)
+            ->first();
+
+        if (!$data) {
+            abort(404);
+        }
 
         return view('pages.about.message', compact('data'));
     }

@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\AccountController;
+use App\Http\Controllers\Admin\AdmissionEnquiryController;
+use App\Http\Controllers\Admin\AdmissionSettingController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\SchoolAuthorityController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FacilityController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ImageSliderController;
 use App\Http\Controllers\Admin\ImportantNoticeController;
@@ -29,6 +33,20 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+        // Admission Settings (singleton)
+        Route::get('admission/settings', [AdmissionSettingController::class, 'edit'])
+            ->name('admission.edit');
+        Route::put('admission/settings', [AdmissionSettingController::class, 'update'])
+            ->name('admission.update');
+
+        // Admission Enquiries
+        Route::get('admission/enquiries', [AdmissionEnquiryController::class, 'index'])
+            ->name('admission.enquiries.index');
+        Route::get('admission/enquiries/{enquiry}', [AdmissionEnquiryController::class, 'show'])
+            ->name('admission.enquiries.show');
+        Route::delete('admission/enquiries/{enquiry}', [AdmissionEnquiryController::class, 'destroy'])
+            ->name('admission.enquiries.destroy');
+
         Route::get('important-notice', [ImportantNoticeController::class, 'edit'])
             ->name('important-notice.edit');
         Route::put('important-notice', [ImportantNoticeController::class, 'update'])
@@ -39,6 +57,22 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('image-slider', ImageSliderController::class);
 
         Route::resource('notice-board', NoticeBoardController::class);
+
+        // Authority – single record per role (no CRUD)
+        Route::get('authority/chairman', [SchoolAuthorityController::class, 'chairman'])
+            ->name('authority.chairman');
+        Route::put('authority/chairman', [SchoolAuthorityController::class, 'chairmanUpdate'])
+            ->name('authority.chairman.update');
+
+        Route::get('authority/director', [SchoolAuthorityController::class, 'director'])
+            ->name('authority.director');
+        Route::put('authority/director', [SchoolAuthorityController::class, 'directorUpdate'])
+            ->name('authority.director.update');
+
+        Route::get('authority/principal', [SchoolAuthorityController::class, 'principal'])
+            ->name('authority.principal');
+        Route::put('authority/principal', [SchoolAuthorityController::class, 'principalUpdate'])
+            ->name('authority.principal.update');
 
         Route::resource('gallery', GalleryController::class);
 
@@ -53,6 +87,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             ->name('gallery.images.bulk-delete');
 
         Route::resource('video-gallery', VideoGalleryController::class);
+
+        Route::resource('facility', FacilityController::class);
 
         Route::post('themes/toggle', [ThemeController::class, 'toggle'])->name('themes.toggle');
 

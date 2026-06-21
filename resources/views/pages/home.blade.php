@@ -128,16 +128,16 @@
                     <div class="col col-sm-6 col-md-4">
                         <article class="home-authority-card">
                             <div class="home-authority-photo">
-                                <img src="{{ $authority['photo'] }}" alt="{{ $authority['name'] }}"
+                                <img src="{{ $authority->photo_url }}" alt="{{ $authority->name }}"
                                     class="img-responsive">
                             </div>
 
                             <div class="home-authority-content">
-                                <h3>{{ $authority['name'] }}</h3>
+                                <h3>{{ $authority->name }}</h3>
                                 <span class="home-authority-divider"></span>
-                                <h4>{{ $authority['role'] }}</h4>
-                                <p>{{ $authority['summary'] }}</p>
-                                <a href="{{ route($authority['route']) }}" class="home-authority-link">
+                                <h4>{{ ucfirst($authority->role) }}</h4>
+                                <p>{{ $authority->short_description }}</p>
+                                <a href="{{ route('about.' . $authority->role) }}" class="home-authority-link">
                                     Read More! <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -158,19 +158,33 @@
                 </div>
             </div>
             <div class="row home-facility-grid">
-                @foreach ($home['facilities'] as $facility)
+                @forelse ($facilities as $facility)
                     <div class="col col-sm-6 col-md-4">
-                        <a href="{{ route($facility['route']) }}" class="home-facility-card">
+                        <a href="{{ $facility->route }}" class="home-facility-card">
                             <div class="home-facility-media">
-                                <img src="{{ $facility['image'] }}" alt="{{ $facility['title'] }}">
+                                <img src="{{ $facility->thumbnail_url }}" alt="{{ $facility->name }}">
                             </div>
                             <div class="home-facility-body">
-                                <h3>{{ $facility['title'] }}</h3>
-                                <p>{{ $facility['description'] }}</p>
+                                <h3>{{ $facility->name }}</h3>
+                                <p>{{ $facility->sort_description }}</p>
                             </div>
                         </a>
                     </div>
-                @endforeach
+                @empty
+                    @foreach ($home['facilities'] as $facility)
+                        <div class="col col-sm-6 col-md-4">
+                            <a href="{{ route($facility['route']) }}" class="home-facility-card">
+                                <div class="home-facility-media">
+                                    <img src="{{ $facility['image'] }}" alt="{{ $facility['title'] }}">
+                                </div>
+                                <div class="home-facility-body">
+                                    <h3>{{ $facility['title'] }}</h3>
+                                    <p>{{ $facility['description'] }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                @endforelse
             </div>
         </div>
     </section>

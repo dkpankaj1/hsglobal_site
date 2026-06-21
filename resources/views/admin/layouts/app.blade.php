@@ -20,6 +20,7 @@
     <script src="{{ asset('assets/backend/js/config.js') }}"></script>
     <link href="{{ asset('assets/backend/css/fixes.css') }}" rel="stylesheet" type="text/css">
 
+    @stack('pageStyles')
 </head>
 
 <body>
@@ -111,6 +112,7 @@
     <script src="{{ asset('assets/backend/js/app.js') }}"></script>
     <x-toastr />
 
+    @stack('pageScripts')
 </body>
 
 </html>

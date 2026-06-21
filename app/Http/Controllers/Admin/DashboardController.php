@@ -3,12 +3,29 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\AdmissionEnquiry;
+use App\Models\Gallery;
+use App\Models\ImageSlider;
+use App\Models\MandatoryDisclosure;
+use App\Models\NoticeBoard;
+use App\Models\VideoGallery;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.dashboard');
+        $stats = [
+            'galleries'      => Gallery::count(),
+            'videos'         => VideoGallery::count(),
+            'notices'        => NoticeBoard::count(),
+            'sliders'        => ImageSlider::count(),
+            'disclosures'    => MandatoryDisclosure::count(),
+            'enquiries'      => AdmissionEnquiry::count(),
+            'new_enquiries'  => AdmissionEnquiry::where('is_read', false)->count(),
+        ];
+
+        $recentEnquiries = AdmissionEnquiry::latest()->limit(5)->get();
+
+        return view('admin.pages.dashboard', compact('stats', 'recentEnquiries'));
     }
 }

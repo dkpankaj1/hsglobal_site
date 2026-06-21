@@ -54,6 +54,8 @@ Route::prefix('facilities')->name('facilities.')->group(function () {
     Route::get('/science-lab',      [FacilitiesController::class, 'scienceLab'])->name('science-lab');
     Route::get('/computer-lab',     [FacilitiesController::class, 'computerLab'])->name('computer-lab');
     Route::get('/sports-facility',  [FacilitiesController::class, 'sportsFacility'])->name('sports');
+    // Dynamic facility detail pages (must be last)
+    Route::get('/{slug}',           [FacilitiesController::class, 'show'])->name('show');
 });
 
 // ── Gallery ───────────────────────────────────────────────────────

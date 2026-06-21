@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Data\MockData;
+use App\Models\Facility;
 use App\Models\ImageSlider;
 use App\Models\ImportantNotice;
 use App\Models\NoticeBoard;
+use App\Models\SchoolAuthority;
 
 class HomeController extends Controller
 {
@@ -28,30 +30,21 @@ class HomeController extends Controller
 
         $importantNotice = ImportantNotice::firstOrCreate();
 
-        $authorities = [
+        $authorities = SchoolAuthority::where('is_published', true)
+            ->orderBy('id')
+            ->get();
 
-            [
-                'name' => 'Mr. Sushil Kumar Singh',
-                'role' => 'Director',
-                'summary' => 'Committed to providing quality education through innovation, discipline, and holistic development, ensuring every student reaches their full potential.',
-                'photo' => asset('static/images/director.jpg'),
-                'route' => 'about.director',
-            ],
-            [
-                'name' => 'Mr. Roshan Singh',
-                'role' => 'Principal',
-                'summary' => 'Dedicated to nurturing academic excellence, strong values, and leadership skills, preparing students for success in a dynamic world.',
-                'photo' => asset('static/images/principal.jpg'),
-                'route' => 'about.principal',
-            ],
-        ];
+        $facilities = Facility::where('is_publish', true)
+            ->latest()
+            ->get();
 
         return view('pages.home', compact(
             'school',
             'home',
             'authorities',
             'importantNotice',
-            'heroSlides'
+            'heroSlides',
+            'facilities'
         ));
     }
 }

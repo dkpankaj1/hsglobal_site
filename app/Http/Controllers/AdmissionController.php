@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Data\MockData;
+use App\Models\AdmissionEnquiry;
+use App\Models\AdmissionSetting;
 use Illuminate\Http\Request;
 
 class AdmissionController extends Controller
@@ -17,26 +19,54 @@ class AdmissionController extends Controller
 
     public function enquiry()
     {
-        $info = MockData::contactInfo();
+        $setting   = AdmissionSetting::first();
+        $classList = $this->classList();
 
-        return view('pages.admission.enquiry', compact('info'));
+        return view('pages.admission.enquiry', compact('setting', 'classList'));
+    }
+
+    private function classList(): array
+    {
+        return [
+            'Play Way',
+            'Nursery',
+            'LKG',
+            'UKG',
+            '1st',
+            '2nd',
+            '3rd',
+            '4th',
+            '5th',
+            '6th',
+            '7th',
+            '8th',
+            '9th',
+            '11th',
+        ];
     }
 
     public function submitEnquiry(Request $request)
     {
+        $setting = AdmissionSetting::first();
+
+        if ($setting && !$setting->is_open) {
+            return redirect()->route('admission.enquiry')
+                ->with('error', 'Admissions are currently closed.');
+        }
+
         $validated = $request->validate([
-            'student_name' => 'required|string|max:100',
+            'student_name'    => 'required|string|max:100',
             'admission_class' => 'required|string|max:50',
-            'parent_name'  => 'required|string|max:100',
-            'phone'        => 'required|string|max:20',
-            'email'        => 'nullable|email|max:150',
-            'message'      => 'required|string|max:2000',
+            'parent_name'     => 'required|string|max:100',
+            'phone'           => 'required|string|max:20',
+            'email'           => 'nullable|email|max:150',
+            'message'         => 'required|string|max:2000',
         ]);
 
-        // TODO: Save enquiry or send notification when backend storage is ready.
+        AdmissionEnquiry::create($validated);
 
         return redirect()->route('admission.enquiry')
-            ->with('success', 'Your admission enquiry has been submitted successfully.');
+            ->with('success', 'Your admission enquiry has been submitted successfully. We will contact you soon.');
     }
 
     public function eligibility()

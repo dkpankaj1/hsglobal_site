@@ -13,7 +13,7 @@
                 {{-- Profile Card --}}
                 <div class="col-md-4 msg-col">
                     <div class="msg-profile">
-                        <img src="{{ $data['photo'] }}" alt="{{ $data['name'] }}" class="msg-avatar"
+                        <img src="{{ $data->photo_url }}" alt="{{ $data->name }}" class="msg-avatar"
                             onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ urlencode($data['name']) }}&size=260&background=751419&color=fff';">
                         <h3 class="msg-name">{{ $data['name'] }}</h3>
                         <span class="msg-role-badge">{{ $data['role'] }}</span>
@@ -37,7 +37,7 @@
                             <p class="msg-body">{!! nl2br(e($data['message'])) !!}</p>
 
                             <div class="msg-signature">
-                                <img src="{{ $data['photo'] }}" alt="{{ $data['name'] }}" class="msg-sig-avatar"
+                                <img src="{{ $data->photo_url }}" alt="{{ $data->name }}" class="msg-sig-avatar"
                                     onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ urlencode($data['name']) }}&size=44&background=751419&color=fff';">
                                 <div>
                                     <p class="msg-sig-name">{{ $data['name'] }}</p>

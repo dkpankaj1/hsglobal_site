@@ -10,7 +10,6 @@
             </a>
         </li>
 
-        <li class="menu-title">Notifications</li>
         <li class="menu-item">
             <a href="{{ route('admin.important-notice.edit') }}" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="megaphone"></i></span>
@@ -18,7 +17,6 @@
             </a>
         </li>
 
-        <li class="menu-title">Disclosures</li>
         <li class="menu-item">
             <a href="{{ route('admin.mandatory-disclosure.index') }}" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="file-text"></i></span>
@@ -26,7 +24,6 @@
             </a>
         </li>
 
-        <li class="menu-title">Sliders</li>
         <li class="menu-item">
             <a href="{{ route('admin.image-slider.index') }}" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="image"></i></span>
@@ -34,7 +31,6 @@
             </a>
         </li>
 
-        <li class="menu-title">Notices</li>
         <li class="menu-item">
             <a href="{{ route('admin.notice-board.index') }}" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="clipboard-list"></i></span>
@@ -42,7 +38,33 @@
             </a>
         </li>
 
-        <li class="menu-title">Gallery</li>
+        <li class="menu-title">Authorities</li>
+        <li class="menu-item">
+            <a href="#menuAuthority" data-bs-toggle="collapse" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="users"></i></span>
+                <span class="menu-text"> School Authorities </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="menuAuthority">
+                <ul class="nav flex-column sub-menu">
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.authority.chairman') }}">
+                            <span class="menu-text">Chairman</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.authority.director') }}">
+                            <span class="menu-text">Director</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.authority.principal') }}">
+                            <span class="menu-text">Principal</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
 
         <li class="menu-item">
             <a href="#menuGallery" data-bs-toggle="collapse" class="menu-link waves-effect">
@@ -66,39 +88,27 @@
             </div>
         </li>
 
-        <li class="menu-title">Pages</li>
-
 
         <li class="menu-item">
-            <a href="#menuPages" data-bs-toggle="collapse" class="menu-link waves-effect">
-                <span class="menu-icon"><i data-lucide="copy"></i></span>
-                <span class="menu-text"> Extra Pages </span>
-                <span class="menu-arrow"></span>
+            <a href="{{ route('admin.facility.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="building-2"></i></span>
+                <span class="menu-text"> Facilities </span>
             </a>
-            <div class="collapse" id="menuPages">
-                <ul class="sub-menu">
-                    <li class="menu-item">
-                        <a href="#" class="menu-link">
-                            <span class="menu-text">Menu 1</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link">
-                            <span class="menu-text">Menu 2</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link">
-                            <span class="menu-text">Menu 3</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
         </li>
 
+        <li class="menu-item">
+            <a href="{{ route('admin.admission.edit') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>
+                <span class="menu-text"> Admission Settings </span>
+            </a>
+        </li>
 
-        <li class="menu-title">Settings</li>
+        <li class="menu-item">
+            <a href="{{ route('admin.admission.enquiries.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="mail-question"></i></span>
+                <span class="menu-text"> Enquiries </span>
+            </a>
+        </li>
 
         <li class="menu-item">
             <a href="{{ route('admin.settings.edit') }}" class="menu-link waves-effect">
@@ -106,8 +116,6 @@
                 <span class="menu-text"> Setting </span>
             </a>
         </li>
-
-        <li class="menu-title">Accounts</li>
 
         <li class="menu-item">
             <a href="#menuAccount" data-bs-toggle="collapse" class="menu-link waves-effect">

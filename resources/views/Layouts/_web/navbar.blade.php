@@ -57,12 +57,9 @@
                     <a href="{{ route('facilities.infrastructure') }}">Facilities <i class="fa fa-angle-down"
                             aria-hidden="true"></i></a>
                     <ul class="sub-menu" style="display: none;">
-                        <li><a href="{{ route('facilities.infrastructure') }}">Infrastructure</a></li>
-                        <li><a href="{{ route('facilities.smart-classrooms') }}">Smart Classrooms</a></li>
-                        <li><a href="{{ route('facilities.library') }}">Library</a></li>
-                        <li><a href="{{ route('facilities.science-lab') }}">Science Lab</a></li>
-                        <li><a href="{{ route('facilities.computer-lab') }}">Computer Lab</a></li>
-                        <li><a href="{{ route('facilities.sports') }}">Sports Facility</a></li>
+                        @foreach (\App\Models\Facility::where('is_publish', true)->latest()->get() as $menuFacility)
+                            <li><a href="{{ $menuFacility->route }}">{{ $menuFacility->name }}</a></li>
+                        @endforeach
                     </ul>
                 </li>
 
