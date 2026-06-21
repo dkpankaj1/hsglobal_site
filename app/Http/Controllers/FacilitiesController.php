@@ -2,46 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use App\Data\MockData;
 use App\Models\Facility;
 
 class FacilitiesController extends Controller
 {
+    /**
+     * Show all published facilities (infrastructure listing page).
+     */
     public function infrastructure()
     {
-        return $this->showStatic('infrastructure');
+        $facilities = Facility::where('is_publish', true)
+            ->latest()
+            ->get();
+
+        return view('pages.facilities.index', compact('facilities'));
     }
 
+    /**
+     * Show a specific facility by known slug.
+     */
     public function smartClassrooms()
     {
-        return $this->showStatic('smart-classrooms');
+        return $this->showBySlug('smart-classrooms');
     }
 
     public function library()
     {
-        return $this->showStatic('library');
+        return $this->showBySlug('library');
     }
 
     public function scienceLab()
     {
-        return $this->showStatic('science-lab');
+        return $this->showBySlug('science-lab');
     }
 
     public function computerLab()
     {
-        return $this->showStatic('computer-lab');
+        return $this->showBySlug('computer-lab');
     }
 
     public function sportsFacility()
     {
-        return $this->showStatic('sports');
-    }
-
-    private function showStatic(string $key)
-    {
-        $data = MockData::facility($key);
-
-        return view('pages.facilities.show', compact('data'));
+        return $this->showBySlug('sports');
     }
 
     /**
@@ -49,8 +51,22 @@ class FacilitiesController extends Controller
      */
     public function show(string $slug)
     {
-        $facility = Facility::where('slug', $slug)->where('is_publish', true)->firstOrFail();
+        return $this->showBySlug($slug);
+    }
 
-        return view('pages.facilities.dynamic-show', compact('facility'));
+    /**
+     * Shared helper to fetch a published facility by slug.
+     */
+    private function showBySlug(string $slug)
+    {
+        $facility = Facility::where('slug', $slug)
+            ->where('is_publish', true)
+            ->firstOrFail();
+
+        $allFacilities = Facility::where('is_publish', true)
+            ->orderBy('name')
+            ->get();
+
+        return view('pages.facilities.dynamic-show', compact('facility', 'allFacilities'));
     }
 }

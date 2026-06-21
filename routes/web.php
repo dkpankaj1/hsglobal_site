@@ -48,7 +48,7 @@ Route::prefix('admission')->name('admission.')->group(function () {
 
 // ── Facilities ────────────────────────────────────────────────────
 Route::prefix('facilities')->name('facilities.')->group(function () {
-    Route::get('/infrastructure',   [FacilitiesController::class, 'infrastructure'])->name('infrastructure');
+    Route::get('/',   [FacilitiesController::class, 'infrastructure'])->name('infrastructure');
     Route::get('/smart-classrooms', [FacilitiesController::class, 'smartClassrooms'])->name('smart-classrooms');
     Route::get('/library',          [FacilitiesController::class, 'library'])->name('library');
     Route::get('/science-lab',      [FacilitiesController::class, 'scienceLab'])->name('science-lab');
