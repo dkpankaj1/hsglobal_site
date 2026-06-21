@@ -14,14 +14,14 @@
                         <span>Our Vision</span>
                         <h2>What We Aspire To Be</h2>
                     </div>
-                    <p>{{ $data['vision'] }}</p>
+                    <p>{{ $data->vision }}</p>
                 </div>
                 <div class="col col-md-6" style="margin-bottom:30px;">
                     <div class="section-title-s1">
                         <span>Our Mission</span>
                         <h2>How We Achieve It</h2>
                     </div>
-                    <p>{{ $data['mission'] }}</p>
+                    <p>{{ $data->mission }}</p>
                 </div>
             </div>
 
@@ -34,12 +34,12 @@
             </div>
 
             <div class="row" style="margin-top:20px;">
-                @foreach ($data['core_values'] as $value)
+                @foreach ($coreValues as $value)
                     <div class="col col-sm-6 col-md-3" style="margin-bottom:25px; text-align:center;">
-                        <i class="fa {{ $value['icon'] }} fa-3x"
+                        <i class="fa {{ $value->icon }} fa-3x"
                             style="color:var(--main-color); margin-bottom:12px;"></i>
-                        <h4>{{ $value['title'] }}</h4>
-                        <p>{{ $value['text'] }}</p>
+                        <h4>{{ $value->title }}</h4>
+                        <p>{{ $value->text }}</p>
                     </div>
                 @endforeach
             </div>

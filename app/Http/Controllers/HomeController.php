@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Data\MockData;
+use App\Models\AboutSetting;
 use App\Models\Facility;
+use App\Models\HomeStat;
 use App\Models\ImageSlider;
 use App\Models\ImportantNotice;
 use App\Models\NoticeBoard;
@@ -13,8 +14,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $school = MockData::aboutSchool();
-        $home = MockData::homePage();
+        $school = AboutSetting::firstOrCreate([]);
+        $home   = \App\Data\MockData::homePage();
+        $stats  = HomeStat::orderBy('sort_order')->get();
         $heroSlides  = ImageSlider::all()->map(function ($item) {
             return [
                 'src' => $item->slider_image_url,
@@ -41,6 +43,7 @@ class HomeController extends Controller
         return view('pages.home', compact(
             'school',
             'home',
+            'stats',
             'authorities',
             'importantNotice',
             'heroSlides',

@@ -15,6 +15,7 @@ class AdmissionSetting extends Model
         'contact_phone',
         'contact_email',
         'instructions',
+        'cta_text',
     ];
 
     protected $casts = [

@@ -8,7 +8,7 @@
 
     @push('pageScripts')
         <script src="{{ asset('assets/web/js/home-hero-slider.js') }}"></script>
-        @if (!empty($home['popup']['enabled']))
+        @if ($importantNotice->enabled)
             <script>
                 $(window).on('load', function() {
                     $('#homePopupModal').modal('show');
@@ -48,26 +48,22 @@
             <div class="row">
                 <div class="col col-md-6">
                     <div class="section-title-s1">
-                        <span>Welcome To {{ $school['name'] }}</span>
+                        <span>Welcome To {{ $school->school_name }}</span>
                         <h2>A Future-Ready CBSE School For Holistic Growth</h2>
                     </div>
                     <div class="about-details">
-                        <p>{{ $school['description'] }}</p>
+                        <p>{{ $school->description }}</p>
                         <ul class="home-check-list">
-                            @foreach ($school['highlights'] as $item)
+                            @foreach ($school->highlights as $item)
                                 <li><i class="fa fa-check-circle" aria-hidden="true"></i> {{ $item }}</li>
                             @endforeach
                         </ul>
                         <a href="{{ route('about.school') }}" class="btn theme-btn-s2">Know More</a>
                     </div>
                 </div>
-                <div class="col col-md-6 about-image-col">
+                <div class="col col-md-6 ">
                     <div class="img-holder">
-                        <img src="{{ asset('assets/web/images/about-us/about_2.png') }}" alt=""
-                            class="img img-responsive">
-                        <img src="{{ asset('assets/web/images/about-us/about_1.png') }}" alt=""
-                            class="img img-responsive">
-                        <img src="{{ asset('assets/web/images/about-us/about_3.png') }}" alt=""
+                        <img src="{{ $school->about_image_url }}" alt="{{ $school->school_name }}"
                             class="img img-responsive">
                     </div>
                 </div>
@@ -86,25 +82,16 @@
                 </div>
             </div>
             <div class="row start-count">
-                @foreach ($home['stats'] as $stat)
+                @foreach ($stats as $stat)
                     <div class="col col-sm-6 col-md-3">
                         <div class="home-stat-card">
-
                             <h3>
-                                @php
-                                    $number = preg_replace('/[^0-9]/', '', $stat['number']);
-                                    $suffix = preg_replace('/[0-9]/', '', $stat['number']);
-                                @endphp
-                                <span class="counter" data-count="{{ $number }}" data-duration="2000">00</span>
-                                @if ($suffix)
-                                    <span>{{ $suffix }}</span>
+                                <span class="counter" data-count="{{ $stat->value }}" data-duration="2000">00</span>
+                                @if ($stat->suffix)
+                                    <span>{{ $stat->suffix }}</span>
                                 @endif
                             </h3>
-                            <p>{{ $stat['label'] }}</p>
-
-                            <h4>
-
-
+                            <p>{{ $stat->label }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -191,33 +178,53 @@
     <!-- end of facilities -->
 
     <!-- start of achievements + cta -->
-    <section class="section-padding home-achievement-section">
+    @if ($admission_setting->is_open)
+        <section>
+            <div class="home-admission-cta">
+                <div class="container">
+                    <h3>Admissions Open</h3>
+                    <p>{{ $admission_setting->cta_text ?: 'Join ' . $school->school_name . ' for session ' . ($admission_setting->academic_year ?: '2026-27') . '. Enquire today for eligibility, documents, and fee details.' }}
+                    </p>
+                    <a href="{{ route('admission.procedure') }}" class="theme-btn-s1">Admission Procedure</a>
+                    <a href="{{ route('contact') }}" class="theme-btn-s2">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <section class="section-padding home-achievement-section" style="background:#f9f9f9;">
         <div class="container">
             <div class="row">
-                <div class="col col-md-7">
+                <div class="col">
                     <div class="section-title-s1">
                         <span>Recent Achievements</span>
-                        <h2>Excellence In <span>Academics & Activities</span></h2>
+                        <h2>Excellence In Academics & Activities</h2>
                     </div>
-                    <ul class="home-check-list">
-                        @foreach ($home['achievements'] as $achievement)
-                            <li><i class="fa fa-trophy" aria-hidden="true"></i> {{ $achievement }}</li>
+                    <div class="row" style="margin-top:20px;">
+                        @foreach ($school->achievements as $achievement)
+                            <div class="col col-sm-6" style="margin-bottom:18px;">
+                                <div
+                                    style="background:#fff; border-radius:8px; padding:18px 16px; box-shadow:0 1px 8px rgba(0,0,0,.06); display:flex; align-items:flex-start; gap:14px; height:100%;">
+                                    <div
+                                        style="flex-shrink:0; width:42px; height:42px; border-radius:50%; background:var(--theme-main); display:flex; align-items:center; justify-content:center;">
+                                        <i class="fa {{ $achievement['icon'] }}"
+                                            style="color:#fff; font-size:16px;"></i>
+                                    </div>
+                                    <div>
+                                        <h5 style="margin:0 0 4px; font-weight:700; font-size:15px;">
+                                            {{ $achievement['title'] }}</h5>
+                                        <p style="margin:0; color:#777; font-size:13px; line-height:1.5;">
+                                            {{ $achievement['desc'] }}</p>
+                                        <span
+                                            style="display:inline-block; margin-top:6px; font-size:11px; color:var(--theme-main); font-weight:600;">
+                                            {{ $achievement['year'] }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
-                    </ul>
-                </div>
-                @if ($admission_setting->is_open)
-                    <div class="col col-md-5">
-                        <div class="home-admission-cta">
-                            <h3>Admissions Open</h3>
-                            <p>Join {{ $school['name'] }} for session 2026-27. Enquire today for eligibility,
-                                documents,
-                                and
-                                fee details.</p>
-                            <a href="{{ route('admission.procedure') }}" class="theme-btn-s1">Admission Procedure</a>
-                            <a href="{{ route('contact') }}" class="theme-btn-s2">Contact Us</a>
-                        </div>
                     </div>
-                @endif
+                </div>
             </div>
         </div>
     </section>

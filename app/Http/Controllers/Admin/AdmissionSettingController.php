@@ -28,6 +28,7 @@ class AdmissionSettingController extends Controller
             'contact_phone'  => 'nullable|string|max:20',
             'contact_email'  => 'nullable|email|max:150',
             'instructions'   => 'nullable|string|max:5000',
+            'cta_text'       => 'nullable|string|max:500',
         ]);
 
         try {
@@ -41,6 +42,7 @@ class AdmissionSettingController extends Controller
                 'contact_phone',
                 'contact_email',
                 'instructions',
+                'cta_text',
             ]);
             $data['is_open'] = $request->boolean('is_open');
 

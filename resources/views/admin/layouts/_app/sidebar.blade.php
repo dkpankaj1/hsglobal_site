@@ -96,6 +96,40 @@
             </a>
         </li>
 
+        <li class="menu-title">About Section</li>
+
+        <li class="menu-item">
+            <a href="#menuAbout" data-bs-toggle="collapse" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="info"></i></span>
+                <span class="menu-text"> About Section </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="menuAbout">
+                <ul class="sub-menu">
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.about-setting.edit') }}">
+                            <span class="menu-text">About School</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.vision-mission.edit') }}">
+                            <span class="menu-text">Vision & Mission</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.core-value.index') }}">
+                            <span class="menu-text">Core Values</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{ route('admin.home-stat.index') }}">
+                            <span class="menu-text">Home Stats</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
         <li class="menu-item">
             <a href="{{ route('admin.admission.edit') }}" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>

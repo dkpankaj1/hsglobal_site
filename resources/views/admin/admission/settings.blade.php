@@ -113,6 +113,23 @@
                             </div>
                         </div>
 
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <h4 class="mb-3">Home Page CTA</h4>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="cta_text" class="form-label">CTA Text</label>
+                                    <textarea class="form-control @error('cta_text') is-invalid @enderror" id="cta_text" name="cta_text" rows="3"
+                                        placeholder="e.g. Join us for session 2026-27. Enquire today for eligibility, documents, and fee details.">{{ old('cta_text', $admissionSetting->cta_text) }}</textarea>
+                                    <small class="text-muted">Shown on the home page admission CTA banner.</small>
+                                    @error('cta_text')
+                                        <div class="invalid-feedback d-block">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
                         <hr>
                         <div>
                             <button type="submit" class="btn btn-primary">

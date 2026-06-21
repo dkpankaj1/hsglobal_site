@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutSettingController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AdmissionEnquiryController;
 use App\Http\Controllers\Admin\AdmissionSettingController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\ContactEnquiryController;
+use App\Http\Controllers\Admin\CoreValueController;
+use App\Http\Controllers\Admin\HomeStatController;
 use App\Http\Controllers\Admin\SchoolAuthorityController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FacilityController;
@@ -16,6 +19,7 @@ use App\Http\Controllers\Admin\NoticeBoardController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ThemeController;
 use App\Http\Controllers\Admin\VideoGalleryController;
+use App\Http\Controllers\Admin\VisionMissionController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
@@ -55,6 +59,24 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             ->name('contact-enquiries.show');
         Route::delete('contact-enquiries/{enquiry}', [ContactEnquiryController::class, 'destroy'])
             ->name('contact-enquiries.destroy');
+
+        // About Settings
+        Route::get('about-setting', [AboutSettingController::class, 'edit'])
+            ->name('about-setting.edit');
+        Route::put('about-setting', [AboutSettingController::class, 'update'])
+            ->name('about-setting.update');
+
+        // Vision & Mission
+        Route::get('vision-mission', [VisionMissionController::class, 'edit'])
+            ->name('vision-mission.edit');
+        Route::put('vision-mission', [VisionMissionController::class, 'update'])
+            ->name('vision-mission.update');
+
+        // Core Values
+        Route::resource('core-value', CoreValueController::class);
+
+        // Home Stats
+        Route::resource('home-stat', HomeStatController::class);
 
         Route::get('important-notice', [ImportantNoticeController::class, 'edit'])
             ->name('important-notice.edit');
