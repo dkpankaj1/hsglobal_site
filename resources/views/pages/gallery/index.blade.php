@@ -2,11 +2,7 @@
 
     @include('layouts._web.page-header', [
         'title' => 'Photo Gallery',
-        'breadcrumb' => [
-            ['label' => 'Home', 'url' => route('home')],
-            ['label' => 'Gallery', 'url' => route('gallery.photos')],
-            ['label' => 'Photo Gallery'],
-        ],
+        'breadcrumb' => [['label' => 'Gallery', 'url' => route('gallery.photos')], ['label' => 'Photo Gallery']],
     ])
 
     <section style="padding:42px 0 54px; background:#fafafa;">

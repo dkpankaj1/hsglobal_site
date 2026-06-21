@@ -24,6 +24,7 @@ class SettingController extends Controller
             'favicon' => 'nullable|mimes:ico,png|max:1024',
             'contact_email' => 'required|email|max:255',
             'contact_phone' => 'required|string',
+            'whatsapp_number' => 'nullable|string|max:20',
             'contact_address' => 'required|string|max:500',
             'contact_timings' => 'nullable|string|max:255',
             'facebook_link' => 'nullable|url|max:255',

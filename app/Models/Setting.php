@@ -13,6 +13,7 @@ class Setting extends Model
         'favicon',
         'contact_email',
         'contact_phone',
+        'whatsapp_number',
         'contact_address',
         'contact_timings',
         'facebook_link',

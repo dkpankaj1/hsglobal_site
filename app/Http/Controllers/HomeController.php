@@ -15,20 +15,18 @@ class HomeController extends Controller
     public function index()
     {
         $school = AboutSetting::firstOrCreate([]);
-        $home   = \App\Data\MockData::homePage();
         $stats  = HomeStat::orderBy('sort_order')->get();
-        $heroSlides  = ImageSlider::all()->map(function ($item) {
+        $heroSlides = ImageSlider::all()->map(function ($item) {
             return [
                 'src' => $item->slider_image_url,
                 'title' => $item->alt_text
             ];
         });
 
-        $home['notices'] = NoticeBoard::where('is_publish', true)
+        $notices = NoticeBoard::where('is_publish', true)
             ->latest()
             ->take(5)
-            ->get(['id', 'title'])
-            ->toArray();
+            ->get(['id', 'title']);
 
         $importantNotice = ImportantNotice::firstOrCreate();
 
@@ -42,7 +40,7 @@ class HomeController extends Controller
 
         return view('pages.home', compact(
             'school',
-            'home',
+            'notices',
             'stats',
             'authorities',
             'importantNotice',

@@ -1,26 +1,23 @@
 <div data-simplebar>
     <ul class="app-menu">
 
-        <li class="menu-title">Menu</li>
+        {{-- ──────────────── HOME ──────────────── --}}
+        <li class="menu-title">Home</li>
 
         <li class="menu-item">
             <a href="{{ route('admin.dashboard') }}" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="airplay"></i></span>
-                <span class="menu-text"> Dashboards </span>
+                <span class="menu-text"> Dashboard </span>
             </a>
         </li>
+
+        {{-- ──────────────── CONTENT ──────────────── --}}
+        <li class="menu-title">Content</li>
 
         <li class="menu-item">
             <a href="{{ route('admin.important-notice.edit') }}" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="megaphone"></i></span>
                 <span class="menu-text"> Important Notice </span>
-            </a>
-        </li>
-
-        <li class="menu-item">
-            <a href="{{ route('admin.mandatory-disclosure.index') }}" class="menu-link waves-effect">
-                <span class="menu-icon"><i data-lucide="file-text"></i></span>
-                <span class="menu-text"> Mandatory Disclosure </span>
             </a>
         </li>
 
@@ -38,7 +35,45 @@
             </a>
         </li>
 
-        <li class="menu-title">Academics</li>
+        <li class="menu-item">
+            <a href="#menuGallery" data-bs-toggle="collapse" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="images"></i></span>
+                <span class="menu-text"> Gallery </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="menuGallery">
+                <ul class="sub-menu">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.video-gallery.index') }}" class="menu-link">
+                            <span class="menu-text">Video Gallery</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('admin.gallery.index') }}" class="menu-link">
+                            <span class="menu-text">Photo Gallery</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ route('admin.facility.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="building-2"></i></span>
+                <span class="menu-text"> Facilities </span>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ route('admin.mandatory-disclosure.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="file-text"></i></span>
+                <span class="menu-text"> Mandatory Disclosure </span>
+            </a>
+        </li>
+
+        {{-- ──────────────── PAGES ──────────────── --}}
+        <li class="menu-title">Pages</li>
+
         <li class="menu-item">
             <a href="#menuAcademics" data-bs-toggle="collapse" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="book-open"></i></span>
@@ -86,7 +121,6 @@
             </div>
         </li>
 
-        <li class="menu-title">Admission</li>
         <li class="menu-item">
             <a href="#menuAdmission" data-bs-toggle="collapse" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>
@@ -101,7 +135,8 @@
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-link" href="{{ route('admin.admission.pages.edit', 'eligibility-criteria') }}">
+                        <a class="menu-link"
+                            href="{{ route('admin.admission.pages.edit', 'eligibility-criteria') }}">
                             <span class="menu-text">Eligibility Criteria</span>
                         </a>
                     </li>
@@ -129,7 +164,37 @@
             </div>
         </li>
 
-        <li class="menu-title">Authorities</li>
+        {{-- ──────────────── ABOUT SCHOOL ──────────────── --}}
+        <li class="menu-title">About School</li>
+
+        <li class="menu-item">
+            <a href="{{ route('admin.about-setting.edit') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="info"></i></span>
+                <span class="menu-text"> About School </span>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ route('admin.vision-mission.edit') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="eye"></i></span>
+                <span class="menu-text"> Vision &amp; Mission </span>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ route('admin.core-value.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="star"></i></span>
+                <span class="menu-text"> Core Values </span>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ route('admin.home-stat.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="bar-chart-3"></i></span>
+                <span class="menu-text"> Home Stats </span>
+            </a>
+        </li>
+
         <li class="menu-item">
             <a href="#menuAuthority" data-bs-toggle="collapse" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="users"></i></span>
@@ -157,73 +222,12 @@
             </div>
         </li>
 
-        <li class="menu-item">
-            <a href="#menuGallery" data-bs-toggle="collapse" class="menu-link waves-effect">
-                <span class="menu-icon"><i data-lucide="images"></i></span>
-                <span class="menu-text"> Gallery </span>
-                <span class="menu-arrow"></span>
-            </a>
-            <div class="collapse" id="menuGallery">
-                <ul class="sub-menu">
-                    <li class="menu-item">
-                        <a href="{{ route('admin.video-gallery.index') }}" class="menu-link">
-                            <span class="menu-text">Video Gallery</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{ route('admin.gallery.index') }}" class="menu-link">
-                            <span class="menu-text">Photo Gallery</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-
-
-        <li class="menu-item">
-            <a href="{{ route('admin.facility.index') }}" class="menu-link waves-effect">
-                <span class="menu-icon"><i data-lucide="building-2"></i></span>
-                <span class="menu-text"> Facilities </span>
-            </a>
-        </li>
-
-        <li class="menu-title">About Section</li>
-
-        <li class="menu-item">
-            <a href="#menuAbout" data-bs-toggle="collapse" class="menu-link waves-effect">
-                <span class="menu-icon"><i data-lucide="info"></i></span>
-                <span class="menu-text"> About Section </span>
-                <span class="menu-arrow"></span>
-            </a>
-            <div class="collapse" id="menuAbout">
-                <ul class="sub-menu">
-                    <li class="menu-item">
-                        <a class="menu-link" href="{{ route('admin.about-setting.edit') }}">
-                            <span class="menu-text">About School</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="{{ route('admin.vision-mission.edit') }}">
-                            <span class="menu-text">Vision & Mission</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="{{ route('admin.core-value.index') }}">
-                            <span class="menu-text">Core Values</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="{{ route('admin.home-stat.index') }}">
-                            <span class="menu-text">Home Stats</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </li>
+        {{-- ──────────────── ADMISSION & ENQUIRIES ──────────────── --}}
+        <li class="menu-title">Admission &amp; Enquiries</li>
 
         <li class="menu-item">
             <a href="{{ route('admin.admission.edit') }}" class="menu-link waves-effect">
-                <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>
+                <span class="menu-icon"><i data-lucide="sliders-horizontal"></i></span>
                 <span class="menu-text"> Admission Settings </span>
             </a>
         </li>
@@ -242,16 +246,19 @@
             </a>
         </li>
 
+        {{-- ──────────────── SETTINGS ──────────────── --}}
+        <li class="menu-title">Settings</li>
+
         <li class="menu-item">
             <a href="{{ route('admin.settings.edit') }}" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="settings"></i></span>
-                <span class="menu-text"> Setting </span>
+                <span class="menu-text"> Site Settings </span>
             </a>
         </li>
 
         <li class="menu-item">
             <a href="#menuAccount" data-bs-toggle="collapse" class="menu-link waves-effect">
-                <span class="menu-icon"><i data-lucide="copy"></i></span>
+                <span class="menu-icon"><i data-lucide="user-circle"></i></span>
                 <span class="menu-text"> My Account </span>
                 <span class="menu-arrow"></span>
             </a>
@@ -272,7 +279,6 @@
                             <span class="menu-text">Change Password</span>
                         </a>
                     </li>
-
                 </ul>
             </div>
         </li>

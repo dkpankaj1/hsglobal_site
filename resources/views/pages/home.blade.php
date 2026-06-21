@@ -24,9 +24,9 @@
                 <span class="notice-label"><i class="fa fa-bullhorn" aria-hidden="true"></i> Notices</span>
                 <div class="marquee-wrapper">
                     <marquee behavior="scroll" direction="left" scrollamount="5" onmouseout="this.start();">
-                        @foreach ($home['notices'] as $notice)
-                            <a href="{{ route('notifications.show', $notice['id']) }}"
-                                class="notice-item">{{ $notice['title'] }}</a>
+                        @foreach ($notices as $notice)
+                            <a href="{{ route('notifications.show', $notice->id) }}"
+                                class="notice-item">{{ $notice->title }}</a>
                             @if (!$loop->last)
                                 <span class="notice-separator"><i class="fa fa-circle" aria-hidden="true"></i></span>
                             @endif
@@ -145,7 +145,7 @@
                 </div>
             </div>
             <div class="row home-facility-grid">
-                @forelse ($facilities as $facility)
+                @foreach ($facilities as $facility)
                     <div class="col col-sm-6 col-md-4">
                         <a href="{{ $facility->route }}" class="home-facility-card">
                             <div class="home-facility-media">
@@ -157,21 +157,7 @@
                             </div>
                         </a>
                     </div>
-                @empty
-                    @foreach ($home['facilities'] as $facility)
-                        <div class="col col-sm-6 col-md-4">
-                            <a href="{{ route($facility['route']) }}" class="home-facility-card">
-                                <div class="home-facility-media">
-                                    <img src="{{ $facility['image'] }}" alt="{{ $facility['title'] }}">
-                                </div>
-                                <div class="home-facility-body">
-                                    <h3>{{ $facility['title'] }}</h3>
-                                    <p>{{ $facility['description'] }}</p>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-                @endforelse
+                @endforeach
             </div>
         </div>
     </section>

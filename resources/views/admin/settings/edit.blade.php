@@ -81,11 +81,19 @@
                                 placeholder="example@gmail.com" />
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <x-input-label name="contact_phone" text="Contact Phone" />
                             <x-input-field name="contact_phone" type="text"
                                 value="{{ old('contact_phone', $setting->contact_phone ?? '') }}"
+                                placeholder="+91-9919xxxx55" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <x-input-label name="whatsapp_number" text="WhatsApp Number" />
+                            <x-input-field name="whatsapp_number" type="text"
+                                value="{{ old('whatsapp_number', $setting->whatsapp_number ?? '') }}"
                                 placeholder="+91-9919xxxx55" />
                         </div>
                     </div>
