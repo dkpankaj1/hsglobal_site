@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AdmissionEnquiryController;
 use App\Http\Controllers\Admin\AdmissionSettingController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\ContactEnquiryController;
 use App\Http\Controllers\Admin\SchoolAuthorityController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FacilityController;
@@ -46,6 +47,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             ->name('admission.enquiries.show');
         Route::delete('admission/enquiries/{enquiry}', [AdmissionEnquiryController::class, 'destroy'])
             ->name('admission.enquiries.destroy');
+
+        // Contact Enquiries
+        Route::get('contact-enquiries', [ContactEnquiryController::class, 'index'])
+            ->name('contact-enquiries.index');
+        Route::get('contact-enquiries/{enquiry}', [ContactEnquiryController::class, 'show'])
+            ->name('contact-enquiries.show');
+        Route::delete('contact-enquiries/{enquiry}', [ContactEnquiryController::class, 'destroy'])
+            ->name('contact-enquiries.destroy');
 
         Route::get('important-notice', [ImportantNoticeController::class, 'edit'])
             ->name('important-notice.edit');

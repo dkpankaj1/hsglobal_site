@@ -205,16 +205,19 @@
                         @endforeach
                     </ul>
                 </div>
-                <div class="col col-md-5">
-                    <div class="home-admission-cta">
-                        <h3>Admissions Open</h3>
-                        <p>Join {{ $school['name'] }} for session 2026-27. Enquire today for eligibility, documents,
-                            and
-                            fee details.</p>
-                        <a href="{{ route('admission.procedure') }}" class="theme-btn-s1">Admission Procedure</a>
-                        <a href="{{ route('contact') }}" class="theme-btn-s2">Contact Us</a>
+                @if ($admission_setting->is_open)
+                    <div class="col col-md-5">
+                        <div class="home-admission-cta">
+                            <h3>Admissions Open</h3>
+                            <p>Join {{ $school['name'] }} for session 2026-27. Enquire today for eligibility,
+                                documents,
+                                and
+                                fee details.</p>
+                            <a href="{{ route('admission.procedure') }}" class="theme-btn-s1">Admission Procedure</a>
+                            <a href="{{ route('contact') }}" class="theme-btn-s2">Contact Us</a>
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </section>

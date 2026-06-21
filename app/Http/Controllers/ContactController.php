@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Data\MockData;
+use App\Models\ContactEnquiry;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        $info = MockData::contactInfo();
-
-        return view('pages.contact', compact('info'));
+        return view('pages.contact');
     }
 
     public function submit(Request $request)
@@ -24,8 +22,7 @@ class ContactController extends Controller
             'message' => 'required|string|max:2000',
         ]);
 
-        // TODO: Save to DB and/or send email notification when admin panel is ready.
-        // Mail::to(config('mail.admin_address'))->send(new ContactMail($validated));
+        ContactEnquiry::create($validated);
 
         return redirect()->route('contact')
             ->with('success', 'Thank you for contacting us. We will get back to you shortly.');

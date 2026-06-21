@@ -16,24 +16,23 @@
                         <span>Get In Touch</span>
                         <h2>Contact Info</h2>
                     </div>
-
                     <ul style="list-style:none; padding:0; margin-top:20px;">
                         <li style="display:flex; gap:15px; margin-bottom:20px;">
                             <i class="fa fa-map-marker fa-lg"
-                                style="color:var(--main-color); width:20px; margin-top:3px;"></i>
-                            <span>{{ $info['address'] }}</span>
+                                style="color:var(--theme-main); width:20px; margin-top:3px;"></i>
+                            <span>{{ $setting->contact_address }}</span>
                         </li>
                         <li style="display:flex; gap:15px; margin-bottom:20px;">
-                            <i class="fa fa-phone fa-lg" style="color:var(--main-color); width:20px;"></i>
-                            <a href="tel:{{ $info['phone'] }}">{{ $info['phone'] }}</a>
+                            <i class="fa fa-phone fa-lg" style="color:var(--theme-main); width:20px;"></i>
+                            <a href="tel:{{ $setting->contact_phone }}">{{ $setting->contact_phone }}</a>
                         </li>
                         <li style="display:flex; gap:15px; margin-bottom:20px;">
-                            <i class="fa fa-envelope fa-lg" style="color:var(--main-color); width:20px;"></i>
-                            <a href="mailto:{{ $info['email'] }}">{{ $info['email'] }}</a>
+                            <i class="fa fa-envelope fa-lg" style="color:var(--theme-main); width:20px;"></i>
+                            <a href="mailto:{{ $setting->contact_email }}">{{ $setting->contact_email }}</a>
                         </li>
                         <li style="display:flex; gap:15px; margin-bottom:20px;">
-                            <i class="fa fa-clock-o fa-lg" style="color:var(--main-color); width:20px;"></i>
-                            <span>{{ $info['timings'] }}</span>
+                            <i class="fa fa-clock-o fa-lg" style="color:var(--theme-main); width:20px;"></i>
+                            <span>{{ $setting->contact_timings }}</span>
                         </li>
                     </ul>
                 </div>

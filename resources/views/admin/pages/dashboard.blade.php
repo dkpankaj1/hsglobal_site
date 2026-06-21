@@ -56,9 +56,25 @@
                         style="font-size:1.8rem; color:#ec4899;"></i>
                     <h3 class="mb-0">{{ $stats['enquiries'] }}</h3>
                     <small class="text-muted">
-                        Enquiries
+                        Adm. Enquiries
                         @if ($stats['new_enquiries'] > 0)
                             <span class="badge bg-warning text-dark ms-1">{{ $stats['new_enquiries'] }} new</span>
+                        @endif
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-2">
+            <div class="card">
+                <div class="card-body text-center p-3">
+                    <i data-lucide="message-square" class="d-block mx-auto mb-2"
+                        style="font-size:1.8rem; color:#0ea5e9;"></i>
+                    <h3 class="mb-0">{{ $stats['contact_enquiries'] }}</h3>
+                    <small class="text-muted">
+                        Contact Enq.
+                        @if ($stats['new_contact_enquiries'] > 0)
+                            <span class="badge bg-warning text-dark ms-1">{{ $stats['new_contact_enquiries'] }}
+                                new</span>
                         @endif
                     </small>
                 </div>
@@ -67,11 +83,11 @@
     </div>
 
     <div class="row mt-3">
-        {{-- Recent Enquiries --}}
+        {{-- Recent Admission Enquiries --}}
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h4 class="header-title mb-0">Recent Enquiries</h4>
+                    <h4 class="header-title mb-0">Recent Admission Enquiries</h4>
                     <a href="{{ route('admin.admission.enquiries.index') }}" class="btn btn-sm btn-outline-primary">
                         View All
                     </a>
@@ -121,6 +137,60 @@
                     @endif
                 </div>
             </div>
+
+            {{-- Recent Contact Enquiries --}}
+            <div class="card mt-3">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="header-title mb-0">Recent Contact Enquiries</h4>
+                    <a href="{{ route('admin.contact-enquiries.index') }}" class="btn btn-sm btn-outline-primary">
+                        View All
+                    </a>
+                </div>
+                <div class="card-body p-0">
+                    @if ($recentContactEnquiries->isNotEmpty())
+                        <div class="table-responsive">
+                            <table class="table table-sm mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Subject</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($recentContactEnquiries as $enquiry)
+                                        <tr class="{{ $enquiry->is_read ? '' : 'fw-bold' }}">
+                                            <td>{{ $enquiry->name }}</td>
+                                            <td>{{ $enquiry->subject }}</td>
+                                            <td>{{ $enquiry->email }}</td>
+                                            <td>{{ $enquiry->phone ?? '—' }}</td>
+                                            <td>
+                                                @if ($enquiry->is_read)
+                                                    <span class="badge bg-secondary">Read</span>
+                                                @else
+                                                    <span class="badge bg-warning text-dark">New</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.contact-enquiries.show', $enquiry) }}"
+                                                    class="btn btn-sm btn-info">View</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    @else
+                        <div class="text-center py-4 text-muted">
+                            <i data-lucide="inbox" class="d-block mb-2" style="font-size:2rem;"></i>
+                            No contact enquiries yet.
+                        </div>
+                    @endif
+                </div>
+            </div>
         </div>
 
         {{-- Quick Actions --}}
@@ -134,13 +204,16 @@
                         <a href="{{ route('admin.gallery.create') }}" class="btn btn-outline-primary text-start">
                             <i data-lucide="image-plus" class="me-2"></i> Create Photo Gallery
                         </a>
-                        <a href="{{ route('admin.video-gallery.create') }}" class="btn btn-outline-primary text-start">
+                        <a href="{{ route('admin.video-gallery.create') }}"
+                            class="btn btn-outline-primary text-start">
                             <i data-lucide="video-plus" class="me-2"></i> Add Video
                         </a>
-                        <a href="{{ route('admin.notice-board.create') }}" class="btn btn-outline-primary text-start">
+                        <a href="{{ route('admin.notice-board.create') }}"
+                            class="btn btn-outline-primary text-start">
                             <i data-lucide="clipboard-plus" class="me-2"></i> Add Notice
                         </a>
-                        <a href="{{ route('admin.image-slider.create') }}" class="btn btn-outline-primary text-start">
+                        <a href="{{ route('admin.image-slider.create') }}"
+                            class="btn btn-outline-primary text-start">
                             <i data-lucide="image-plus" class="me-2"></i> Add Slider Image
                         </a>
                         <a href="{{ route('admin.mandatory-disclosure.create') }}"

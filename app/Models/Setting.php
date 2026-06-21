@@ -14,6 +14,7 @@ class Setting extends Model
         'contact_email',
         'contact_phone',
         'contact_address',
+        'contact_timings',
         'facebook_link',
         'twitter_link',
         'instagram_link',

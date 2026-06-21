@@ -99,6 +99,14 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <x-input-label name="contact_timings" text="Contact Timings" />
+                            <x-input-field name="contact_timings" type="text"
+                                value="{{ old('contact_timings', $setting->contact_timings ?? '') }}"
+                                placeholder="Mon – Sat: 8:00 AM – 2:30 PM" />
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Social Media Links -->

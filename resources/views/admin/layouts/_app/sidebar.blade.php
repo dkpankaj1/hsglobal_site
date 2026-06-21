@@ -106,7 +106,14 @@
         <li class="menu-item">
             <a href="{{ route('admin.admission.enquiries.index') }}" class="menu-link waves-effect">
                 <span class="menu-icon"><i data-lucide="mail-question"></i></span>
-                <span class="menu-text"> Enquiries </span>
+                <span class="menu-text"> Admission Enquiries </span>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ route('admin.contact-enquiries.index') }}" class="menu-link waves-effect">
+                <span class="menu-icon"><i data-lucide="message-square"></i></span>
+                <span class="menu-text"> Contact Enquiries </span>
             </a>
         </li>
 
