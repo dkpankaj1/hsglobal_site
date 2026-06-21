@@ -1,34 +1,51 @@
 ﻿{{-- Shared template for Chairman / Director / Principal messages --}}
 <x-web-layout>
 
-    @include('Layouts._web.page-header', [
-        'title'      => $data['role'],
-        'breadcrumb' => [
-            ['label' => 'About Us', 'url' => route('about.school')],
-            ['label' => $data['role']],
-        ],
+    @include('layouts._web.page-header', [
+        'title' => $data['role'],
+        'breadcrumb' => [['label' => 'About Us', 'url' => route('about.school')], ['label' => $data['role']]],
     ])
 
-    <section class="section-padding">
+    <section class="msg-section">
         <div class="container">
-            <div class="row">
+            <div class="row msg-row">
 
-                <div class="col col-md-3" style="text-align:center; margin-bottom:30px;">
-                    <img src="{{ $data['photo'] }}"
-                         alt="{{ $data['name'] }}"
-                         class="img img-responsive img-circle"
-                         style="width:180px; height:180px; object-fit:cover; margin:0 auto 15px; border:4px solid var(--main-color);"
-                         onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ urlencode($data['name']) }}&size=180&background=751419&color=fff&rounded=true'">
-                    <h4 style="margin-bottom:4px;">{{ $data['name'] }}</h4>
-                    <span style="color:var(--main-color); font-weight:600;">{{ $data['role'] }}</span>
+                {{-- Profile Card --}}
+                <div class="col-md-4 msg-col">
+                    <div class="msg-profile">
+                        <img src="{{ $data->photo_url }}" alt="{{ $data->name }}" class="msg-avatar"
+                            onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ urlencode($data['name']) }}&size=260&background=751419&color=fff';">
+                        <h3 class="msg-name">{{ $data['name'] }}</h3>
+                        <span class="msg-role-badge">{{ $data['role'] }}</span>
+                        <div class="msg-divider"></div>
+                        <p class="msg-hint">Message from the {{ $data['role'] }}</p>
+                    </div>
                 </div>
 
-                <div class="col col-md-9">
-                    <div class="section-title-s1">
-                        <span>A Message From Us</span>
-                        <h2>{{ $data['role'] }}</h2>
+                {{-- Message Content --}}
+                <div class="col-md-8 msg-col">
+                    <div class="msg-content">
+                        <div class="msg-heading">
+                            <div class="msg-accent-bar"></div>
+                            <div>
+                                <p class="msg-label">A Message From</p>
+                                <h2 class="msg-title">{{ $data['role'] }}</h2>
+                            </div>
+                        </div>
+
+                        <div class="msg-card">
+                            <p class="msg-body">{!! nl2br(e($data['message'])) !!}</p>
+
+                            <div class="msg-signature">
+                                <img src="{{ $data->photo_url }}" alt="{{ $data->name }}" class="msg-sig-avatar"
+                                    onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ urlencode($data['name']) }}&size=44&background=751419&color=fff';">
+                                <div>
+                                    <p class="msg-sig-name">{{ $data['name'] }}</p>
+                                    <p class="msg-sig-role">{{ $data['role'] }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p style="font-size:16px; line-height:1.9;">{!! nl2br(e($data['message'])) !!}</p>
                 </div>
 
             </div>

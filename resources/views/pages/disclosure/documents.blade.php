@@ -1,9 +1,9 @@
 ﻿<x-web-layout>
 
-    @include('Layouts._web.page-header', [
-        'title'      => 'Documents & Information',
+    @include('layouts._web.page-header', [
+        'title' => 'Documents & Information',
         'breadcrumb' => [
-            ['label' => 'Mandatory Disclosure', 'url' => route('disclosure.general')],
+            ['label' => 'Mandatory Disclosure', 'url' => route('disclosure.index')],
             ['label' => 'Documents & Information'],
         ],
     ])
@@ -19,10 +19,14 @@
                 <div class="col col-md-8">
                     <table class="table table-bordered table-hover">
                         <thead style="background-color:var(--main-color); color:#fff;">
-                            <tr><th>#</th><th>Document Name</th><th>Download</th></tr>
+                            <tr>
+                                <th>#</th>
+                                <th>Document Name</th>
+                                <th>Download</th>
+                            </tr>
                         </thead>
                         <tbody>
-                            @foreach($data as $i => $doc)
+                            @foreach ($data as $i => $doc)
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
                                     <td>{{ $doc['name'] }}</td>

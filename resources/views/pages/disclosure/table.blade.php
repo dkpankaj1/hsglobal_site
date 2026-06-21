@@ -1,10 +1,10 @@
 ﻿{{-- Reusable disclosure table view --}}
 <x-web-layout>
 
-    @include('Layouts._web.page-header', [
-        'title'      => $pageTitle,
+    @include('layouts._web.page-header', [
+        'title' => $pageTitle,
         'breadcrumb' => [
-            ['label' => 'Mandatory Disclosure', 'url' => route('disclosure.general')],
+            ['label' => 'Mandatory Disclosure', 'url' => route('disclosure.index')],
             ['label' => $pageTitle],
         ],
     ])
@@ -20,15 +20,15 @@
                 <table class="table table-bordered table-hover">
                     <thead style="background-color:var(--main-color); color:#fff;">
                         <tr>
-                            @foreach($columns as $col)
+                            @foreach ($columns as $col)
                                 <th>{{ $col }}</th>
                             @endforeach
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($rows as $row)
+                        @foreach ($rows as $row)
                             <tr>
-                                @foreach($row as $cell)
+                                @foreach ($row as $cell)
                                     <td>{{ $cell }}</td>
                                 @endforeach
                             </tr>

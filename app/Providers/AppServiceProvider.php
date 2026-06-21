@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\AdmissionSetting;
+use App\Models\Setting;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Paginator::useBootstrapFour();
+
+        View::share('setting', Setting::firstOrCreate([]));
+        View::share('admission_setting', AdmissionSetting::firstOrCreate([]));
     }
 }

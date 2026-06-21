@@ -1,88 +1,90 @@
-<footer class="site-footer">
+<footer class="site-footer hsga-footer">
     <div class="container">
-        <div class="row">
-            <div class="col col-lg-4 col-md-3 col-xs-6">
-                <div class="widget about-widget">
-                    <h3><a href="#" class="logo">Mega Industry</a></h3>
-                    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laborio,
-                        nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in
-                        ea voluptate velit esse quam nihil.</p>
-                </div>
-            </div>
-
-            <div class="col col-lg-2 col-md-3 col-xs-6">
-                <div class="widget site-map-widget">
-                    <h3>Navigation</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="#">Contuct</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col col-lg-3 col-md-3 col-xs-6">
-                <div class="widget news-widget">
-                    <h3>Recent news</h3>
-                    <ul>
-                        <li>
-                            <div class="entry-media">
-                                <img src="images/blog/thumb/img-1.jpg" alt>
-                            </div>
-                            <div class="entry-details">
-                                <h5><a href="#">New ch017y concrete mixer is bought</a></h5>
-                                <span class="date">19 FEB</span>
-                            </div>
+        <div class="row hsga-footer-grid">
+            <div class="col col-lg-5 col-md-6 col-sm-12">
+                <div class="widget hsga-footer-brand">
+                    <a href="{{ route('home') }}" class="logo" style="display:inline-block; margin-bottom:14px;">
+                        <img src="{{ $setting?->footer_logo_url ?? asset('static/logo/logo_footer.png') }}"
+                            alt="{{ $setting?->brand_name ?? 'HSGA School' }} logo"
+                            style="max-height:72px; display:block;">
+                    </a>
+                    <p>
+                        Building confident learners through strong academics, disciplined values, and meaningful
+                        co-curricular growth in a safe school environment.
+                    </p>
+                    <ul class="hsga-contact-list">
+                        <li><i class="fa fa-map-marker"></i>{{ $setting?->contact_address ?? 'Haridwar, Uttarakhand' }}
                         </li>
-                        <li>
-                            <div class="entry-media">
-                                <img src="images/blog/thumb/img-1.jpg" alt>
-                            </div>
-                            <div class="entry-details">
-                                <h5><a href="#">New ch017y concrete mixer is bought</a></h5>
-                                <span class="date">16 FEB</span>
-                            </div>
+                        <li><i class="fa fa-phone"></i><a
+                                href="tel:{{ $setting?->contact_phone ?? '+910000000000' }}">{{ $setting?->contact_phone ?? '+91 00000 00000' }}</a>
+                        </li>
+                        <li><i class="fa fa-envelope"></i><a
+                                href="mailto:{{ $setting?->contact_email ?? 'info@hsgaschool.in' }}">{{ $setting?->contact_email ?? 'info@hsgaschool.in' }}</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="col col-lg-3 col-md-3 col-xs-6">
-                <div class="widget newsletter-widget">
-                    <h3>Subscription</h3>
-                    <p>Enter your email address to subscribe our weekly newsletter</p>
-                    <form class="form">
-                        <div>
-                            <input type="text" class="form-control" placeholder="email address">
-                            <button class="btn" type="submit"><i class="fa fa-send"></i></button>
-                        </div>
-
-                    </form>
-                </div>
-
-                <div class="widget social-media-widget">
-                    <ul class="social-links">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            <div class="col col-lg-3 col-md-6 col-sm-6">
+                <div class="widget hsga-footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('about.school') }}">About School</a></li>
+                        <li><a href="{{ route('admission.procedure') }}">Admissions</a></li>
+                        <li><a href="{{ route('gallery.photos') }}">Gallery</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>
-        </div> <!-- end row -->
-    </div> <!-- end container -->
+
+            <div class="col col-lg-4 col-md-12 col-sm-6">
+                <div class="widget hsga-footer-links">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="{{ route('facilities.infrastructure') }}">Infrastructure</a></li>
+                        <li><a href="{{ route('facilities.library') }}">Library</a></li>
+                        <li><a href="{{ route('gallery.videos') }}">Video Gallery</a></li>
+                        <li><a href="{{ route('notifications.list') }}">Notifications</a></li>
+                        <li><a href="{{ route('disclosure.index') }}">Mandatory Disclosure</a></li>
+                    </ul>
+                    <div class="hsga-social-wrap">
+                        @if ($setting?->facebook_link)
+                            <a href="{{ $setting->facebook_link }}" target="_blank" rel="noopener noreferrer"
+                                aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                        @else
+                            <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                        @endif
+                        @if ($setting?->instagram_link)
+                            <a href="{{ $setting->instagram_link }}" target="_blank" rel="noopener noreferrer"
+                                aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                        @else
+                            <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                        @endif
+                        <a href="#" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+                        @if ($setting?->linkedin_link)
+                            <a href="{{ $setting->linkedin_link }}" target="_blank" rel="noopener noreferrer"
+                                aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                        @else
+                            <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
-<div class="lower-footer">
+
+<div class="lower-footer hsga-lower-footer">
     <div class="container">
         <div class="row">
             <div class="col col-xs-12">
                 <p class="copyright">
-                    &copy; {{ date('Y') }} <a href="#">HSGA School</a>. All Rights Reserved.
-                    &nbsp;|&nbsp; Developed by <a href="https://dipankarwebdev.co.in" target="_blank">TechWizi</a>
+                    &copy; {{ date('Y') }} <a
+                        href="{{ route('home') }}">{{ $setting?->brand_name ?? 'HSGA School' }}</a>. All Rights
+                    Reserved.
+                    &nbsp;|&nbsp; Developed by <a href="https://dipankarwebdev.co.in" target="_blank"
+                        rel="noopener noreferrer">TechWizi</a>
                 </p>
             </div>
         </div>

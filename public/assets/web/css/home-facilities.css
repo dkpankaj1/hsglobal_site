@@ -1,0 +1,116 @@
+.home-facilities {
+    background: #faf7f3;
+}
+
+.home-facility-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.home-facility-grid .col {
+    display: flex;
+    margin-bottom: 34px;
+}
+
+.home-facility-card {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #e7ddd3;
+    padding: 0;
+    color: #1f2937;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.home-facility-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-facility-card:hover,
+.home-facility-card:focus {
+    transform: translateY(-6px);
+    border-color: #c97a39;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    color: #1f2937;
+}
+
+.home-facility-media {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-bottom: 1px solid #eadfd4;
+    background: #ebe6df;
+}
+
+.home-facility-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.home-facility-card:hover .home-facility-media img,
+.home-facility-card:focus .home-facility-media img {
+    transform: scale(1.05);
+}
+
+.home-facility-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 22px 22px 24px;
+}
+
+.home-facility-body h3 {
+    margin: 0 0 12px;
+    color: #9a2f14;
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+.home-facility-body p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #243447;
+    flex: 1;
+}
+
+@media (max-width: 991px) {
+    .home-facility-grid .col {
+        margin-bottom: 28px;
+    }
+
+    .home-facility-body {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-facilities {
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+
+    .home-facility-grid {
+        margin-top: 0;
+    }
+
+    .home-facility-grid .col {
+        width: 100%;
+        margin-bottom: 22px;
+    }
+
+    .home-facility-body h3 {
+        font-size: 18px;
+    }
+
+    .home-facility-body p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+}

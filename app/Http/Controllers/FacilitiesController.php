@@ -3,43 +3,54 @@
 namespace App\Http\Controllers;
 
 use App\Data\MockData;
+use App\Models\Facility;
 
 class FacilitiesController extends Controller
 {
     public function infrastructure()
     {
-        return $this->show('infrastructure');
+        return $this->showStatic('infrastructure');
     }
 
     public function smartClassrooms()
     {
-        return $this->show('smart-classrooms');
+        return $this->showStatic('smart-classrooms');
     }
 
     public function library()
     {
-        return $this->show('library');
+        return $this->showStatic('library');
     }
 
     public function scienceLab()
     {
-        return $this->show('science-lab');
+        return $this->showStatic('science-lab');
     }
 
     public function computerLab()
     {
-        return $this->show('computer-lab');
+        return $this->showStatic('computer-lab');
     }
 
     public function sportsFacility()
     {
-        return $this->show('sports');
+        return $this->showStatic('sports');
     }
 
-    private function show(string $key)
+    private function showStatic(string $key)
     {
         $data = MockData::facility($key);
 
         return view('pages.facilities.show', compact('data'));
+    }
+
+    /**
+     * Display a dynamic facility by slug.
+     */
+    public function show(string $slug)
+    {
+        $facility = Facility::where('slug', $slug)->where('is_publish', true)->firstOrFail();
+
+        return view('pages.facilities.dynamic-show', compact('facility'));
     }
 }

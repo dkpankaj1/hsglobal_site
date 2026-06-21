@@ -2,56 +2,50 @@
 
 namespace App\Http\Controllers;
 
-use App\Data\MockData;
+use App\Models\Page;
 
 class AcademicsController extends Controller
 {
+    /**
+     * Render a dynamic Academics page by slug.
+     */
+    protected function page(string $slug)
+    {
+        $page = Page::where('slug', $slug)->published()->firstOrFail();
+
+        return view('pages.dynamic', [
+            'page'       => $page,
+            'section'    => 'Academics',
+            'sectionUrl' => route('academics.curriculum'),
+        ]);
+    }
+
     public function curriculum()
     {
-        $data = MockData::curriculum();
-
-        return view('pages.academics.curriculum', compact('data'));
+        return $this->page('curriculum');
     }
-
     public function examinationPolicy()
     {
-        $data = MockData::examinationPolicy();
-
-        return view('pages.academics.examination-policy', compact('data'));
+        return $this->page('examination-policy');
     }
-
     public function schoolTiming()
     {
-        $data = MockData::schoolTiming();
-
-        return view('pages.academics.school-timing', compact('data'));
+        return $this->page('school-timing');
     }
-
     public function rulesRegulations()
     {
-        $data = MockData::rulesRegulations();
-
-        return view('pages.academics.rules-regulations', compact('data'));
+        return $this->page('rules-regulations');
     }
-
     public function uniformRegulations()
     {
-        $data = MockData::uniformRegulations();
-
-        return view('pages.academics.uniform-regulations', compact('data'));
+        return $this->page('uniform-regulations');
     }
-
     public function bookList()
     {
-        $data = MockData::bookList();
-
-        return view('pages.academics.book-list', compact('data'));
+        return $this->page('book-list');
     }
-
     public function feeStructure()
     {
-        $data = MockData::feeStructure();
-
-        return view('pages.academics.fee-structure', compact('data'));
+        return $this->page('fee-structure');
     }
 }

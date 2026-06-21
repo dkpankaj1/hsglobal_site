@@ -2,48 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Data\MockData;
+use App\Models\Gallery;
 
 class GalleryController extends Controller
 {
-    public function photos()
+    /**
+     * Display all published photo galleries.
+     */
+    public function index()
     {
-        $photos = MockData::galleryPhotos();
+        $galleries = Gallery::with('images')
+            ->where('is_published', true)
+            ->latest()
+            ->paginate(12);
 
-        return view('pages.gallery.photos', compact('photos'));
+        return view('pages.gallery.index', compact('galleries'));
     }
 
-    public function videos()
+    /**
+     * Display a single gallery with its images.
+     */
+    public function show(string $slug)
     {
-        $videos = MockData::galleryVideos();
+        $gallery = Gallery::with('images')
+            ->where('slug', $slug)
+            ->where('is_published', true)
+            ->firstOrFail();
 
-        return view('pages.gallery.videos', compact('videos'));
-    }
-
-    public function sportsEvents()
-    {
-        return $this->showEvents('sports');
-    }
-
-    public function culturalPrograms()
-    {
-        return $this->showEvents('cultural');
-    }
-
-    public function prizeDistribution()
-    {
-        return $this->showEvents('prize');
-    }
-
-    public function achievements()
-    {
-        return $this->showEvents('achievements');
-    }
-
-    private function showEvents(string $type)
-    {
-        $data = MockData::galleryEvents($type);
-
-        return view('pages.gallery.events', compact('data'));
+        return view('pages.gallery.show', compact('gallery'));
     }
 }
