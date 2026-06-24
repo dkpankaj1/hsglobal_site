@@ -41,7 +41,7 @@ class MandatoryDisclosureController extends Controller
         if (empty($disclosure->document)) {
             abort(404, 'Document not found.');
         }
-        return response()->download(public_path('upload/' . $disclosure->document), $disclosure->name);
+        return response()->download(public_path($disclosure->document), $disclosure->name);
     }
 
     public function generalInfo()

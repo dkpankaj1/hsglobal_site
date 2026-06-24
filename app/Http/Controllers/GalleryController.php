@@ -24,10 +24,13 @@ class GalleryController extends Controller
      */
     public function show(string $slug)
     {
-        $gallery = Gallery::with('images')
+        $gallery = Gallery::with(['images' => function ($query) {
+            $query->where('is_published', true);
+        }])
             ->where('slug', $slug)
             ->where('is_published', true)
             ->firstOrFail();
+
 
         return view('pages.gallery.show', compact('gallery'));
     }

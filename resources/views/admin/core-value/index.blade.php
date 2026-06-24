@@ -84,7 +84,7 @@
         </div>
     </div>
 
-    @push('scripts')
+    @push('pageScripts')
         <script>
             const deleteModal = document.getElementById('deleteModal');
             deleteModal.addEventListener('show.bs.modal', function(event) {

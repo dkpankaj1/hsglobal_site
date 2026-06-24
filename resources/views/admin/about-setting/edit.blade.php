@@ -177,7 +177,7 @@
         </div>
     </div>
 
-    @push('scripts')
+    @push('pageScripts')
         <script>
             // Highlights
             let highlightIndex = {{ count(old('highlights', $aboutSetting->highlights ?? [])) }};
