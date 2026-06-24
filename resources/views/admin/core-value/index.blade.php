@@ -27,7 +27,8 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td><i class="fa {{ $value->icon }} fa-lg"></i>
-                                            <code>{{ $value->icon }}</code></td>
+                                            <code>{{ $value->icon }}</code>
+                                        </td>
                                         <td>{{ $value->title }}</td>
                                         <td>{{ Str::limit($value->text, 60) }}</td>
                                         <td>{{ $value->sort_order }}</td>
